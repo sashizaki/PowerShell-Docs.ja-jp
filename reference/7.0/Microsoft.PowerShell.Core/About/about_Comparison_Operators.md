@@ -1,576 +1,461 @@
 ---
 description: PowerShell の値を比較する演算子について説明します。
 Locale: en-US
-ms.date: 12/10/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: dbda5371224345a2e22dd281c17ae0d7c928aad6
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: a89ab612a7f0fe518f97a4d037956df14546740d
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090228"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620117"
 ---
-# <a name="about-comparison-operators"></a><span data-ttu-id="aaa82-103">比較演算子について</span><span class="sxs-lookup"><span data-stu-id="aaa82-103">About Comparison Operators</span></span>
+# <a name="about-comparison-operators"></a><span data-ttu-id="1bdac-103">比較演算子について</span><span class="sxs-lookup"><span data-stu-id="1bdac-103">About Comparison Operators</span></span>
 
-## <a name="short-description"></a><span data-ttu-id="aaa82-104">簡単な説明</span><span class="sxs-lookup"><span data-stu-id="aaa82-104">Short description</span></span>
-<span data-ttu-id="aaa82-105">PowerShell の値を比較する演算子について説明します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-105">Describes the operators that compare values in PowerShell.</span></span>
+## <a name="short-description"></a><span data-ttu-id="1bdac-104">簡単な説明</span><span class="sxs-lookup"><span data-stu-id="1bdac-104">Short description</span></span>
 
-## <a name="long-description"></a><span data-ttu-id="aaa82-106">長い説明</span><span class="sxs-lookup"><span data-stu-id="aaa82-106">Long description</span></span>
+<span data-ttu-id="1bdac-105">PowerShell の比較演算子は、2つの値を比較するか、コレクションの要素を入力値に対してフィルター処理することができます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-105">The comparison operators in PowerShell can either compare two values or filter elements of a collection against an input value.</span></span>
 
-<span data-ttu-id="aaa82-107">比較演算子を使用すると、値を比較し、指定したパターンに一致する値を検索するための条件を指定できます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-107">Comparison operators let you specify conditions for comparing values and finding values that match specified patterns.</span></span> <span data-ttu-id="aaa82-108">比較演算子を使用するには、比較する値を、これらの値を区切る演算子と組み合わせて指定します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-108">To use a comparison operator, specify the values that you want to compare together with an operator that separates these values.</span></span>
+## <a name="long-description"></a><span data-ttu-id="1bdac-106">長い説明</span><span class="sxs-lookup"><span data-stu-id="1bdac-106">Long description</span></span>
 
-<span data-ttu-id="aaa82-109">PowerShell には、次の比較演算子が含まれています。</span><span class="sxs-lookup"><span data-stu-id="aaa82-109">PowerShell includes the following comparison operators:</span></span>
+<span data-ttu-id="1bdac-107">比較演算子を使用すると、値を比較したり、指定したパターンに一致する値を検索したりできます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-107">Comparison operators let you compare values or finding values that match specified patterns.</span></span> <span data-ttu-id="1bdac-108">PowerShell には、次の比較演算子が含まれています。</span><span class="sxs-lookup"><span data-stu-id="1bdac-108">PowerShell includes the following comparison operators:</span></span>
 
-| <span data-ttu-id="aaa82-110">Type</span><span class="sxs-lookup"><span data-stu-id="aaa82-110">Type</span></span>        | <span data-ttu-id="aaa82-111">演算子</span><span class="sxs-lookup"><span data-stu-id="aaa82-111">Operators</span></span>    | <span data-ttu-id="aaa82-112">説明</span><span class="sxs-lookup"><span data-stu-id="aaa82-112">Description</span></span>                                 |
-| ----------- | ------------ | --------------------------------------------|
-| <span data-ttu-id="aaa82-113">等式</span><span class="sxs-lookup"><span data-stu-id="aaa82-113">Equality</span></span>    | <span data-ttu-id="aaa82-114">-eq</span><span class="sxs-lookup"><span data-stu-id="aaa82-114">-eq</span></span>          | <span data-ttu-id="aaa82-115">equals</span><span class="sxs-lookup"><span data-stu-id="aaa82-115">equals</span></span>                                      |
-|             | <span data-ttu-id="aaa82-116">-ne</span><span class="sxs-lookup"><span data-stu-id="aaa82-116">-ne</span></span>          | <span data-ttu-id="aaa82-117">等しくない</span><span class="sxs-lookup"><span data-stu-id="aaa82-117">not equals</span></span>                                  |
-|             | <span data-ttu-id="aaa82-118">-gt</span><span class="sxs-lookup"><span data-stu-id="aaa82-118">-gt</span></span>          | <span data-ttu-id="aaa82-119">より大きい</span><span class="sxs-lookup"><span data-stu-id="aaa82-119">greater than</span></span>                                |
-|             | <span data-ttu-id="aaa82-120">-ge</span><span class="sxs-lookup"><span data-stu-id="aaa82-120">-ge</span></span>          | <span data-ttu-id="aaa82-121">以上</span><span class="sxs-lookup"><span data-stu-id="aaa82-121">greater than or equal</span></span>                       |
-|             | <span data-ttu-id="aaa82-122">-lt</span><span class="sxs-lookup"><span data-stu-id="aaa82-122">-lt</span></span>          | <span data-ttu-id="aaa82-123">次の値未満</span><span class="sxs-lookup"><span data-stu-id="aaa82-123">less than</span></span>                                   |
-|             | <span data-ttu-id="aaa82-124">-le</span><span class="sxs-lookup"><span data-stu-id="aaa82-124">-le</span></span>          | <span data-ttu-id="aaa82-125">以下</span><span class="sxs-lookup"><span data-stu-id="aaa82-125">less than or equal</span></span>                          |
-|             |              |                                             |
-| <span data-ttu-id="aaa82-126">Matching</span><span class="sxs-lookup"><span data-stu-id="aaa82-126">Matching</span></span>    | <span data-ttu-id="aaa82-127">-like</span><span class="sxs-lookup"><span data-stu-id="aaa82-127">-like</span></span>        | <span data-ttu-id="aaa82-128">文字列がワイルドカードに一致する場合に true を返します</span><span class="sxs-lookup"><span data-stu-id="aaa82-128">Returns true when string matches wildcard</span></span>   |
-|             |              | <span data-ttu-id="aaa82-129">pattern</span><span class="sxs-lookup"><span data-stu-id="aaa82-129">pattern</span></span>                                     |
-|             | <span data-ttu-id="aaa82-130">-notlike</span><span class="sxs-lookup"><span data-stu-id="aaa82-130">-notlike</span></span>     | <span data-ttu-id="aaa82-131">文字列が一致しない場合に true を返します</span><span class="sxs-lookup"><span data-stu-id="aaa82-131">Returns true when string does not match</span></span>     |
-|             |              | <span data-ttu-id="aaa82-132">ワイルドカードパターン</span><span class="sxs-lookup"><span data-stu-id="aaa82-132">wildcard pattern</span></span>                            |
-|             | <span data-ttu-id="aaa82-133">-match</span><span class="sxs-lookup"><span data-stu-id="aaa82-133">-match</span></span>       | <span data-ttu-id="aaa82-134">文字列が regex と一致する場合に true を返します</span><span class="sxs-lookup"><span data-stu-id="aaa82-134">Returns true when string matches regex</span></span>      |
-|             |              | <span data-ttu-id="aaa82-135">種類$matches に一致する文字列が含まれています</span><span class="sxs-lookup"><span data-stu-id="aaa82-135">pattern; $matches contains matching strings</span></span> |
-|             | <span data-ttu-id="aaa82-136">-notmatch</span><span class="sxs-lookup"><span data-stu-id="aaa82-136">-notmatch</span></span>    | <span data-ttu-id="aaa82-137">文字列が一致しない場合に true を返します</span><span class="sxs-lookup"><span data-stu-id="aaa82-137">Returns true when string does not match</span></span>     |
-|             |              | <span data-ttu-id="aaa82-138">regex パターン;一致する $matches が含まれています</span><span class="sxs-lookup"><span data-stu-id="aaa82-138">regex pattern; $matches contains matching</span></span>   |
-|             |              | <span data-ttu-id="aaa82-139">文字列</span><span class="sxs-lookup"><span data-stu-id="aaa82-139">strings</span></span>                                     |
-|             |              |                                             |
-| <span data-ttu-id="aaa82-140">Containment</span><span class="sxs-lookup"><span data-stu-id="aaa82-140">Containment</span></span> | <span data-ttu-id="aaa82-141">-contains</span><span class="sxs-lookup"><span data-stu-id="aaa82-141">-contains</span></span>    | <span data-ttu-id="aaa82-142">参照値が含まれている場合に true を返します</span><span class="sxs-lookup"><span data-stu-id="aaa82-142">Returns true when reference value contained</span></span> |
-|             |              | <span data-ttu-id="aaa82-143">コレクション内</span><span class="sxs-lookup"><span data-stu-id="aaa82-143">in a collection</span></span>                             |
-|             | <span data-ttu-id="aaa82-144">-notcontains</span><span class="sxs-lookup"><span data-stu-id="aaa82-144">-notcontains</span></span> | <span data-ttu-id="aaa82-145">参照値が指定されていない場合に true を返します</span><span class="sxs-lookup"><span data-stu-id="aaa82-145">Returns true when reference value not</span></span>       |
-|             |              | <span data-ttu-id="aaa82-146">コレクションに含まれる</span><span class="sxs-lookup"><span data-stu-id="aaa82-146">contained in a collection</span></span>                   |
-|             | <span data-ttu-id="aaa82-147">-in</span><span class="sxs-lookup"><span data-stu-id="aaa82-147">-in</span></span>          | <span data-ttu-id="aaa82-148">テスト値がに含まれている場合に true を返します</span><span class="sxs-lookup"><span data-stu-id="aaa82-148">Returns true when test value contained in a</span></span> |
-|             |              | <span data-ttu-id="aaa82-149">collection</span><span class="sxs-lookup"><span data-stu-id="aaa82-149">collection</span></span>                                  |
-|             | <span data-ttu-id="aaa82-150">-notin</span><span class="sxs-lookup"><span data-stu-id="aaa82-150">-notin</span></span>       | <span data-ttu-id="aaa82-151">テスト値が含まれていない場合に true を返します</span><span class="sxs-lookup"><span data-stu-id="aaa82-151">Returns true when test value not contained</span></span>  |
-|             |              | <span data-ttu-id="aaa82-152">コレクション内</span><span class="sxs-lookup"><span data-stu-id="aaa82-152">in a collection</span></span>                             |
-|             |              |                                             |
-| <span data-ttu-id="aaa82-153">Replacement</span><span class="sxs-lookup"><span data-stu-id="aaa82-153">Replacement</span></span> | <span data-ttu-id="aaa82-154">-replace</span><span class="sxs-lookup"><span data-stu-id="aaa82-154">-replace</span></span>     | <span data-ttu-id="aaa82-155">文字列パターンを置換します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-155">Replaces a string pattern</span></span>                   |
-|             |              |                                             |
-| <span data-ttu-id="aaa82-156">Type</span><span class="sxs-lookup"><span data-stu-id="aaa82-156">Type</span></span>        | <span data-ttu-id="aaa82-157">-が</span><span class="sxs-lookup"><span data-stu-id="aaa82-157">-is</span></span>          | <span data-ttu-id="aaa82-158">両方のオブジェクトが同じ場合に true を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-158">Returns true if both object are the same</span></span>    |
-|             |              | <span data-ttu-id="aaa82-159">type</span><span class="sxs-lookup"><span data-stu-id="aaa82-159">type</span></span>                                        |
-|             | <span data-ttu-id="aaa82-160">-isnot</span><span class="sxs-lookup"><span data-stu-id="aaa82-160">-isnot</span></span>       | <span data-ttu-id="aaa82-161">オブジェクトが同じでない場合に true を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-161">Returns true if the objects are not the same</span></span>|
-|             |              | <span data-ttu-id="aaa82-162">type</span><span class="sxs-lookup"><span data-stu-id="aaa82-162">type</span></span>                                        |
+|    <span data-ttu-id="1bdac-109">型</span><span class="sxs-lookup"><span data-stu-id="1bdac-109">Type</span></span>     |   <span data-ttu-id="1bdac-110">演算子</span><span class="sxs-lookup"><span data-stu-id="1bdac-110">Operator</span></span>   |              <span data-ttu-id="1bdac-111">比較テスト</span><span class="sxs-lookup"><span data-stu-id="1bdac-111">Comparison test</span></span>              |
+| ----------- | ------------ | ----------------------------------------- |
+| <span data-ttu-id="1bdac-112">等価比較</span><span class="sxs-lookup"><span data-stu-id="1bdac-112">Equality</span></span>    | <span data-ttu-id="1bdac-113">-eq</span><span class="sxs-lookup"><span data-stu-id="1bdac-113">-eq</span></span>          | <span data-ttu-id="1bdac-114">equals</span><span class="sxs-lookup"><span data-stu-id="1bdac-114">equals</span></span>                                    |
+|             | <span data-ttu-id="1bdac-115">-ne</span><span class="sxs-lookup"><span data-stu-id="1bdac-115">-ne</span></span>          | <span data-ttu-id="1bdac-116">等しくない</span><span class="sxs-lookup"><span data-stu-id="1bdac-116">not equals</span></span>                                |
+|             | <span data-ttu-id="1bdac-117">-gt</span><span class="sxs-lookup"><span data-stu-id="1bdac-117">-gt</span></span>          | <span data-ttu-id="1bdac-118">より大きい</span><span class="sxs-lookup"><span data-stu-id="1bdac-118">greater than</span></span>                              |
+|             | <span data-ttu-id="1bdac-119">-ge</span><span class="sxs-lookup"><span data-stu-id="1bdac-119">-ge</span></span>          | <span data-ttu-id="1bdac-120">以上</span><span class="sxs-lookup"><span data-stu-id="1bdac-120">greater than or equal</span></span>                     |
+|             | <span data-ttu-id="1bdac-121">-lt</span><span class="sxs-lookup"><span data-stu-id="1bdac-121">-lt</span></span>          | <span data-ttu-id="1bdac-122">次の値未満</span><span class="sxs-lookup"><span data-stu-id="1bdac-122">less than</span></span>                                 |
+|             | <span data-ttu-id="1bdac-123">-le</span><span class="sxs-lookup"><span data-stu-id="1bdac-123">-le</span></span>          | <span data-ttu-id="1bdac-124">以下</span><span class="sxs-lookup"><span data-stu-id="1bdac-124">less than or equal</span></span>                        |
+| <span data-ttu-id="1bdac-125">Matching</span><span class="sxs-lookup"><span data-stu-id="1bdac-125">Matching</span></span>    | <span data-ttu-id="1bdac-126">-like</span><span class="sxs-lookup"><span data-stu-id="1bdac-126">-like</span></span>        | <span data-ttu-id="1bdac-127">ワイルドカードパターンに一致する文字列</span><span class="sxs-lookup"><span data-stu-id="1bdac-127">string matches wildcard pattern</span></span>           |
+|             | <span data-ttu-id="1bdac-128">-notlike</span><span class="sxs-lookup"><span data-stu-id="1bdac-128">-notlike</span></span>     | <span data-ttu-id="1bdac-129">文字列がワイルドカードパターンと一致しません</span><span class="sxs-lookup"><span data-stu-id="1bdac-129">string does not match wildcard pattern</span></span>    |
+|             | <span data-ttu-id="1bdac-130">-match</span><span class="sxs-lookup"><span data-stu-id="1bdac-130">-match</span></span>       | <span data-ttu-id="1bdac-131">文字列が regex パターンと一致します</span><span class="sxs-lookup"><span data-stu-id="1bdac-131">string matches regex pattern</span></span>              |
+|             | <span data-ttu-id="1bdac-132">-notmatch</span><span class="sxs-lookup"><span data-stu-id="1bdac-132">-notmatch</span></span>    | <span data-ttu-id="1bdac-133">文字列が regex パターンと一致しません</span><span class="sxs-lookup"><span data-stu-id="1bdac-133">string does not match regex pattern</span></span>       |
+| <span data-ttu-id="1bdac-134">Replacement</span><span class="sxs-lookup"><span data-stu-id="1bdac-134">Replacement</span></span> | <span data-ttu-id="1bdac-135">-replace</span><span class="sxs-lookup"><span data-stu-id="1bdac-135">-replace</span></span>     | <span data-ttu-id="1bdac-136">正規表現パターンに一致する文字列を置換します</span><span class="sxs-lookup"><span data-stu-id="1bdac-136">replaces strings matching a regex pattern</span></span> |
+| <span data-ttu-id="1bdac-137">Containment</span><span class="sxs-lookup"><span data-stu-id="1bdac-137">Containment</span></span> | <span data-ttu-id="1bdac-138">-contains</span><span class="sxs-lookup"><span data-stu-id="1bdac-138">-contains</span></span>    | <span data-ttu-id="1bdac-139">コレクションに値が含まれています</span><span class="sxs-lookup"><span data-stu-id="1bdac-139">collection contains a value</span></span>               |
+|             | <span data-ttu-id="1bdac-140">-notcontains</span><span class="sxs-lookup"><span data-stu-id="1bdac-140">-notcontains</span></span> | <span data-ttu-id="1bdac-141">コレクションに値が含まれていません</span><span class="sxs-lookup"><span data-stu-id="1bdac-141">collection does not contain a value</span></span>       |
+|             | <span data-ttu-id="1bdac-142">-in</span><span class="sxs-lookup"><span data-stu-id="1bdac-142">-in</span></span>          | <span data-ttu-id="1bdac-143">値がコレクション内にあります</span><span class="sxs-lookup"><span data-stu-id="1bdac-143">value is in a collection</span></span>                  |
+|             | <span data-ttu-id="1bdac-144">-notin</span><span class="sxs-lookup"><span data-stu-id="1bdac-144">-notin</span></span>       | <span data-ttu-id="1bdac-145">値がコレクション内にありません</span><span class="sxs-lookup"><span data-stu-id="1bdac-145">value is not in a collection</span></span>              |
+| <span data-ttu-id="1bdac-146">Type</span><span class="sxs-lookup"><span data-stu-id="1bdac-146">Type</span></span>        | <span data-ttu-id="1bdac-147">-が</span><span class="sxs-lookup"><span data-stu-id="1bdac-147">-is</span></span>          | <span data-ttu-id="1bdac-148">両方のオブジェクトが同じ型です。</span><span class="sxs-lookup"><span data-stu-id="1bdac-148">both objects are the same type</span></span>            |
+|             | <span data-ttu-id="1bdac-149">-isnot</span><span class="sxs-lookup"><span data-stu-id="1bdac-149">-isnot</span></span>       | <span data-ttu-id="1bdac-150">オブジェクトが同じ型ではありません</span><span class="sxs-lookup"><span data-stu-id="1bdac-150">the objects are not the same type</span></span>         |
 
-<span data-ttu-id="aaa82-163">既定では、すべての比較演算子で大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-163">By default, all comparison operators are case-insensitive.</span></span> <span data-ttu-id="aaa82-164">大文字と小文字を区別する比較演算子を作成するには、演算子名の前にを付け `c` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-164">To make a comparison operator case-sensitive, precede the operator name with a `c`.</span></span> <span data-ttu-id="aaa82-165">たとえば、の大文字と小文字を区別するバージョン `-eq` はです `-ceq` 。</span><span class="sxs-lookup"><span data-stu-id="aaa82-165">For example, the case-sensitive version of `-eq` is `-ceq`.</span></span> <span data-ttu-id="aaa82-166">大文字小文字を区別しないようにするには、演算子の前にを付け `i` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-166">To make the case-insensitivity explicit, precede the operator with an `i`.</span></span> <span data-ttu-id="aaa82-167">たとえば、の明示的な大文字と小文字を区別しないバージョン `-eq` はです `-ieq` 。</span><span class="sxs-lookup"><span data-stu-id="aaa82-167">For example, the explicitly case-insensitive version of `-eq` is `-ieq`.</span></span>
+## <a name="common-features"></a><span data-ttu-id="1bdac-151">共通機能</span><span class="sxs-lookup"><span data-stu-id="1bdac-151">Common features</span></span>
 
-<span data-ttu-id="aaa82-168">演算子への入力がスカラー値の場合、比較演算子はブール値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-168">When the input to an operator is a scalar value, comparison operators return a Boolean value.</span></span> <span data-ttu-id="aaa82-169">入力が値のコレクションである場合、比較演算子は一致する値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-169">When the input is a collection of values, the comparison operators return any matching values.</span></span> <span data-ttu-id="aaa82-170">コレクションに一致するものがない場合、比較演算子は空の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-170">If there are no matches in a collection, comparison operators return an empty array.</span></span>
+<span data-ttu-id="1bdac-152">既定では、すべての比較演算子で大文字と小文字が区別されます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-152">By default, all comparison operators are case-insensitive.</span></span> <span data-ttu-id="1bdac-153">大文字と小文字を区別する比較演算子を作成するには、の後にを追加し `c` `-` ます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-153">To make a comparison operator case-sensitive, add a `c` after the `-`.</span></span> <span data-ttu-id="1bdac-154">たとえば、 `-ceq` は、の大文字と小文字を区別するバージョンです `-eq` 。</span><span class="sxs-lookup"><span data-stu-id="1bdac-154">For example, `-ceq` is the case-sensitive version of `-eq`.</span></span> <span data-ttu-id="1bdac-155">大文字と小文字を区別しないようにするには、の前にを追加し `i` `-` ます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-155">To make the case-insensitivity explicit, add an `i` before `-`.</span></span> <span data-ttu-id="1bdac-156">たとえば、 `-ieq` は、の大文字と小文字を区別しない明示的なバージョンです `-eq` 。</span><span class="sxs-lookup"><span data-stu-id="1bdac-156">For example, `-ieq` is the explicitly case-insensitive version of `-eq`.</span></span>
+
+<span data-ttu-id="1bdac-157">演算子の入力がスカラー値の場合、演算子は **ブール** 値を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-157">When the input of an operator is a scalar value, the operator returns a **Boolean** value.</span></span> <span data-ttu-id="1bdac-158">入力がコレクションの場合、演算子は、式の右辺の値に一致するコレクションの要素を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-158">When the input is a collection, the operator returns the elements of the collection that match the right-hand value of the expression.</span></span>
+<span data-ttu-id="1bdac-159">コレクション内に一致するものがない場合、比較演算子は空の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-159">If there are no matches in the collection, comparison operators return an empty array.</span></span> <span data-ttu-id="1bdac-160">以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-160">For example:</span></span>
 
 ```powershell
-PS> (1, 2 -eq 3).GetType().FullName
-System.Object[]
+$a = (1, 2 -eq 3)
+$a.GetType().Name
+$a.Count
 ```
 
-<span data-ttu-id="aaa82-171">例外は、包含演算子、In 演算子、および型演算子で、常に **ブール** 値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-171">The exceptions are the containment operators, the In operators, and the type operators, which always return a **Boolean** value.</span></span>
+```output
+Object[]
+0
+```
 
-> [!NOTE]
-> <span data-ttu-id="aaa82-172">値をと比較する必要がある場合は、 `$null` `$null` 比較の左側に配置する必要があります。</span><span class="sxs-lookup"><span data-stu-id="aaa82-172">If you need to compare a value to `$null` you should put `$null` on the left-hand side of the comparison.</span></span> <span data-ttu-id="aaa82-173">`$null`**オブジェクト []** と比較すると、比較オブジェクトが配列であるため、結果は **False** になります。</span><span class="sxs-lookup"><span data-stu-id="aaa82-173">When you compare `$null` to an **Object[]** the result is **False** because the comparison object is an array.</span></span> <span data-ttu-id="aaa82-174">配列をと比較すると `$null` 、比較によって `$null` 配列に格納されているすべての値が除外されます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-174">When you compare an array to `$null`, the comparison filters out any `$null` values stored in the array.</span></span> <span data-ttu-id="aaa82-175">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-175">For example:</span></span>
->
-> ```powershell
-> PS> $null -ne $null, "hello"
-> True
-> PS> $null, "hello" -ne $null
-> hello
-> ```
+<span data-ttu-id="1bdac-161">次のようにいくつかの例外があります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-161">There are a few exceptions:</span></span>
 
-## <a name="equality-operators"></a><span data-ttu-id="aaa82-176">等値演算子</span><span class="sxs-lookup"><span data-stu-id="aaa82-176">Equality operators</span></span>
+- <span data-ttu-id="1bdac-162">含有演算子と型演算子は、常に **ブール** 値を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-162">The containment and type operators always return a **Boolean** value</span></span>
+- <span data-ttu-id="1bdac-163">演算子は、 `-replace` 置換結果を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-163">The `-replace` operator returns the replacement result</span></span>
+- <span data-ttu-id="1bdac-164">`-match`And `-notmatch` 演算子も `$Matches` 自動変数を設定します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-164">The `-match` and `-notmatch` operators also populate the `$Matches` automatic variable</span></span>
 
-<span data-ttu-id="aaa82-177">等値演算子 ( `-eq` 、 `-ne` ) は、1つ以上の入力値が指定されたパターンと同じ場合に TRUE または一致する値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-177">The equality operators (`-eq`, `-ne`) return a value of TRUE or the matches when one or more of the input values is identical to the specified pattern.</span></span> <span data-ttu-id="aaa82-178">パターン全体が値全体と一致している必要があります。</span><span class="sxs-lookup"><span data-stu-id="aaa82-178">The entire pattern must match an entire value.</span></span>
+## <a name="equality-operators"></a><span data-ttu-id="1bdac-165">等値演算子</span><span class="sxs-lookup"><span data-stu-id="1bdac-165">Equality operators</span></span>
 
-<span data-ttu-id="aaa82-179">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-179">Example:</span></span>
+### <a name="-eq-and--ne"></a><span data-ttu-id="1bdac-166">-eq と -ne</span><span class="sxs-lookup"><span data-stu-id="1bdac-166">-eq and -ne</span></span>
 
-### <a name="-eq"></a><span data-ttu-id="aaa82-180">-eq</span><span class="sxs-lookup"><span data-stu-id="aaa82-180">-eq</span></span>
+<span data-ttu-id="1bdac-167">左辺がスカラーの場合、 `-eq` 右辺が完全に一致する場合は **True** を返し、それ以外の場合は False を返し `-eq` ます。 </span><span class="sxs-lookup"><span data-stu-id="1bdac-167">When the left-hand side is scalar, `-eq` returns **True** if the right-hand side is an exact match, otherwise, `-eq` returns **False**.</span></span> <span data-ttu-id="1bdac-168">`-ne` は逆になります。両辺が一致する場合は **False** を返します。それ以外の場合は `-ne` True を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-168">`-ne` does the opposite; it returns **False** when both sides match; otherwise, `-ne` returns True.</span></span>
 
-<span data-ttu-id="aaa82-181">説明: と等しい。</span><span class="sxs-lookup"><span data-stu-id="aaa82-181">Description: Equal to.</span></span> <span data-ttu-id="aaa82-182">には、同じ値が含まれます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-182">Includes an identical value.</span></span>
-
-<span data-ttu-id="aaa82-183">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-183">Example:</span></span>
+<span data-ttu-id="1bdac-169">例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-169">Example:</span></span>
 
 ```powershell
-PS> 2 -eq 2
-True
+2 -eq 2                 # Output: True
+2 -eq 3                 # Output: False
+"abc" -eq "abc"         # Output: True
+"abc" -eq "abc", "def"  # Output: False
+"abc" -ne "def"         # Output: True
+"abc" -ne "abc"         # Output: False
+"abc" -ne "abc", "def"  # Output: True
+```
 
-PS> 2 -eq 3
+<span data-ttu-id="1bdac-170">左側がコレクションの場合は、 `-eq` 右側に一致するメンバーを返し、 `-ne` フィルターで除外します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-170">When the left-hand side is a collection, `-eq` returns those members that match the right-hand side, while `-ne` filters them out.</span></span>
+
+<span data-ttu-id="1bdac-171">例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-171">Example:</span></span>
+
+```powershell
+1,2,3 -eq 2             # Output: 2
+"abc", "def" -eq "abc"  # Output: abc
+"abc", "def" -ne "abc"  # Output: def
+```
+
+<span data-ttu-id="1bdac-172">これらの演算子は、コレクションのすべての要素を処理します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-172">These operators process all elements of the collection.</span></span> <span data-ttu-id="1bdac-173">例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-173">Example:</span></span>
+
+```powershell
+"zzz", "def", "zzz" -eq "zzz"
+```
+
+```output
+zzz
+zzz
+```
+
+<span data-ttu-id="1bdac-174">等値演算子は、スカラーまたはコレクションだけでなく、任意の2つのオブジェクトを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-174">The equality operators accept any two objects, not just a scalar or collection.</span></span>
+<span data-ttu-id="1bdac-175">ただし、比較結果はエンドユーザーにとって意味があるとは限りません。</span><span class="sxs-lookup"><span data-stu-id="1bdac-175">But the comparison result is not guaranteed to be meaningful for the end-user.</span></span>
+<span data-ttu-id="1bdac-176">次の例は、この問題を示しています。</span><span class="sxs-lookup"><span data-stu-id="1bdac-176">The following example demonstrates the issue.</span></span>
+
+```powershell
+class MyFileInfoSet {
+    [String]$File
+    [Int64]$Size
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
 False
+```
 
-PS> 1,2,3 -eq 2
+<span data-ttu-id="1bdac-177">この例では、同一のプロパティを持つ2つのオブジェクトを作成しました。</span><span class="sxs-lookup"><span data-stu-id="1bdac-177">In this example, we created two objects with identical properties.</span></span> <span data-ttu-id="1bdac-178">ただし、等価テストの結果は、異なるオブジェクトであるため **False** になります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-178">Yet, the equality test result is **False** because they are different objects.</span></span> <span data-ttu-id="1bdac-179">同等のクラスを作成するには、クラスに[IEquatable \<T> ][2]を実装する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-179">To create comparable classes, you need to implement [System.IEquatable\<T>][2] in your class.</span></span> <span data-ttu-id="1bdac-180">次の例は、 [IEquatable \<T>][2]を実装し、**ファイル** と **サイズ** の2つのプロパティを持つ、 **myfileinfoset** クラスの部分実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="1bdac-180">The following example demonstrates the partial implementation of a **MyFileInfoSet** class that implements [System.IEquatable\<T>][2] and has two properties, **File** and **Size**.</span></span> <span data-ttu-id="1bdac-181">`Equals()`2 つの **Myfileinfoset** オブジェクトの File プロパティと Size プロパティが同じである場合、メソッドは True を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-181">The `Equals()` method returns True if the File and Size properties of two **MyFileInfoSet** objects are the same.</span></span>
+
+```powershell
+class MyFileInfoSet : System.IEquatable[Object] {
+    [String]$File
+    [Int64]$Size
+
+    [bool] Equals([Object] $obj) {
+        return ($this.File -eq $obj.File) -and ($this.Size -eq $obj.Size)
+    }
+}
+$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a -eq $b
+```
+
+```Output
+True
+```
+
+<span data-ttu-id="1bdac-182">任意のオブジェクトを比較するための例として、null かどうかを確認することがあります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-182">A prominent example of comparing arbitrary objects is to find out if they are null.</span></span> <span data-ttu-id="1bdac-183">ただし、変数がであるかどうかを判断する必要がある場合は `$null` 、 `$null` 等値演算子の左側に配置する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-183">But if you need to determine whether a variable is `$null`, you must put `$null` on the left-hand side of the equality operator.</span></span> <span data-ttu-id="1bdac-184">これを右側に配置しても、期待どおりの処理は行われません。</span><span class="sxs-lookup"><span data-stu-id="1bdac-184">Putting it on the right-hand side does not do what you expect.</span></span>
+
+<span data-ttu-id="1bdac-185">たとえば、次の `$a` ように null 要素を含む配列を使用します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-185">For example, let `$a` be an array containing null elements:</span></span>
+
+```powershell
+$a = 1, 2, $null, 4, $null, 6
+```
+
+<span data-ttu-id="1bdac-186">次のテストは `$a` null ではありません。</span><span class="sxs-lookup"><span data-stu-id="1bdac-186">The following tests that `$a` is not null.</span></span>
+
+```powershell
+$null -ne $a
+```
+
+```output
+False
+```
+
+<span data-ttu-id="1bdac-187">ただし、次の例では、からすべての null 要素を除外してい `$a` ます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-187">The following, however, filers out all null elements from `$a`:</span></span>
+
+```powershell
+$a -ne $null # Output: 1, 2, 4, 6
+```
+
+```output
+1
 2
-PS> "abc" -eq "abc"
-True
-
-PS> "abc" -eq "abc", "def"
-False
-
-PS> "abc", "def" -eq "abc"
-abc
+4
+6
 ```
 
-### <a name="-ne"></a><span data-ttu-id="aaa82-184">-ne</span><span class="sxs-lookup"><span data-stu-id="aaa82-184">-ne</span></span>
+### <a name="-gt--ge--lt-and--le"></a><span data-ttu-id="1bdac-188">-gt、-ge、-lt、および-le</span><span class="sxs-lookup"><span data-stu-id="1bdac-188">-gt, -ge, -lt, and -le</span></span>
 
-<span data-ttu-id="aaa82-185">説明: 等しくない。</span><span class="sxs-lookup"><span data-stu-id="aaa82-185">Description: Not equal to.</span></span> <span data-ttu-id="aaa82-186">に別の値が含まれています。</span><span class="sxs-lookup"><span data-stu-id="aaa82-186">Includes a different value.</span></span>
+<span data-ttu-id="1bdac-189">`-gt`、 `-ge` 、 `-lt` 、およびは `-le` 同様に動作します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-189">`-gt`, `-ge`, `-lt`, and `-le` behave very similarly.</span></span> <span data-ttu-id="1bdac-190">両方の側がスカラーの場合は、2つの辺の比較に応じて、 **True** または **False** を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-190">When both sides are scalar they return **True** or **False** depending on how the two sides compare:</span></span>
 
-<span data-ttu-id="aaa82-187">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-187">Example:</span></span>
+| <span data-ttu-id="1bdac-191">演算子</span><span class="sxs-lookup"><span data-stu-id="1bdac-191">Operator</span></span> | <span data-ttu-id="1bdac-192">True を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-192">Returns True when...</span></span>                   |
+| -------- | -------------------------------------- |
+| <span data-ttu-id="1bdac-193">-gt</span><span class="sxs-lookup"><span data-stu-id="1bdac-193">-gt</span></span>      | <span data-ttu-id="1bdac-194">左側が大きくなっています</span><span class="sxs-lookup"><span data-stu-id="1bdac-194">The left-hand side is greater</span></span>          |
+| <span data-ttu-id="1bdac-195">-ge</span><span class="sxs-lookup"><span data-stu-id="1bdac-195">-ge</span></span>      | <span data-ttu-id="1bdac-196">左辺が大きいか等しいです。</span><span class="sxs-lookup"><span data-stu-id="1bdac-196">The left-hand side is greater or equal</span></span> |
+| <span data-ttu-id="1bdac-197">-lt</span><span class="sxs-lookup"><span data-stu-id="1bdac-197">-lt</span></span>      | <span data-ttu-id="1bdac-198">左側が小さくなっています</span><span class="sxs-lookup"><span data-stu-id="1bdac-198">The left-hand side is smaller</span></span>          |
+| <span data-ttu-id="1bdac-199">-le</span><span class="sxs-lookup"><span data-stu-id="1bdac-199">-le</span></span>      | <span data-ttu-id="1bdac-200">左側が小さいか等しい</span><span class="sxs-lookup"><span data-stu-id="1bdac-200">The left-hand side is smaller or equal</span></span> |
 
-```powershell
-PS> "abc" -ne "def"
-True
-
-PS> "abc" -ne "abc"
-False
-
-PS> "abc" -ne "abc", "def"
-True
-
-PS> "abc", "def" -ne "abc"
-def
-```
-
-### <a name="-gt"></a><span data-ttu-id="aaa82-188">-gt</span><span class="sxs-lookup"><span data-stu-id="aaa82-188">-gt</span></span>
-
-<span data-ttu-id="aaa82-189">説明: より大きい。</span><span class="sxs-lookup"><span data-stu-id="aaa82-189">Description: Greater-than.</span></span>
-
-<span data-ttu-id="aaa82-190">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-190">Example:</span></span>
+<span data-ttu-id="1bdac-201">次の例では、すべてのステートメントが True を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-201">In the following examples, all statements return True.</span></span>
 
 ```powershell
-PS> 8 -gt 6
-True
-
-PS> 7, 8, 9 -gt 8
-9
+8 -gt 6  # Output: True
+8 -ge 8  # Output: True
+6 -lt 8  # Output: True
+8 -le 8  # Output: True
 ```
 
 > [!NOTE]
-> <span data-ttu-id="aaa82-191">`>`他の多くのプログラミング言語では、大なり演算子と混同しないようにしてください。</span><span class="sxs-lookup"><span data-stu-id="aaa82-191">This should not to be confused with `>`, the greater-than operator in many other programming languages.</span></span> <span data-ttu-id="aaa82-192">PowerShell で `>` は、はリダイレクトに使用されます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-192">In PowerShell, `>` is used for redirection.</span></span> <span data-ttu-id="aaa82-193">詳細については、「 [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="aaa82-193">For more information, see [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators).</span></span>
+> <span data-ttu-id="1bdac-202">ほとんどのプログラミング言語では、大なり演算子は `>` です。</span><span class="sxs-lookup"><span data-stu-id="1bdac-202">In most programming languages the greater-than operator is `>`.</span></span> <span data-ttu-id="1bdac-203">PowerShell では、この文字がリダイレクトに使用されます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-203">In PowerShell, this character is used for redirection.</span></span> <span data-ttu-id="1bdac-204">詳細については、「 [about_Redirection][3]」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1bdac-204">For details, see [about_Redirection][3].</span></span>
 
-### <a name="-ge"></a><span data-ttu-id="aaa82-194">-ge</span><span class="sxs-lookup"><span data-stu-id="aaa82-194">-ge</span></span>
+<span data-ttu-id="1bdac-205">左側がコレクションの場合、これらの演算子は、コレクションの各メンバーを右側と比較します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-205">When the left-hand side is a collection, these operators compare each member of the collection with the right-hand side.</span></span> <span data-ttu-id="1bdac-206">ロジックに応じて、メンバーを保持するか破棄します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-206">Depending on their logic, they either keep or discard the member.</span></span>
 
-<span data-ttu-id="aaa82-195">説明: より大きいか等しい。</span><span class="sxs-lookup"><span data-stu-id="aaa82-195">Description: Greater-than or equal to.</span></span>
-
-<span data-ttu-id="aaa82-196">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-196">Example:</span></span>
+<span data-ttu-id="1bdac-207">例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-207">Example:</span></span>
 
 ```powershell
-PS> 8 -ge 8
-True
+$a=5, 6, 7, 8, 9
 
-PS> 7, 8, 9 -ge 8
+Write-Output "Test collection:"
+$a
+
+Write-Output "`nMembers greater than 7"
+$a -gt 7
+
+Write-Output "`nMembers greater than or equal to 7"
+$a -ge 7
+
+Write-Output "`nMembers smaller than 7"
+$a -lt 7
+
+Write-Output "`nMembers smaller than or equal to 7"
+$a -le 7
+```
+
+```output
+Test collection:
+5
+6
+7
 8
 9
-```
 
-### <a name="-lt"></a><span data-ttu-id="aaa82-197">-lt</span><span class="sxs-lookup"><span data-stu-id="aaa82-197">-lt</span></span>
+Members greater than 7
+8
+9
 
-<span data-ttu-id="aaa82-198">説明: より小さい。</span><span class="sxs-lookup"><span data-stu-id="aaa82-198">Description: Less-than.</span></span>
-
-<span data-ttu-id="aaa82-199">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-199">Example:</span></span>
-
-```powershell
-
-PS> 8 -lt 6
-False
-
-PS> 7, 8, 9 -lt 8
-7
-```
-
-### <a name="-le"></a><span data-ttu-id="aaa82-200">-le</span><span class="sxs-lookup"><span data-stu-id="aaa82-200">-le</span></span>
-
-<span data-ttu-id="aaa82-201">説明: 次の値より小さいか等しい。</span><span class="sxs-lookup"><span data-stu-id="aaa82-201">Description: Less-than or equal to.</span></span>
-
-<span data-ttu-id="aaa82-202">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-202">Example:</span></span>
-
-```powershell
-PS> 6 -le 8
-True
-
-PS> 7, 8, 9 -le 8
+Members greater than or equal to 7
 7
 8
+9
+
+Members smaller than 7
+5
+6
+
+Members smaller than or equal to 7
+5
+6
+7
 ```
 
-## <a name="matching-operators"></a><span data-ttu-id="aaa82-203">照合演算子</span><span class="sxs-lookup"><span data-stu-id="aaa82-203">Matching operators</span></span>
+<span data-ttu-id="1bdac-208">これらの演算子は、 [system.icomparable][1]を実装するすべてのクラスで機能します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-208">These operators work with any class that implements [System.IComparable][1].</span></span>
 
-<span data-ttu-id="aaa82-204">Like 演算子 ( `-like` および) は、 `-notlike` ワイルドカード式を使用して、指定したパターンに一致するか一致しない要素を検索します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-204">The like operators (`-like` and `-notlike`) find elements that match or do not match a specified pattern using wildcard expressions.</span></span>
-
-<span data-ttu-id="aaa82-205">の構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="aaa82-205">The syntax is:</span></span>
+<span data-ttu-id="1bdac-209">例 :</span><span class="sxs-lookup"><span data-stu-id="1bdac-209">Examples:</span></span>
 
 ```powershell
-<string[]> -like <wildcard-expression>
+# Date comparison
+[DateTime]'2001-11-12' -lt [DateTime]'2020-08-01' # True
+
+# Sorting order comparison
+'a' -lt 'z'           # True; 'a' comes before 'z'
+'macOS' -ilt 'MacOS'  # False
+'MacOS' -ilt 'macOS'  # False
+'macOS' -clt 'MacOS'  # True; 'm' comes before 'M'
+```
+
+<span data-ttu-id="1bdac-210">次の例は、"a" の後に並べ替えられる、アメリカ QWERTY キーボードにシンボルがないことを示しています。</span><span class="sxs-lookup"><span data-stu-id="1bdac-210">The following example demonstrates that there is no symbol on an American QWERTY keyboard that gets sorted after 'a'.</span></span> <span data-ttu-id="1bdac-211">このようなすべての記号を含むセットを演算子にフィードして、 `-gt` ' a ' と比較します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-211">It feeds a set containing all such symbols to the `-gt` operator to compare them against 'a'.</span></span> <span data-ttu-id="1bdac-212">出力は空の配列です。</span><span class="sxs-lookup"><span data-stu-id="1bdac-212">The output is an empty array.</span></span>
+
+```powershell
+$a=' ','`','~','!','@','#','$','%','^','&','*','(',')','_','+','-','=',
+   '{','}','[',']',':',';','"','''','\','|','/','?','.','>',',','<'
+$a -gt 'a'
+# Output: Nothing
+```
+
+<span data-ttu-id="1bdac-213">演算子の両側が適度に比較できない場合、これらの演算子は終了しないエラーを発生させます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-213">If the two sides of the operators are not reasonably comparable, these operators raise a non-terminating error.</span></span>
+
+## <a name="matching-operators"></a><span data-ttu-id="1bdac-214">照合演算子</span><span class="sxs-lookup"><span data-stu-id="1bdac-214">Matching operators</span></span>
+
+<span data-ttu-id="1bdac-215">一致する演算子 ( `-like` 、 `-notlike` 、 `-match` 、および `-notmatch` ) は、指定したパターンに一致するか一致しない要素を検索します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-215">The matching operators (`-like`, `-notlike`, `-match`, and `-notmatch`) find elements that match or do not match a specified pattern.</span></span> <span data-ttu-id="1bdac-216">とのパターン `-like` `-notlike` は、ワイルドカード式 (、、およびを含む `*` ) であり、とは `?` `[ ]` `-match` `-notmatch` 正規表現 (Regex) を受け入れます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-216">The pattern for `-like` and `-notlike` is a wildcard expression (containing `*`, `?`, and `[ ]`), while `-match` and `-notmatch` accept a regular expression (Regex).</span></span>
+
+<span data-ttu-id="1bdac-217">の構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="1bdac-217">The syntax is:</span></span>
+
+```
+<string[]> -like    <wildcard-expression>
 <string[]> -notlike <wildcard-expression>
-```
-
-<span data-ttu-id="aaa82-206">一致演算子 ( `-match` および) は、 `-notmatch` 正規表現を使用して、指定したパターンに一致するか一致しない要素を検索します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-206">The match operators (`-match` and `-notmatch`) find elements that match or do not match a specified pattern using regular expressions.</span></span>
-
-<span data-ttu-id="aaa82-207">一致演算子は、 `$Matches` 演算子への入力 (左側の引数) が単一のスカラーオブジェクトである場合に、自動変数を設定します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-207">The match operators populate the `$Matches` automatic variable when the input (the left-side argument) to the operator is a single scalar object.</span></span> <span data-ttu-id="aaa82-208">入力がスカラーの場合、 `-match` および `-notmatch` 演算子はブール値を返し、 `$Matches` 自動変数の値を引数の一致するコンポーネントに設定します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-208">When the input is scalar, the `-match` and `-notmatch` operators return a Boolean value and set the value of the `$Matches` automatic variable to the matched components of the argument.</span></span>
-
-<span data-ttu-id="aaa82-209">の構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="aaa82-209">The syntax is:</span></span>
-
-```powershell
-<string[]> -match <regular-expression>
+<string[]> -match    <regular-expression>
 <string[]> -notmatch <regular-expression>
 ```
 
-### <a name="-like"></a><span data-ttu-id="aaa82-210">-like</span><span class="sxs-lookup"><span data-stu-id="aaa82-210">-like</span></span>
+<span data-ttu-id="1bdac-218">これらの演算子の入力がスカラー値の場合は、 **ブール** 値が返されます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-218">When the input of these operators is a scalar value, they return a **Boolean** value.</span></span> <span data-ttu-id="1bdac-219">入力が値のコレクションである場合、演算子は一致するメンバーを返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-219">When the input is a collection of values, the operators return any matching members.</span></span> <span data-ttu-id="1bdac-220">コレクション内に一致するものがない場合、これらの演算子は空の配列を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-220">If there are no matches in a collection, the operators return an empty array.</span></span>
 
-<span data-ttu-id="aaa82-211">説明: ワイルドカード文字 () を使用して一致し \* ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-211">Description: Match using the wildcard character (\*).</span></span>
+### <a name="-like-and--notlike"></a><span data-ttu-id="1bdac-221">-like および-notlike</span><span class="sxs-lookup"><span data-stu-id="1bdac-221">-like and -notlike</span></span>
 
-<span data-ttu-id="aaa82-212">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-212">Example:</span></span>
+<span data-ttu-id="1bdac-222">`-like` およびは `-notlike` と同様に動作し `-eq` ますが、右側には `-ne` [ワイルドカード](about_Wildcards.md)を含む文字列を指定できます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-222">`-like` and `-notlike` behave similarly to `-eq` and `-ne`, but the right-hand side could be a string containing [wildcards](about_Wildcards.md).</span></span>
+
+<span data-ttu-id="1bdac-223">例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-223">Example:</span></span>
 
 ```powershell
-PS> "PowerShell" -like "*shell"
+"PowerShell" -like    "*shell"           # Output: True
+"PowerShell" -notlike "*shell"           # Output: False
+"PowerShell" -like    "Power?hell"       # Output: True
+"PowerShell" -notlike "Power?hell"       # Output: False
+"PowerShell" -like    "Power[p-w]hell"   # Output: True
+"PowerShell" -notlike "Power[p-w]hell"   # Output: False
+
+"PowerShell", "Server" -like "*shell"    # Output: PowerShell
+"PowerShell", "Server" -notlike "*shell" # Output: Server
+```
+
+### <a name="-match-and--notmatch"></a><span data-ttu-id="1bdac-224">-match と-notmatch</span><span class="sxs-lookup"><span data-stu-id="1bdac-224">-match and -notmatch</span></span>
+
+<span data-ttu-id="1bdac-225">`-match` と `-notmatch` は、正規表現を使用して、左側の値のパターンを検索します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-225">`-match` and `-notmatch` use regular expressions to search for pattern in the left-hand side values.</span></span> <span data-ttu-id="1bdac-226">正規表現は、電子メールアドレス、UNC パス、書式設定された電話番号などの複雑なパターンに一致する場合があります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-226">Regular expressions can match complex patterns like email addresses, UNC paths, or formatted phone numbers.</span></span> <span data-ttu-id="1bdac-227">右側の文字列は [正規表現](about_Regular_Expressions.md) の規則に従う必要があります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-227">The right-hand side string must adhere to the [regular expressions](about_Regular_Expressions.md) rules.</span></span>
+
+<span data-ttu-id="1bdac-228">スカラーの例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-228">Scalar examples:</span></span>
+
+```powershell
+# Partial match test, showing how differently -match and -like behave
+"PowerShell" -match 'shell'        # Output: True
+"PowerShell" -like  'shell'        # Output: False
+
+# Regex syntax test
+"PowerShell" -match    '^Power\w+' # Output: True
+'bag'        -notmatch 'b[iou]g'   # Output: True
+```
+
+<span data-ttu-id="1bdac-229">入力がコレクションの場合、演算子はそのコレクションの一致するメンバーを返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-229">If the input is a collection, the operators return the matching members of that collection.</span></span>
+
+<span data-ttu-id="1bdac-230">コレクションの例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-230">Collection examples:</span></span>
+
+```powershell
+"PowerShell", "Super PowerShell", "Power's hell" -match '^Power\w+'
+# Output: PowerShell
+
+"Rhell", "Chell", "Mel", "Smell", "Shell" -match "hell"
+# Output: Rhell, Chell, Shell
+
+"Bag", "Beg", "Big", "Bog", "Bug"  -match 'b[iou]g'
+#Output: Big, Bog, Bug
+
+"Bag", "Beg", "Big", "Bog", "Bug"  -notmatch 'b[iou]g'
+#Output: Bag, Beg
+```
+
+<span data-ttu-id="1bdac-231">`-match` およびでは、 `-notmatch` regex キャプチャグループがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="1bdac-231">`-match` and `-notmatch` support regex capture groups.</span></span> <span data-ttu-id="1bdac-232">実行するたびに、自動変数が上書きさ `$Matches` れます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-232">Each time they run, they overwrite the `$Matches` automatic variable.</span></span> <span data-ttu-id="1bdac-233">`<input>`がコレクションの場合、 `$Matches` 変数は `$null` です。</span><span class="sxs-lookup"><span data-stu-id="1bdac-233">When `<input>` is a collection the `$Matches` variable is `$null`.</span></span> <span data-ttu-id="1bdac-234">`$Matches` は、常に ' 0 ' という名前のキーを持つ **ハッシュテーブル** であり、一致した文字列全体が格納されます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-234">`$Matches` is a **Hashtable** that always has a key named '0', which stores the entire match.</span></span> <span data-ttu-id="1bdac-235">正規表現にキャプチャグループが含まれている場合、には、 `$Matches` 各グループの追加のキーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-235">If the regular expression contains capture groups, the `$Matches` contains additional keys for each group.</span></span>
+
+<span data-ttu-id="1bdac-236">例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-236">Example:</span></span>
+
+```powershell
+$string = 'The last logged on user was CONTOSO\jsmith'
+$string -match 'was (?<domain>.+)\\(?<user>.+)'
+
+$Matches
+
+Write-Output "`nDomain name:"
+$Matches.domain
+
+Write-Output "`nUser name:"
+$Matches.user
+```
+
+```output
 True
-
-PS> "PowerShell", "Server" -like "*shell"
-PowerShell
-```
-
-### <a name="-notlike"></a><span data-ttu-id="aaa82-213">-notlike</span><span class="sxs-lookup"><span data-stu-id="aaa82-213">-notlike</span></span>
-
-<span data-ttu-id="aaa82-214">説明: は、ワイルドカード文字 () を使用して一致しません \* 。</span><span class="sxs-lookup"><span data-stu-id="aaa82-214">Description: Does not match using the wildcard character (\*).</span></span>
-
-<span data-ttu-id="aaa82-215">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-215">Example:</span></span>
-
-```powershell
-PS> "PowerShell" -notlike "*shell"
-False
-
-PS> "PowerShell", "Server" -notlike "*shell"
-Server
-```
-
-### <a name="-match"></a><span data-ttu-id="aaa82-216">-match</span><span class="sxs-lookup"><span data-stu-id="aaa82-216">-match</span></span>
-
-<span data-ttu-id="aaa82-217">説明: 正規表現を使用して文字列に一致します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-217">Description: Matches a string using regular expressions.</span></span> <span data-ttu-id="aaa82-218">入力がスカラーの場合は、自動変数が設定され `$Matches` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-218">When the input is scalar, it populates the `$Matches` automatic variable.</span></span>
-
-<span data-ttu-id="aaa82-219">入力がコレクションの場合、演算子 `-match` と演算子は、 `-notmatch` そのコレクションの一致するメンバーを返しますが、演算子は変数に値を設定しません `$Matches` 。</span><span class="sxs-lookup"><span data-stu-id="aaa82-219">If the input is a collection, the `-match` and `-notmatch` operators return the matching members of that collection, but the operator does not populate the `$Matches` variable.</span></span>
-
-<span data-ttu-id="aaa82-220">たとえば、次のコマンドは、文字列のコレクションを演算子に送信し `-match` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-220">For example, the following command submits a collection of strings to the `-match` operator.</span></span> <span data-ttu-id="aaa82-221">演算子は、 `-match` 一致するコレクション内の項目を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-221">The `-match` operator returns the items in the collection that match.</span></span> <span data-ttu-id="aaa82-222">自動変数は設定されません `$Matches` 。</span><span class="sxs-lookup"><span data-stu-id="aaa82-222">It does not populate the `$Matches` automatic variable.</span></span>
-
-```powershell
-PS> "Sunday", "Monday", "Tuesday" -match "sun"
-Sunday
-
-PS> $Matches
-PS>
-```
-
-<span data-ttu-id="aaa82-223">これに対して、次のコマンドは、1つの文字列を演算子に送信し `-match` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-223">In contrast, the following command submits a single string to the `-match` operator.</span></span> <span data-ttu-id="aaa82-224">`-match`演算子はブール値を返し、自動変数を設定し `$Matches` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-224">The `-match` operator returns a Boolean value and populates the `$Matches` automatic variable.</span></span> <span data-ttu-id="aaa82-225">`$Matches`自動変数は **ハッシュテーブル** です。</span><span class="sxs-lookup"><span data-stu-id="aaa82-225">The `$Matches` automatic variable is a **Hashtable**.</span></span> <span data-ttu-id="aaa82-226">グループ化またはキャプチャが使用されていない場合は、1つのキーだけが設定されます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-226">If no grouping or capturing is used, only one key is populated.</span></span>
-<span data-ttu-id="aaa82-227">キーは、 `0` 一致したすべてのテキストを表します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-227">The `0` key represents all text that was matched.</span></span> <span data-ttu-id="aaa82-228">正規表現を使用したグループ化とキャプチャの詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="aaa82-228">For more information about grouping and capturing using regular expressions, see [about_Regular_Expressions](about_Regular_Expressions.md).</span></span>
-
-```powershell
-PS> "Sunday" -match "sun"
-True
-
-PS> $Matches
 
 Name                           Value
 ----                           -----
-0                              Sun
+domain                         CONTOSO
+user                           jsmith
+0                              was CONTOSO\jsmith
+
+Domain name:
+CONTOSO
+
+User name:
+jsmith
 ```
 
-<span data-ttu-id="aaa82-229">ハッシュテーブルには、一致するパターンが最初に出現するだけが含まれていることに注意して `$Matches` ください。</span><span class="sxs-lookup"><span data-stu-id="aaa82-229">It is important to note that the `$Matches` hashtable will only contain the first occurrence of any matching pattern.</span></span>
+<span data-ttu-id="1bdac-237">詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1bdac-237">For details, see [about_Regular_Expressions](about_Regular_Expressions.md).</span></span>
 
-```powershell
-PS> "Banana" -match "na"
-True
+## <a name="replacement-operator"></a><span data-ttu-id="1bdac-238">置換演算子</span><span class="sxs-lookup"><span data-stu-id="1bdac-238">Replacement operator</span></span>
 
-PS> $Matches
+### <a name="replacement-with-regular-expressions"></a><span data-ttu-id="1bdac-239">正規表現での置換</span><span class="sxs-lookup"><span data-stu-id="1bdac-239">Replacement with regular expressions</span></span>
 
-Name                           Value
-----                           -----
-0                              na
+<span data-ttu-id="1bdac-240">と同様に `-match` 、 `-replace` 演算子は正規表現を使用して、指定されたパターンを検索します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-240">Like `-match`, the `-replace` operator uses regular expressions to find the specified pattern.</span></span> <span data-ttu-id="1bdac-241">ただし、とは異なり、 `-match` 一致を別の指定された値に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-241">But unlike `-match`, it replaces the matches with another specified value.</span></span>
+
+<span data-ttu-id="1bdac-242">構文:</span><span class="sxs-lookup"><span data-stu-id="1bdac-242">Syntax:</span></span>
+
+```
+<input> -replace <regular-expression>, <substitute>
 ```
 
-> [!IMPORTANT]
-> <span data-ttu-id="aaa82-230">`0`キーは **整数** です。</span><span class="sxs-lookup"><span data-stu-id="aaa82-230">The `0` key is an **Integer**.</span></span> <span data-ttu-id="aaa82-231">任意の **ハッシュテーブル** メソッドを使用して、格納されている値にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-231">You can use any **Hashtable** method to access the value stored.</span></span>
->
-> ```powershell
-> PS> "Good Dog" -match "Dog"
-> True
->
-> PS> $Matches[0]
-> Dog
->
-> PS> $Matches.Item(0)
-> Dog
->
-> PS> $Matches.0
-> Dog
-> ```
-
-<span data-ttu-id="aaa82-232">演算子は、 `-notmatch` `$Matches` 入力がスカラーのときに自動変数を設定し、結果が False であること、つまり一致が検出されたときにその変数を設定します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-232">The `-notmatch` operator populates the `$Matches` automatic variable when the input is scalar and the result is False, that it, when it detects a match.</span></span>
-
-```powershell
-PS> "Sunday" -notmatch "rain"
-True
-
-PS> $matches
-PS>
-
-PS> "Sunday" -notmatch "day"
-False
-
-PS> $matches
-
-Name                           Value
-----                           -----
-0                              day
-```
-
-### <a name="-notmatch"></a><span data-ttu-id="aaa82-233">-notmatch</span><span class="sxs-lookup"><span data-stu-id="aaa82-233">-notmatch</span></span>
-
-<span data-ttu-id="aaa82-234">説明: が文字列と一致しません。</span><span class="sxs-lookup"><span data-stu-id="aaa82-234">Description: Does not match a string.</span></span> <span data-ttu-id="aaa82-235">正規表現を使用します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-235">Uses regular expressions.</span></span> <span data-ttu-id="aaa82-236">入力がスカラーの場合は、自動変数が設定され `$Matches` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-236">When the input is scalar, it populates the `$Matches` automatic variable.</span></span>
-
-<span data-ttu-id="aaa82-237">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-237">Example:</span></span>
-
-```powershell
-PS> "Sunday" -notmatch "sun"
-False
-
-PS> $matches
-Name Value
----- -----
-0    sun
-
-PS> "Sunday", "Monday" -notmatch "sun"
-Monday
-```
-
-## <a name="containment-operators"></a><span data-ttu-id="aaa82-238">含有演算子</span><span class="sxs-lookup"><span data-stu-id="aaa82-238">Containment operators</span></span>
-
-<span data-ttu-id="aaa82-239">含有演算子 ( `-contains` と `-notcontains` ) は、等値演算子に似ています。</span><span class="sxs-lookup"><span data-stu-id="aaa82-239">The containment operators (`-contains` and `-notcontains`) are similar to the equality operators.</span></span> <span data-ttu-id="aaa82-240">ただし、入力がコレクションの場合でも、コンテインメント演算子は常にブール値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-240">However, the containment operators always return a Boolean value, even when the input is a collection.</span></span>
-
-<span data-ttu-id="aaa82-241">また、等値演算子とは異なり、コンテインメント演算子は、最初の一致を検出するとすぐに値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-241">Also, unlike the equality operators, the containment operators return a value as soon as they detect the first match.</span></span> <span data-ttu-id="aaa82-242">等値演算子は、すべての入力を評価し、コレクション内のすべての一致を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-242">The equality operators evaluate all input and then return all the matches in the collection.</span></span>
-
-### <a name="-contains"></a><span data-ttu-id="aaa82-243">-contains</span><span class="sxs-lookup"><span data-stu-id="aaa82-243">-contains</span></span>
-
-<span data-ttu-id="aaa82-244">説明: コンテインメント演算子。</span><span class="sxs-lookup"><span data-stu-id="aaa82-244">Description: Containment operator.</span></span> <span data-ttu-id="aaa82-245">参照値のコレクションに1つのテスト値が含まれているかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-245">Tells whether a collection of reference values includes a single test value.</span></span> <span data-ttu-id="aaa82-246">常にブール値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-246">Always returns a Boolean value.</span></span> <span data-ttu-id="aaa82-247">テスト値が参照値の少なくとも1つと完全に一致する場合にのみ TRUE を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-247">Returns TRUE only when the test value exactly matches at least one of the reference values.</span></span>
-
-<span data-ttu-id="aaa82-248">テスト値がコレクションの場合、Contains 演算子は参照の等価性を使用します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-248">When the test value is a collection, the Contains operator uses reference equality.</span></span> <span data-ttu-id="aaa82-249">参照値の1つがテスト値オブジェクトの同じインスタンスである場合にのみ、TRUE を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-249">It returns TRUE only when one of the reference values is the same instance of the test value object.</span></span>
-
-<span data-ttu-id="aaa82-250">非常に大きなコレクションでは、 `-contains` 演算子は equal to 演算子よりも結果を迅速に返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-250">In a very large collection, the `-contains` operator returns results quicker than the equal to operator.</span></span>
-
-<span data-ttu-id="aaa82-251">構文:</span><span class="sxs-lookup"><span data-stu-id="aaa82-251">Syntax:</span></span>
-
-`<Reference-values> -contains <Test-value>`
-
-<span data-ttu-id="aaa82-252">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-252">Examples:</span></span>
-
-```powershell
-PS> "abc", "def" -contains "def"
-True
-
-PS> "Windows", "PowerShell" -contains "Shell"
-False  #Not an exact match
-
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS> $DomainServers -contains $thisComputer
-True
-
-PS> "abc", "def", "ghi" -contains "abc", "def"
-False
-
-PS> $a = "abc", "def"
-PS> "abc", "def", "ghi" -contains $a
-False
-PS> $a, "ghi" -contains $a
-True
-```
-
-### <a name="-notcontains"></a><span data-ttu-id="aaa82-253">-notcontains</span><span class="sxs-lookup"><span data-stu-id="aaa82-253">-notcontains</span></span>
-
-<span data-ttu-id="aaa82-254">説明: コンテインメント演算子。</span><span class="sxs-lookup"><span data-stu-id="aaa82-254">Description: Containment operator.</span></span> <span data-ttu-id="aaa82-255">参照値のコレクションに1つのテスト値が含まれているかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-255">Tells whether a collection of reference values includes a single test value.</span></span> <span data-ttu-id="aaa82-256">常にブール値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-256">Always returns a Boolean value.</span></span> <span data-ttu-id="aaa82-257">テスト値が参照値の少なくとも1つと完全に一致しない場合に TRUE を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-257">Returns TRUE when the test value is not an exact matches for at least one of the reference values.</span></span>
-
-<span data-ttu-id="aaa82-258">テスト値がコレクションの場合、NotContains 演算子は参照の等価性を使用します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-258">When the test value is a collection, the NotContains operator uses reference equality.</span></span>
-
-<span data-ttu-id="aaa82-259">構文:</span><span class="sxs-lookup"><span data-stu-id="aaa82-259">Syntax:</span></span>
-
-`<Reference-values> -notcontains <Test-value>`
-
-<span data-ttu-id="aaa82-260">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-260">Examples:</span></span>
-
-```powershell
-PS> "Windows", "PowerShell" -notcontains "Shell"
-True  #Not an exact match
-
-# Get cmdlet parameters, but exclude common parameters
-function get-parms ($cmdlet)
-{
-    $Common = "Verbose", "Debug", "WarningAction", "WarningVariable",
-      "ErrorAction", "ErrorVariable", "OutVariable", "OutBuffer"
-
-    $allparms = (Get-Command $Cmdlet).parametersets |
-      foreach {$_.Parameters} |
-        foreach {$_.Name} | Sort-Object | Get-Unique
-
-    $allparms | where {$Common -notcontains $_ }
-}
-
-# Find unapproved verbs in the functions in my module
-PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS> $myVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-PS> $myVerbs | where {$ApprovedVerbs -notcontains $_}
-ForEach
-Sort
-Tee
-Where
-```
-
-### <a name="-in"></a><span data-ttu-id="aaa82-261">-in</span><span class="sxs-lookup"><span data-stu-id="aaa82-261">-in</span></span>
-
-<span data-ttu-id="aaa82-262">説明: In 演算子。</span><span class="sxs-lookup"><span data-stu-id="aaa82-262">Description: In operator.</span></span> <span data-ttu-id="aaa82-263">テスト値が参照値のコレクションに表示されるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-263">Tells whether a test value appears in a collection of reference values.</span></span> <span data-ttu-id="aaa82-264">常にブール値として返されます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-264">Always return as Boolean value.</span></span> <span data-ttu-id="aaa82-265">テスト値が参照値の少なくとも1つと完全に一致する場合にのみ TRUE を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-265">Returns TRUE only when the test value exactly matches at least one of the reference values.</span></span>
-
-<span data-ttu-id="aaa82-266">テスト値がコレクションの場合、In 演算子は参照の等価性を使用します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-266">When the test value is a collection, the In operator uses reference equality.</span></span>
-<span data-ttu-id="aaa82-267">参照値の1つがテスト値オブジェクトの同じインスタンスである場合にのみ、TRUE を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-267">It returns TRUE only when one of the reference values is the same instance of the test value object.</span></span>
-
-<span data-ttu-id="aaa82-268">演算子は、 `-in` PowerShell 3.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="aaa82-268">The `-in` operator was introduced in PowerShell 3.0.</span></span>
-
-<span data-ttu-id="aaa82-269">構文:</span><span class="sxs-lookup"><span data-stu-id="aaa82-269">Syntax:</span></span>
-
-`<Test-value> -in <Reference-values>`
-
-<span data-ttu-id="aaa82-270">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-270">Examples:</span></span>
-
-```powershell
-PS> "def" -in "abc", "def"
-True
-
-PS> "Shell" -in "Windows", "PowerShell"
-False  #Not an exact match
-
-PS> "Windows" -in "Windows", "PowerShell"
-True  #An exact match
-
-PS> "Windows", "PowerShell" -in "Windows", "PowerShell", "ServerManager"
-False  #Using reference equality
-
-PS> $a = "Windows", "PowerShell"
-PS> $a -in $a, "ServerManager"
-True  #Using reference equality
-
-# Does the list of computers in $DomainServers include $ThisComputer?
-PS> $thisComputer -in  $domainServers
-True
-```
-
-### <a name="-notin"></a><span data-ttu-id="aaa82-271">-notin</span><span class="sxs-lookup"><span data-stu-id="aaa82-271">-notin</span></span>
-
-<span data-ttu-id="aaa82-272">Description: テスト値が参照値のコレクションに表示されるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-272">Description: Tells whether a test value appears in a collection of reference values.</span></span> <span data-ttu-id="aaa82-273">常にブール値を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-273">Always returns a Boolean value.</span></span> <span data-ttu-id="aaa82-274">テスト値が参照値の少なくとも1つと完全に一致しない場合に TRUE を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-274">Returns TRUE when the test value is not an exact match for at least one of the reference values.</span></span>
-
-<span data-ttu-id="aaa82-275">テスト値がコレクションの場合、In 演算子は参照の等価性を使用します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-275">When the test value is a collection, the In operator uses reference equality.</span></span>
-<span data-ttu-id="aaa82-276">参照値の1つがテスト値オブジェクトの同じインスタンスである場合にのみ、TRUE を返します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-276">It returns TRUE only when one of the reference values is the same instance of the test value object.</span></span>
-
-<span data-ttu-id="aaa82-277">演算子は、 `-notin` PowerShell 3.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="aaa82-277">The `-notin` operator was introduced in PowerShell 3.0.</span></span>
-
-<span data-ttu-id="aaa82-278">構文:</span><span class="sxs-lookup"><span data-stu-id="aaa82-278">Syntax:</span></span>
-
-`<Test-value> -notin <Reference-values>`
-
-<span data-ttu-id="aaa82-279">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-279">Examples:</span></span>
-
-```powershell
-PS> "def" -notin "abc", "def"
-False
-
-PS> "ghi" -notin "abc", "def"
-True
-
-PS> "Shell" -notin "Windows", "PowerShell"
-True  #Not an exact match
-
-PS> "Windows" -notin "Windows", "PowerShell"
-False  #An exact match
-
-# Find unapproved verbs in the functions in my module
-PS> $ApprovedVerbs = Get-Verb | foreach {$_.verb}
-PS> $MyVerbs = Get-Command -Module MyModule | foreach {$_.verb}
-
-PS> $MyVerbs | where {$_ -notin $ApprovedVerbs}
-ForEach
-Sort
-Tee
-Where
-```
-
-## <a name="replacement-operator"></a><span data-ttu-id="aaa82-280">置換演算子</span><span class="sxs-lookup"><span data-stu-id="aaa82-280">Replacement Operator</span></span>
-
-<span data-ttu-id="aaa82-281">`-replace`演算子の構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="aaa82-281">The `-replace` operator has the following syntax:</span></span>
-
-`<input> -replace <original>, <substitute>`
-
-<span data-ttu-id="aaa82-282">`<original>`プレースホルダーは、置換する文字と一致する正規表現です。</span><span class="sxs-lookup"><span data-stu-id="aaa82-282">The `<original>` placeholder is a regular expression matching the characters to be replaced.</span></span> <span data-ttu-id="aaa82-283">`<substitute>`プレースホルダーは、それらを置き換えるリテラル文字列です。</span><span class="sxs-lookup"><span data-stu-id="aaa82-283">The `<substitute>` placeholder is a literal string that replaces them.</span></span>
-
-<span data-ttu-id="aaa82-284">演算子は、値のすべてまたは一部を、正規表現を使用して、指定された値に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-284">The operator replaces all or part of a value with the specified value using regular expressions.</span></span> <span data-ttu-id="aaa82-285">演算子は、ファイル名の変更など、多くの管理タスクに使用できます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-285">You can use the operator for many administrative tasks, such as renaming files.</span></span> <span data-ttu-id="aaa82-286">たとえば、次のコマンドは、すべてのファイルのファイル名拡張子 `.txt` をに変更し `.log` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-286">For example, the following command changes the file name extensions of all `.txt` files to `.log`:</span></span>
+<span data-ttu-id="1bdac-243">演算子は、値のすべてまたは一部を、正規表現を使用して、指定された値に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-243">The operator replaces all or part of a value with the specified value using regular expressions.</span></span> <span data-ttu-id="1bdac-244">演算子は、ファイル名の変更など、多くの管理タスクに使用できます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-244">You can use the operator for many administrative tasks, such as renaming files.</span></span> <span data-ttu-id="1bdac-245">たとえば、次のコマンドは、すべてのファイルのファイル名拡張子 `.txt` をに変更し `.log` ます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-245">For example, the following command changes the file name extensions of all `.txt` files to `.log`:</span></span>
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-### <a name="case-sensitive-matches"></a><span data-ttu-id="aaa82-287">大文字と小文字を区別する一致</span><span class="sxs-lookup"><span data-stu-id="aaa82-287">Case-sensitive matches</span></span>
+<span data-ttu-id="1bdac-246">既定では、 `-replace` 演算子は大文字と小文字を区別しません。</span><span class="sxs-lookup"><span data-stu-id="1bdac-246">By default, the `-replace` operator is case-insensitive.</span></span> <span data-ttu-id="1bdac-247">大文字と小文字を区別するには、を使用 `-creplace` します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-247">To make it case sensitive, use `-creplace`.</span></span> <span data-ttu-id="1bdac-248">大文字と小文字を区別しないようにするには、を使用 `-ireplace` します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-248">To make it explicitly case-insensitive, use `-ireplace`.</span></span>
 
-<span data-ttu-id="aaa82-288">既定では、 `-replace` 演算子は大文字と小文字を区別しません。</span><span class="sxs-lookup"><span data-stu-id="aaa82-288">By default, the `-replace` operator is case-insensitive.</span></span> <span data-ttu-id="aaa82-289">大文字と小文字を区別するには、を使用 `-creplace` します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-289">To make it case sensitive, use `-creplace`.</span></span> <span data-ttu-id="aaa82-290">大文字と小文字を区別しないようにするには、を使用 `-ireplace` します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-290">To make it explicitly case-insensitive, use `-ireplace`.</span></span>
-
-<span data-ttu-id="aaa82-291">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-291">Consider the following examples:</span></span>
+<span data-ttu-id="1bdac-249">例 :</span><span class="sxs-lookup"><span data-stu-id="1bdac-249">Examples:</span></span>
 
 ```powershell
-PS> "book" -replace "B", "C"
-Cook
+"book" -ireplace "B", "C" # Case insensitive
+"book" -creplace "B", "C" # Case-sensitive; hence, nothing to replace
 ```
 
-```powershell
-PS> "book" -ireplace "B", "C"
+```Output
 Cook
-```
-
-```powershell
-PS> "book" -creplace "B", "C"
 book
 ```
 
-### <a name="substitutions-in-regular-expressions"></a><span data-ttu-id="aaa82-292">正規表現での置換</span><span class="sxs-lookup"><span data-stu-id="aaa82-292">Substitutions in regular expressions</span></span>
+### <a name="regular-expressions-substitutions"></a><span data-ttu-id="1bdac-250">正規表現の置換</span><span class="sxs-lookup"><span data-stu-id="1bdac-250">Regular expressions substitutions</span></span>
 
-<span data-ttu-id="aaa82-293">また、正規表現を使用して、キャプチャグループと置換を使用してテキストを動的に置換することもできます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-293">It is also possible to use regular expressions to dynamically replace text using capturing groups, and substitutions.</span></span> <span data-ttu-id="aaa82-294">キャプチャグループは、 `<substitute>` `$` グループ識別子の前にドル記号 () を使用して、文字列内で参照できます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-294">Capture groups can be referenced in the `<substitute>` string using the dollar sign (`$`) character before the group identifier.</span></span>
+<span data-ttu-id="1bdac-251">また、正規表現を使用して、キャプチャグループと置換を使用してテキストを動的に置換することもできます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-251">It is also possible to use regular expressions to dynamically replace text using capturing groups, and substitutions.</span></span> <span data-ttu-id="1bdac-252">キャプチャグループは、 `<substitute>` `$` グループ識別子の前にドル記号 () を使用して、文字列内で参照できます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-252">Capture groups can be referenced in the `<substitute>` string using the dollar sign (`$`) character before the group identifier.</span></span>
 
-<span data-ttu-id="aaa82-295">キャプチャグループは、**数値** または **名前** で参照できます</span><span class="sxs-lookup"><span data-stu-id="aaa82-295">Capture groups can be referenced by **Number** or **Name**</span></span>
+<span data-ttu-id="1bdac-253">次の例では、 `-replace` 演算子は、の形式でユーザー名を受け取り、 `DomainName\Username` 形式に変換し `Username@DomainName` ます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-253">In the following example, the `-replace` operator accepts a username in the form of `DomainName\Username` and converts to the `Username@DomainName` format:</span></span>
 
-- <span data-ttu-id="aaa82-296">**数値** キャプチャグループには、左から右に番号が付けられます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-296">By **Number** - Capturing Groups are numbered from left to right.</span></span>
+```powershell
+$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$ReplaceExp = '${Username}@${DomainName}'
 
-  ```powershell
-  PS> "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
-  John.D.Smith@contoso.com
-  ```
+'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
+```
 
-- <span data-ttu-id="aaa82-297">**名前** のキャプチャグループは、名前によって参照することもできます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-297">By **Name** - Capturing Groups can also be referenced by name.</span></span>
-
-  ```powershell
-  PS> "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
-  FABRIKAM\Administrator
-  ```
+```output
+John.Doe@Contoso.local
+```
 
 > [!WARNING]
-> <span data-ttu-id="aaa82-298">文字は `$` 文字列の展開で使用されるため、リテラル文字列を使用するか、文字をエスケープする必要があり `$` ます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-298">Since the `$` character is used in string expansion, you will must use literal strings or escape the `$` character.</span></span>
+> <span data-ttu-id="1bdac-254">この `$` 文字には、PowerShell と正規表現の両方で syntatic ロールがあります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-254">The `$` character has syntatic roles in both PowerShell and regular expressions:</span></span>
 >
-> ```powershell
-> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
-> Hello Universe
-> ```
->
-> <span data-ttu-id="aaa82-299">また、文字は `$` 代入で使用されるため、文字列内のすべてのインスタンスをエスケープする必要があります。</span><span class="sxs-lookup"><span data-stu-id="aaa82-299">Additionally, since the `$` character is used in substitution, you must escape any instances in your string.</span></span>
->
-> ```powershell
-> PS> '5.72' -replace '(.+)', '$$$1'
-> $5.72
-> ```
+> - <span data-ttu-id="1bdac-255">PowerShell では、2つの二重引用符の間に変数を指定し、部分式演算子として機能します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-255">In PowerShell, between double quotation marks, it designates variables and acts as a subexpression operator.</span></span>
+> - <span data-ttu-id="1bdac-256">正規表現の検索文字列では、行の終わりを示します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-256">In Regex search strings, it denotes end of the line</span></span>
+> - <span data-ttu-id="1bdac-257">Regex の置換文字列では、キャプチャされたグループを表します。したがって、単一引用符の間に正規表現を配置するか、バックティック () 文字を挿入するようにしてください `` ` `` 。</span><span class="sxs-lookup"><span data-stu-id="1bdac-257">In Regex substitution strings, it denotes captured groups As such, be sure to to either put your regular expressions between single quotation marks or insert a backtick (`` ` ``) character before them.</span></span>
 
-<span data-ttu-id="aaa82-300">詳細については、「[正規表現での](/dotnet/standard/base-types/substitutions-in-regular-expressions) [about_Regular_Expressions](about_Regular_Expressions.md)と置換」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="aaa82-300">To learn more see [about_Regular_Expressions](about_Regular_Expressions.md) and [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions)</span></span>
+<span data-ttu-id="1bdac-258">以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-258">For example:</span></span>
 
-### <a name="substituting-in-a-collection"></a><span data-ttu-id="aaa82-301">コレクション内での置換</span><span class="sxs-lookup"><span data-stu-id="aaa82-301">Substituting in a collection</span></span>
+```powershell
+$1 = 'Goodbye'
 
-<span data-ttu-id="aaa82-302">`<input>`演算子へのが `-replace` コレクションである場合、PowerShell はコレクションのすべての値に置換を適用します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-302">When the `<input>` to the `-replace` operator is a collection, PowerShell applies the replacement to every value in the collection.</span></span> <span data-ttu-id="aaa82-303">次に例を示します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-303">For example:</span></span>
+'Hello World' -replace '(\w+) \w+', "$1 Universe"
+# Output: Goodbye Universe
+
+'Hello World' -replace '(\w+) \w+', '$1 Universe'
+# Output: Hello Universe
+```
+
+<span data-ttu-id="1bdac-259">`$$` Regex のはリテラルを表し `$` ます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-259">`$$` in Regex denotes a literal `$`.</span></span> <span data-ttu-id="1bdac-260">置換 `$$` 文字列内のこの値によって、置換後のリテラルが含まれ `$` ます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-260">This `$$` in the substitution string to include a a literal `$` in the resulting replacement.</span></span> <span data-ttu-id="1bdac-261">以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-261">For example:</span></span>
+
+```powershell
+'5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
+'5.72' -replace '(.+)', '$$$1' # Output: $5.72
+'5.72' -replace '(.+)', '$$1'  # Output: $1
+```
+
+<span data-ttu-id="1bdac-262">詳細については、「[正規表現での][4] [about_Regular_Expressions](about_Regular_Expressions.md)と置換」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1bdac-262">To learn more, see [about_Regular_Expressions](about_Regular_Expressions.md) and [Substitutions in Regular Expressions][4].</span></span>
+
+### <a name="substituting-in-a-collection"></a><span data-ttu-id="1bdac-263">コレクション内での置換</span><span class="sxs-lookup"><span data-stu-id="1bdac-263">Substituting in a collection</span></span>
+
+<span data-ttu-id="1bdac-264">`<input>`演算子へのが `-replace` コレクションである場合、PowerShell はコレクションのすべての値に置換を適用します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-264">When the `<input>` to the `-replace` operator is a collection, PowerShell applies the replacement to every value in the collection.</span></span> <span data-ttu-id="1bdac-265">以下に例を示します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-265">For example:</span></span>
 
 ```powershell
 "B1","B2","B3","B4","B5" -replace "B", 'a'
@@ -581,62 +466,134 @@ a4
 a5
 ```
 
-### <a name="scriptblock-substitutions"></a><span data-ttu-id="aaa82-304">ScriptBlock の置換</span><span class="sxs-lookup"><span data-stu-id="aaa82-304">ScriptBlock substitutions</span></span>
+### <a name="replacement-with-a-script-block"></a><span data-ttu-id="1bdac-266">スクリプトブロックを使用した置換</span><span class="sxs-lookup"><span data-stu-id="1bdac-266">Replacement with a script block</span></span>
 
-<span data-ttu-id="aaa82-305">PowerShell 6 以降では、_代替_ テキストに **ScriptBlock** 引数を使用できます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-305">Beginning in PowerShell 6, you can use a **ScriptBlock** argument for the _Substitution_ text.</span></span> <span data-ttu-id="aaa82-306">**ScriptBlock** は、_入力_ 文字列で見つかった一致ごとに実行されます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-306">The **ScriptBlock** will execute for each match found in the _input_ string.</span></span>
+<span data-ttu-id="1bdac-267">PowerShell 6 以降では、演算子は、 `-replace` 置換を実行するスクリプトブロックも受け入れます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-267">In PowerShell 6 and later, the `-replace` operator also accepts a script block that performs the replacement.</span></span> <span data-ttu-id="1bdac-268">スクリプトブロックは、一致するたびに1回実行されます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-268">The script block runs once for every match.</span></span>
 
-<span data-ttu-id="aaa82-307">**ScriptBlock** 内では、自動変数を使用し `$_` て、現在の **system.text.regularexpressions.regexoptions** オブジェクトを参照します。</span><span class="sxs-lookup"><span data-stu-id="aaa82-307">Within the **ScriptBlock**, use the `$_` automatic variable to refer to the current **System.Text.RegularExpressions.Match** object.</span></span> <span data-ttu-id="aaa82-308">**Match** オブジェクトを使用すると、置き換えられる現在の入力テキストに加えて、その他の有用な情報にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-308">The **Match** object gives you access to the current input text being replaced, as well as other useful information.</span></span>
-
-<span data-ttu-id="aaa82-309">この例では、3つの10進数の各シーケンスを、それと等価な文字に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-309">This example replaces each sequence of three decimals with the character equivalent.</span></span> <span data-ttu-id="aaa82-310">**ScriptBlock** は、置換する必要がある3つの10進数のセットごとに実行されます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-310">The **ScriptBlock** is run for each set of three decimals that needs to be replaced.</span></span>
+<span data-ttu-id="1bdac-269">構文:</span><span class="sxs-lookup"><span data-stu-id="1bdac-269">Syntax:</span></span>
 
 ```powershell
-PS> "072101108108111" -replace "\d{3}", {[char][int]$_.Value}
+<String> -replace <regular-expression>, {<Script-block>}
+```
+
+<span data-ttu-id="1bdac-270">スクリプトブロック内では、自動変数を使用し `$_` て、置き換えられる入力テキストやその他の有用な情報にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="1bdac-270">Within the script block, use the `$_` automatic variable to access the input text being replaced and other useful information.</span></span> <span data-ttu-id="1bdac-271">この変数のクラス型は [system.text.regularexpressions.regexoptions][2]です。</span><span class="sxs-lookup"><span data-stu-id="1bdac-271">This variable's class type is [System.Text.RegularExpressions.Match][2].</span></span>
+
+<span data-ttu-id="1bdac-272">次の例では、3桁の各シーケンスを、対応する文字に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-272">The following example replaces each sequence of three digits with the character equivalents.</span></span> <span data-ttu-id="1bdac-273">スクリプトブロックは、置換する必要がある3桁のセットごとに実行されます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-273">The script block runs for each set of three digits that needs to be replaced.</span></span>
+
+```powershell
+"072101108108111" -replace "\d{3}", {return [char][int]$_.Value}
+```
+
+```output
 Hello
 ```
 
-## <a name="type-comparison"></a><span data-ttu-id="aaa82-311">型の比較</span><span class="sxs-lookup"><span data-stu-id="aaa82-311">Type comparison</span></span>
+## <a name="containment-operators"></a><span data-ttu-id="1bdac-274">含有演算子</span><span class="sxs-lookup"><span data-stu-id="1bdac-274">Containment operators</span></span>
 
-<span data-ttu-id="aaa82-312">型の比較演算子 ( `-is` と `-isnot` ) は、オブジェクトが特定の型であるかどうかを判断するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="aaa82-312">The type comparison operators (`-is` and `-isnot`) are used to determine if an object is a specific type.</span></span>
+<span data-ttu-id="1bdac-275">含有演算子 ( `-contains` 、、 `-notcontains` `-in` 、および `-notin` ) は、等値演算子に似ていますが、入力がコレクションの場合でも、常に **ブール** 値を返す点が異なります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-275">The containment operators (`-contains`, `-notcontains`, `-in`, and `-notin`) are similar to the equality operators, except that they always return a **Boolean** value, even when the input is a collection.</span></span> <span data-ttu-id="1bdac-276">これらの演算子は、最初の一致を検出するとすぐに比較を停止します。一方、等値演算子はすべての入力メンバーを評価します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-276">These operators stop comparing as soon as they detect the first match, whereas the equality operators evaluate all input members.</span></span> <span data-ttu-id="1bdac-277">非常に大きなコレクションでは、これらの演算子は等値演算子よりも高速に戻ります。</span><span class="sxs-lookup"><span data-stu-id="1bdac-277">In a very large collection, these operators return quicker than the equality operators.</span></span>
 
-### <a name="-is"></a><span data-ttu-id="aaa82-313">-が</span><span class="sxs-lookup"><span data-stu-id="aaa82-313">-is</span></span>
+<span data-ttu-id="1bdac-278">構文:</span><span class="sxs-lookup"><span data-stu-id="1bdac-278">Syntax:</span></span>
 
-<span data-ttu-id="aaa82-314">構文:</span><span class="sxs-lookup"><span data-stu-id="aaa82-314">Syntax:</span></span>
-
-`<object> -is <type reference>`
-
-<span data-ttu-id="aaa82-315">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-315">Example:</span></span>
-
-```powershell
-PS> $a = 1
-PS> $b = "1"
-PS> $a -is [int]
-True
-PS> $a -is $b.GetType()
-False
+```
+<Collection> -contains <Test-object>
+<Collection> -notcontains <Test-object>
+<Test-object> -in <Collection>
+<Test-object> -notin <Collection>
 ```
 
-### <a name="-isnot"></a><span data-ttu-id="aaa82-316">-isnot</span><span class="sxs-lookup"><span data-stu-id="aaa82-316">-isnot</span></span>
+### <a name="-contains-and--notcontains"></a><span data-ttu-id="1bdac-279">-contains と-notcontains</span><span class="sxs-lookup"><span data-stu-id="1bdac-279">-contains and -notcontains</span></span>
 
-<span data-ttu-id="aaa82-317">構文:</span><span class="sxs-lookup"><span data-stu-id="aaa82-317">Syntax:</span></span>
+<span data-ttu-id="1bdac-280">これらの演算子は、セットに特定の要素が含まれているかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-280">These operators tell whether a set includes a certain element.</span></span> <span data-ttu-id="1bdac-281">`-contains` 右側 (テストオブジェクト) がセット内のいずれかの要素と一致する場合に True を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-281">`-contains` returns True when the right-hand side (test object) matches one of the elements in the set.</span></span> <span data-ttu-id="1bdac-282">`-notcontains` 代わりに False を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-282">`-notcontains` returns False instead.</span></span> <span data-ttu-id="1bdac-283">テストオブジェクトがコレクションの場合、これらの演算子は参照の等価性を使用します。つまり、セットの要素の1つがテストオブジェクトの同じインスタンスであるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-283">When the test object is a collection, these operators use reference equality, i.e. they check whether one of the set's elements is the same instance of the test object.</span></span>
 
-`<object> -isnot <type reference>`
-
-<span data-ttu-id="aaa82-318">例:</span><span class="sxs-lookup"><span data-stu-id="aaa82-318">Example:</span></span>
+<span data-ttu-id="1bdac-284">例 :</span><span class="sxs-lookup"><span data-stu-id="1bdac-284">Examples:</span></span>
 
 ```powershell
-PS> $a = 1
-PS> $b = "1"
-PS> $a -isnot $b.GetType()
-True
-PS> $b -isnot [int]
-True
+"abc", "def" -contains "def"                  # Output: True
+"abc", "def" -notcontains "def"               # Output: False
+"Windows", "PowerShell" -contains "Shell"     # Output: False
+"Windows", "PowerShell" -notcontains "Shell"  # Output: True
+"abc", "def", "ghi" -contains "abc", "def"    # Output: False
+"abc", "def", "ghi" -notcontains "abc", "def" # Output: True
 ```
 
-## <a name="see-also"></a><span data-ttu-id="aaa82-319">関連項目</span><span class="sxs-lookup"><span data-stu-id="aaa82-319">See also</span></span>
+<span data-ttu-id="1bdac-285">より複雑な例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-285">More complex examples:</span></span>
 
-- [<span data-ttu-id="aaa82-320">about_Operators</span><span class="sxs-lookup"><span data-stu-id="aaa82-320">about_Operators</span></span>](about_Operators.md)
-- [<span data-ttu-id="aaa82-321">about_Regular_Expressions</span><span class="sxs-lookup"><span data-stu-id="aaa82-321">about_Regular_Expressions</span></span>](about_Regular_Expressions.md)
-- [<span data-ttu-id="aaa82-322">about_Wildcards</span><span class="sxs-lookup"><span data-stu-id="aaa82-322">about_Wildcards</span></span>](about_Wildcards.md)
-- [<span data-ttu-id="aaa82-323">Compare-Object</span><span class="sxs-lookup"><span data-stu-id="aaa82-323">Compare-Object</span></span>](xref:Microsoft.PowerShell.Utility.Compare-Object)
-- [<span data-ttu-id="aaa82-324">Foreach-オブジェクト</span><span class="sxs-lookup"><span data-stu-id="aaa82-324">Foreach-Object</span></span>](xref:Microsoft.PowerShell.Core.ForEach-Object)
-- [<span data-ttu-id="aaa82-325">Where-Object</span><span class="sxs-lookup"><span data-stu-id="aaa82-325">Where-Object</span></span>](xref:Microsoft.PowerShell.Core.Where-Object)
+```powershell
+$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
+                 "ContosoDHCP","ContosoWSUS"
+$thisComputer  = "ContosoDC2"
+
+$DomainServers -contains $thisComputer
+# Output: True
+
+$a = "abc", "def"
+"abc", "def", "ghi" -contains $a # Output: False
+$a, "ghi" -contains $a           # Output: True
+```
+
+### <a name="-in-and--notin"></a><span data-ttu-id="1bdac-286">-in および-notin</span><span class="sxs-lookup"><span data-stu-id="1bdac-286">-in and -notin</span></span>
+
+<span data-ttu-id="1bdac-287">And 演算子は、 `-in` `notin` と演算子の構文の逆に、PowerShell 3 で導入されました `contains` `-notcontain` 。</span><span class="sxs-lookup"><span data-stu-id="1bdac-287">The `-in` and -`notin` operators were introduced in PowerShell 3 as the syntactic reverse of the of `contains` and `-notcontain` operators.</span></span> <span data-ttu-id="1bdac-288">`-in`左辺が `<test-object>` set 内のいずれかの要素と一致する場合に True を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-288">`-in` returns **True** when the left-hand side `<test-object>` matches one of the elements in the set.</span></span> <span data-ttu-id="1bdac-289">`-notin` 代わりに **False** を返します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-289">`-notin` returns **False** instead.</span></span> <span data-ttu-id="1bdac-290">テストオブジェクトがセットの場合、これらの演算子は参照の等価性を使用して、セットの要素の1つがテストオブジェクトの同じインスタンスであるかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="1bdac-290">When the test object is a set, these operators use reference equality to check whether one of the set's elements is the same instance of the test object.</span></span>
+
+<span data-ttu-id="1bdac-291">次の例では、との例と同じことを行い `-contain` `-notcontain` ますが、代わりにとを使用して記述されてい `-in` `-notin` ます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-291">The following examples do the same thing that the examples for `-contain` and `-notcontain` do, but they are written with `-in` and `-notin` instead.</span></span>
+
+```powershell
+"def" -in "abc", "def"                  # Output: True
+"def" -notin "abc", "def"               # Output: False
+"Shell" -in "Windows", "PowerShell"     # Output: False
+"Shell" -notin "Windows", "PowerShell"  # Output: True
+"abc", "def" -in "abc", "def", "ghi"    # Output: False
+"abc", "def" -notin "abc", "def", "ghi" # Output: True
+```
+
+<span data-ttu-id="1bdac-292">より複雑な例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-292">More complex examples:</span></span>
+
+```powershell
+$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
+                 "ContosoDHCP","ContosoWSUS"
+$thisComputer  = "ContosoDC2"
+
+$thisComputer -in $DomainServers
+# Output: True
+
+$a = "abc", "def"
+$a -in "abc", "def", "ghi" # Output: False
+$a -in $a, "ghi"           # Output: True
+```
+
+## <a name="type-comparison"></a><span data-ttu-id="1bdac-293">型の比較</span><span class="sxs-lookup"><span data-stu-id="1bdac-293">Type comparison</span></span>
+
+<span data-ttu-id="1bdac-294">型の比較演算子 ( `-is` と `-isnot` ) は、オブジェクトが特定の型であるかどうかを判断するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="1bdac-294">The type comparison operators (`-is` and `-isnot`) are used to determine if an object is a specific type.</span></span>
+
+<span data-ttu-id="1bdac-295">構文:</span><span class="sxs-lookup"><span data-stu-id="1bdac-295">Syntax:</span></span>
+
+```powershell
+<object> -is <type-reference>
+<object> -isnot <type-reference>
+```
+
+<span data-ttu-id="1bdac-296">例:</span><span class="sxs-lookup"><span data-stu-id="1bdac-296">Example:</span></span>
+
+```powershell
+$a = 1
+$b = "1"
+$a -is [int]           # Output: True
+$a -is $b.GetType()    # Output: False
+$b -isnot [int]        # Output: True
+$a -isnot $b.GetType() # Output: True
+```
+
+## <a name="see-also"></a><span data-ttu-id="1bdac-297">関連項目</span><span class="sxs-lookup"><span data-stu-id="1bdac-297">SEE ALSO</span></span>
+
+- [<span data-ttu-id="1bdac-298">about_Operators</span><span class="sxs-lookup"><span data-stu-id="1bdac-298">about_Operators</span></span>](about_Operators.md)
+- [<span data-ttu-id="1bdac-299">about_Regular_Expressions</span><span class="sxs-lookup"><span data-stu-id="1bdac-299">about_Regular_Expressions</span></span>](about_Regular_Expressions.md)
+- [<span data-ttu-id="1bdac-300">about_Wildcards</span><span class="sxs-lookup"><span data-stu-id="1bdac-300">about_Wildcards</span></span>](about_Wildcards.md)
+- [<span data-ttu-id="1bdac-301">Compare-Object</span><span class="sxs-lookup"><span data-stu-id="1bdac-301">Compare-Object</span></span>](xref:Microsoft.PowerShell.Utility.Compare-Object)
+- [<span data-ttu-id="1bdac-302">Foreach-オブジェクト</span><span class="sxs-lookup"><span data-stu-id="1bdac-302">Foreach-Object</span></span>](xref:Microsoft.PowerShell.Core.ForEach-Object)
+- [<span data-ttu-id="1bdac-303">Where-Object</span><span class="sxs-lookup"><span data-stu-id="1bdac-303">Where-Object</span></span>](xref:Microsoft.PowerShell.Core.Where-Object)
+
+[1]: /dotnet/api/system.icomparable
+[2]: /dotnet/api/system.iequatable-1
+[3]: /dotnet/api/system.text.regularexpressions.match
+[4]: about_Redirection.md#potential-confusion-with-comparison-operators
+[5]: /dotnet/standard/base-types/substitutions-in-regular-expressions
