@@ -1,14 +1,14 @@
 ---
-ms.date: 10/16/2019
+ms.date: 01/04/2021
 ms.topic: reference
 title: PowerShell モジュール マニフェストを記述する方法
 description: PowerShell モジュール マニフェストを記述する方法
-ms.openlocfilehash: 42db71968ccac1cc3c1c05c5be2e72327e5e28d9
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92647698"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879373"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>PowerShell モジュールマニフェストを記述する方法
 
@@ -63,7 +63,7 @@ PowerShell モジュールを作成した後、モジュールに関する情報
 |**CompanyName**<br /> 型: `String`|`'Unknown'`|このモジュールの会社またはベンダー。 値が指定されていない場合、は `New-ModuleManifest` 既定のを使用します。<br /> 例: `CompanyName = 'Fabrikam'`|
 |**著作権**<br /> 型: `String`|`'(c) <Author>. All rights reserved.'`| このモジュールの著作権に関する声明。 値が指定されていない場合、は `New-ModuleManifest` 現在のユーザーの既定のをとして使用し `<Author>` ます。 作成者を指定するには、 **author** パラメーターを使用します。 <br /> 例: `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**説明**<br /> 型: `String`|`<empty string>`|このモジュールによって提供される機能の説明です。<br /> 例: `Description = 'This is the module's description.'`|
-|**PowerShellVersion**<br /> 型: `Version`|`<empty string>`|このモジュールに必要な PowerShell エンジンの最小バージョン。 有効な値は、1.0、2.0、3.0、4.0、5.0、5.1、6、および7です。<br /> 例: `PowerShellVersion = '5.0'`|
+|**PowerShellVersion**<br /> 型: `Version`|`<empty string>`|このモジュールに必要な PowerShell エンジンの最小バージョン。 有効な値は、1.0、2.0、3.0、4.0、5.0、5.1、6.0、6.1、6.2、7.0、および7.1 です。<br /> 例: `PowerShellVersion = '5.0'`|
 |**PowerShellHostName**<br /> 型: `String`|`<empty string>`|このモジュールが必要とする PowerShell ホストの名前。 この名前は、PowerShell によって提供されます。 ホストプログラムの名前を検索するには、プログラムで「」と入力 `$host.name` します。<br /> 例: `PowerShellHostName = 'ConsoleHost'`|
 |**PowerShellHostVersion**<br /> 型: `Version`|`<empty string>`|このモジュールに必要な PowerShell ホストの最小バージョン。<br /> 例: `PowerShellHostVersion = '2.0'`|
 |**DotNetFrameworkVersion**<br /> 型: `Version`|`<empty string>`|このモジュールで必要な Microsoft .NET Framework の最小バージョン。 この前提条件は、powershell デスクトップエディションに対してのみ有効です (PowerShell 5.1 など)。<br /> 例: `DotNetFrameworkVersion = '3.5'`|
