@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: コマンドを追加し、呼び出す
 description: コマンドを追加し、呼び出す
-ms.openlocfilehash: c30cb15d473c344e40b96938c355d77c059fe2d5
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: f539172eaf119fe5774e158c77a00276c8ba9e0a
+ms.sourcegitcommit: 880b00218708724a76503000c9eca181f4e00891
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "96616031"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049427"
 ---
 # <a name="adding-and-invoking-commands"></a>コマンドを追加し、呼び出す
 
@@ -89,14 +89,14 @@ ps.Invoke();
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
+ps.AddScript(File.ReadAllText(@"D:\PSScripts\MyScript.ps1")).Invoke();
 ```
 
 また、という名前のブール型パラメーターを受け取る、バージョンの system.string. [Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) メソッドもあり `useLocalScope` ます。 このパラメーターがに設定されている場合、 `true` スクリプトはローカルスコープで実行されます。 次のコードでは、スクリプトがローカルスコープで実行されます。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
+ps.AddScript(File.ReadAllText(@"D:\PSScripts\MyScript.ps1"), true).Invoke();
 ```
 
 ### <a name="invoking-a-pipeline-synchronously"></a>パイプラインの同期的な呼び出し
@@ -160,11 +160,11 @@ namespace HostPS3
       // Create an IAsyncResult object and call the
       // BeginInvoke method to start running the
       // command pipeline asynchronously.
-      IAsyncResult async = ps.BeginInvoke();
+      IAsyncResult asyncpl = ps.BeginInvoke();
 
       // Using the PowerShell.Invoke method, run the command
       // pipeline using the default runspace.
-      foreach (PSObject result in ps.EndInvoke(async))
+      foreach (PSObject result in ps.EndInvoke(asyncpl))
       {
         Console.WriteLine("{0,-20}{1}",
                 result.Members["ProcessName"].Value,

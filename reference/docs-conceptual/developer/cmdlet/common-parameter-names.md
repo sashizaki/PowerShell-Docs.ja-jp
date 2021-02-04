@@ -3,23 +3,30 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: 共有パラメーター名
 description: 共有パラメーター名
-ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 506aab290abdb97a6e26c340ac4bd0051244f54b
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92668220"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860881"
 ---
 # <a name="common-parameter-names"></a>共有パラメーター名
 
-このトピックで説明するパラメーターは、 *共通パラメーター* と呼ばれます。 これらは、Windows PowerShell ランタイムによってコマンドレットに追加され、コマンドレットで宣言することはできません。
+このトピックで説明するパラメーターは、 **共通パラメーター** と呼ばれます。 これらは、Windows PowerShell ランタイムによってコマンドレットに追加され、コマンドレットで宣言することはできません。
 
 > [!NOTE]
 > これらのパラメーターは、プロバイダーのコマンドレットと、属性で修飾された関数にも追加され `CmdletBinding` ます。
 
 ## <a name="general-common-parameters"></a>一般的な共通パラメーター
 
-次のパラメーターはすべてのコマンドレットに追加され、コマンドレットを実行するたびにアクセスできます。 これらのパラメーターは、system.servicemodel [パラメーター](/dotnet/api/System.Management.Automation.Internal.CommonParameters) クラスによって定義されます。
+次のパラメーターはすべてのコマンドレットに追加され、コマンドレットを実行するたびにアクセスできます。
+これらのパラメーターは、system.servicemodel [パラメーター](/dotnet/api/System.Management.Automation.Internal.CommonParameters) クラスによって定義されます。
+
+### <a name="confirm-alias-cf"></a>Confirm (alias: cf)
+
+データ型: SwitchParameter
+
+このパラメーターは、コマンドレットで、ユーザーが操作を続行するかどうかを確認するプロンプトを表示するかどうかを指定します。
 
 ### <a name="debug-alias-db"></a>デバッグ (エイリアス: db)
 
@@ -37,13 +44,7 @@ ms.locfileid: "92668220"
 
 データ型: 文字列
 
-このパラメーターは、エラーが発生したときにオブジェクトを配置する変数を指定します。 この変数にを追加するには、変数をクリアして設定するのではなく、+*varname* を使用します。
-
-### <a name="outvariable-alias-ov"></a>OutVariable (エイリアス: ov-es)
-
-データ型: 文字列
-
-このパラメーターは、コマンドレットによって生成されるすべての出力オブジェクトを配置する変数を指定します。 この変数にを追加するには、変数をクリアして設定するのではなく、+*varname* を使用します。
+このパラメーターは、エラーが発生したときにオブジェクトを配置する変数を指定します。 この変数にを追加するには、変数をクリアして設定するのではなく、+_varname_ を使用します。
 
 ### <a name="outbuffer-alias-ob"></a>OutBuffer (エイリアス: ob)
 
@@ -51,7 +52,20 @@ ms.locfileid: "92668220"
 
 このパラメーターは、オブジェクトがパイプラインから渡される前に、出力バッファーに格納するオブジェクトの数を定義します。 既定では、オブジェクトはパイプラインのすぐ下に渡されます。
 
-### <a name="verbose-alias-vb"></a>Verbose (エイリアス: vb)
+### <a name="outvariable-alias-ov"></a>OutVariable (エイリアス: ov-es)
+
+データ型: 文字列
+
+このパラメーターは、コマンドレットによって生成されるすべての出力オブジェクトを配置する変数を指定します。
+この変数にを追加するには、変数をクリアして設定するのではなく、+_varname_ を使用します。
+
+### <a name="pipelinevariable-alias-pv"></a>PipelineVariable (エイリアス: pv)
+
+データ型: 文字列
+
+このパラメーターは、パイプラインを介してフローするときに、現在のパイプライン要素の値を名前付きコマンドの変数として格納します。
+
+## <a name="verbose-alias-vb"></a>Verbose (エイリアス: vb)
 
 データ型: SwitchParameter
 
@@ -67,17 +81,12 @@ ms.locfileid: "92668220"
 
 データ型: 文字列
 
-このパラメーターは、警告メッセージを保存できる変数を指定します。 この変数にを追加するには、変数をクリアして設定するのではなく、+*varname* を使用します。
+このパラメーターは、警告メッセージを保存できる変数を指定します。 この変数にを追加するには、変数をクリアして設定するのではなく、+_varname_ を使用します。
 
 ## <a name="risk-mitigation-parameters"></a>Risk-Mitigation パラメーター
 
-次のパラメーターは、アクションを実行する前に確認を要求するコマンドレットに追加されます。 確認要求の詳細については、「 [確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。 これらのパラメーターは、 [Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) クラスによって定義されます。
-
-### <a name="confirm-alias-cf"></a>Confirm (alias: cf)
-
-データ型: SwitchParameter
-
-このパラメーターは、コマンドレットで、ユーザーが操作を続行するかどうかを確認するプロンプトを表示するかどうかを指定します。
+次のパラメーターは、アクションを実行する前に確認を要求するコマンドレットに追加されます。 確認要求の詳細については、「 [確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
+これらのパラメーターは、 [Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) クラスによって定義されます。
 
 ### <a name="whatif-alias-wi"></a>WhatIf (エイリアス: wi)
 
@@ -87,7 +96,7 @@ ms.locfileid: "92668220"
 
 ## <a name="transaction-parameters"></a>トランザクションパラメーター
 
-トランザクションをサポートするコマンドレットには、次のパラメーターが追加されています。 これらのパラメーターは、system.string [クラスに](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) よって定義されます。
+トランザクションをサポートするコマンドレットには、次のパラメーターが追加されています。 これらのパラメーターは、system.string [クラスに](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) よって定義されます。 トランザクションのサポートは PowerShell 3.0 で導入され、PowerShell 6.0 では廃止されました。
 
 ### <a name="usetransaction-alias-usetx"></a>UseTransaction (エイリアス: usetx)
 
