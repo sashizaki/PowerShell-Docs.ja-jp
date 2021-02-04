@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-EventLog
-ms.openlocfilehash: 4044453cb46b407344619f1edd3227213bf67250
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 051f02b00144805569d5130686a51a0f42b64b00
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388248"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584632"
 ---
 # Write-EventLog
 
@@ -27,6 +27,7 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
 ```
 
 ## Description
+
 コマンドレットでは、イベントを `Write-EventLog` イベントログに書き込みます。
 
 イベントをイベント ログに書き込むには、イベント ログがコンピューター上に存在し、イベント ソースがイベント ログに登録されている必要があります。
@@ -75,7 +76,7 @@ Accept wildcard characters: False
 
 リモート コンピューターの NetBIOS 名、IP アドレス、または完全修飾ドメイン名を入力します。
 
-このパラメーターは、Windows PowerShell リモート処理に依存しません。 **ComputerName** `Get-EventLog` コンピューターがリモートコマンドを実行するように構成されていない場合でも、コマンドレットの ComputerName パラメーターを使用できます。
+このパラメーターは、Windows PowerShell リモート処理に依存しません。  `Get-EventLog` コンピューターがリモートコマンドを実行するように構成されていない場合でも、コマンドレットの ComputerName パラメーターを使用できます。
 
 ```yaml
 Type: System.String
@@ -196,16 +197,18 @@ Accept wildcard characters: False
 ## 入力
 
 ### なし
+
 パイプを使用してこのコマンドレットに入力を渡すことはできません。
 
 ## 出力
 
 ### EventLogEntry
+
 このコマンドレットは、ログ内のイベントを表すオブジェクトを返します。
 
 ## 注
 
-を使用するには、[ `Write-EventLog` 管理者として実行] オプションを使用して Windows PowerShell を起動します。
+一部の Windows イベントログでは、イベントの書き込みに管理者権限が必要です。 [ **管理者として実行** ] オプションを使用して PowerShell を起動する必要があります。
 
 ## 関連リンク
 

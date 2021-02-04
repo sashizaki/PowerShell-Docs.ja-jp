@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: cbf87c2a2d6ab0f08e514ba971a622ea9f1904aa
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: bb7f169e0c01c73bb4e834375f341bf795e37ce7
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514937"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584666"
 ---
 # Get-Date
 
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 
 PowerShell 5.0 以降では、 **Format** パラメーターの値として次の追加形式を使用できます。
 
-- **Filedate**。 現在の日付を現地時刻で表した、ファイルまたはパスによるわかりやすい表現。 形式は、 `yyyyMMdd` (大文字と小文字を区別します。4桁の年、2桁の月、および2桁の日) を使用します。 次に例を示します。
+- **Filedate**。 現在の日付を現地時刻で表した、ファイルまたはパスによるわかりやすい表現。 形式は、 `yyyyMMdd` (大文字と小文字を区別します。4桁の年、2桁の月、および2桁の日) を使用します。 以下に例を示します。
   20190627.
 
 - **Filedateuniversal**。 現在の日付を世界協定時刻 (UTC) で表した、ファイルまたはパスのフレンドリ表現。 形式は、 `yyyyMMddZ` (大文字と小文字を区別します。4桁の年、2桁の月、2桁の日、および UTC インジケーターとしての文字を使用し `Z` ます)。 例: 20190627Z。
@@ -421,7 +421,7 @@ Accept wildcard characters: False
 
 ### パイプラインの入力
 
-`Get-Date` パイプラインの入力を受け入れます。 たとえば、「 `Get-ChildItem | Get-Date` 」のように入力します。
+`Get-Date` パイプラインの入力を受け入れます。 たとえば、`Get-ChildItem | Get-Date` のようにします。
 
 ## 出力
 
@@ -434,7 +434,7 @@ Accept wildcard characters: False
 メソッドは、 `(Get-Date).ToString()` **DateTime** オブジェクトを **String** オブジェクトに変換します。
 
 オブジェクトのプロパティとメソッドを表示するには、オブジェクトをパイプライン内でに送信し `Get-Member` ます。
-たとえば、「 `Get-Date | Get-Member` 」のように入力します。
+たとえば、`Get-Date | Get-Member` のようにします。
 
 ## 注
 
@@ -461,7 +461,7 @@ Accept wildcard characters: False
 | `%H` | 24時間形式の時間                                                  | 17                       |
 | `%h` | ' B ' と同じ                                                             |                          |
 | `%I` | 12時間形式の時間                                                  | 05                       |
-| `%j` | 年の通算日                                                         | 1-366                    |
+| `%j` | 通算日 ( `0` PowerShell 6 以降では、先行修正は含まれません) | 1-366                    |
 | `%k` | ' H ' と同じ                                                             |                          |
 | `%l` | ' I ' と同じ (大文字の I)                                              | 05                       |
 | `%M` | 分                                                                 | 35                       |

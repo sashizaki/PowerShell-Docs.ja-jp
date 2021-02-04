@@ -1,16 +1,16 @@
 ---
 description: セッションで使用される名前空間を指定できます。
 Locale: en-US
-ms.date: 11/18/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: 798b7bc9759c7c88eb612d0eb47bdb92c015cc18
-ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
+ms.openlocfilehash: 2ada269fd0ce6b34a5f7faccfddf47a799301eb9
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94892023"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98619943"
 ---
 # <a name="about-using"></a>使用について
 
@@ -21,7 +21,9 @@ ms.locfileid: "94892023"
 
 `using`ステートメントでは、セッションで使用する名前空間を指定できます。 名前空間を追加すると、.NET のクラスおよびメンバーの使用が簡略化され、スクリプトモジュールとアセンブリからクラスをインポートできるようになります。
 
-ステートメントは、 `using` スクリプト内の他のステートメントの前に記述する必要があります。
+ステートメントは、 `using` スクリプトまたはモジュール内の他のステートメントの前に記述する必要があります。 パラメーターを含め、コメント解除されたステートメントの前には使用できません。
+
+ステートメントには、 `using` 変数を含めることはできません。
 
 ステートメントは、 `using` `using:` 変数のスコープ修飾子と混同しないようにしてください。 詳細については、「 [about_Remote_Variables](about_Remote_Variables.md)」を参照してください。
 
@@ -61,6 +63,12 @@ using module <module-name>
   - `RequiredVersion` -モジュールの正確な必須バージョンを指定します。
   - `MaximumVersion` -モジュールの許容される最大バージョンを指定します。
 
+ステートメントは、 `using module` `ModuleToProcess` スクリプトモジュールまたはバイナリモジュールのルートモジュール () からクラスをインポートします。 入れ子になったモジュールで定義されているクラスや、ドットソースのスクリプトで定義されているクラスをモジュールに常にインポートすることはできません。 モジュールの外部のユーザーが使用できるようにするクラスは、ルートモジュールで定義する必要があります。
+
+スクリプトモジュールの開発時には、コードに変更を加えた後、Force パラメーターを指定してを使用して新しいバージョンのモジュールを読み込むのが一般的です `Import-Module` 。  これは、ルートモジュールの関数の変更に対してのみ機能します。 `Import-Module` では、入れ子になったモジュールは再読み込みされません。 また、更新されたクラスを読み込む方法はありません。
+
+最新バージョンを実行していることを確認するには、コマンドレットを使用してモジュールをアンロードする必要があり `Remove-Module` ます。 `Remove-Module` ルートモジュール、すべての入れ子になったモジュール、およびモジュールで定義されているすべてのクラスを削除します。 次に、およびステートメントを使用して、モジュールとクラスを再度読み込みます `Import-Module` `using module` 。
+
 ## <a name="assembly-syntax"></a>アセンブリ構文
 
 .NET アセンブリから型をプリロードするには、次のようにします。
@@ -73,7 +81,7 @@ using assembly <.NET-assembly-path>
 
 新しい PowerShell クラスを作成しない場合は、 `Add-Type` 代わりにコマンドレットを使用します。 詳細については、「 [Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type)」を参照してください。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 ### <a name="example-1---add-namespaces-for-typename-resolution"></a>例 1-typename の解決のための名前空間を追加する
 
