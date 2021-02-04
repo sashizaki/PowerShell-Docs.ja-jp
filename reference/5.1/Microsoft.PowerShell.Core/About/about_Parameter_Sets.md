@@ -1,59 +1,59 @@
 ---
 description: 高度な関数でパラメーターセットを定義して使用する方法について説明します。
 title: about_Parameter_Sets
-ms.date: 02/11/2020
-ms.openlocfilehash: e4cfbc13f981bcc93c8a0a3c799851e83df7746c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.date: 01/05/2021
+ms.openlocfilehash: 8f3a33345a8e2fa19810c8ebd527d9a7dca7dec5
+ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93223384"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97917860"
 ---
-# <a name="about-parameter-sets"></a><span data-ttu-id="c0b45-103">パラメーターセットについて</span><span class="sxs-lookup"><span data-stu-id="c0b45-103">About parameter sets</span></span>
+# <a name="about-parameter-sets"></a><span data-ttu-id="c533f-103">パラメーターセットについて</span><span class="sxs-lookup"><span data-stu-id="c533f-103">About parameter sets</span></span>
 
-## <a name="short-description"></a><span data-ttu-id="c0b45-104">概要</span><span class="sxs-lookup"><span data-stu-id="c0b45-104">SHORT DESCRIPTION</span></span>
-<span data-ttu-id="c0b45-105">高度な関数でパラメーターセットを定義して使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c0b45-105">Describes how to define and use parameter sets in advanced functions.</span></span>
+## <a name="short-description"></a><span data-ttu-id="c533f-104">概要</span><span class="sxs-lookup"><span data-stu-id="c533f-104">SHORT DESCRIPTION</span></span>
+<span data-ttu-id="c533f-105">高度な関数でパラメーターセットを定義して使用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c533f-105">Describes how to define and use parameter sets in advanced functions.</span></span>
 
-## <a name="long-description"></a><span data-ttu-id="c0b45-106">詳細説明</span><span class="sxs-lookup"><span data-stu-id="c0b45-106">LONG DESCRIPTION</span></span>
+## <a name="long-description"></a><span data-ttu-id="c533f-106">詳細説明</span><span class="sxs-lookup"><span data-stu-id="c533f-106">LONG DESCRIPTION</span></span>
 
-<span data-ttu-id="c0b45-107">PowerShell では、パラメーターセットを使用して、さまざまなシナリオに対して異なるアクションを実行できる単一の関数を記述できます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-107">PowerShell uses parameter sets to enable you to write a single function that can do different actions for different scenarios.</span></span> <span data-ttu-id="c0b45-108">パラメーターセットを使用すると、さまざまなパラメーターをユーザーに公開できます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-108">Parameter sets enable you to expose different parameters to the user.</span></span> <span data-ttu-id="c0b45-109">また、ユーザーが指定したパラメーターに基づいて異なる情報を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-109">And, to return different information based on the parameters specified by the user.</span></span>
+<span data-ttu-id="c533f-107">PowerShell では、パラメーターセットを使用して、さまざまなシナリオに対して異なるアクションを実行できる単一の関数を記述できます。</span><span class="sxs-lookup"><span data-stu-id="c533f-107">PowerShell uses parameter sets to enable you to write a single function that can do different actions for different scenarios.</span></span> <span data-ttu-id="c533f-108">パラメーターセットを使用すると、さまざまなパラメーターをユーザーに公開できます。</span><span class="sxs-lookup"><span data-stu-id="c533f-108">Parameter sets enable you to expose different parameters to the user.</span></span> <span data-ttu-id="c533f-109">また、ユーザーが指定したパラメーターに基づいて異なる情報を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="c533f-109">And, to return different information based on the parameters specified by the user.</span></span>
 
-## <a name="parameter-set-requirements"></a><span data-ttu-id="c0b45-110">パラメーターセットの要件</span><span class="sxs-lookup"><span data-stu-id="c0b45-110">Parameter set requirements</span></span>
+## <a name="parameter-set-requirements"></a><span data-ttu-id="c533f-110">パラメーターセットの要件</span><span class="sxs-lookup"><span data-stu-id="c533f-110">Parameter set requirements</span></span>
 
-<span data-ttu-id="c0b45-111">すべてのパラメーターセットには、次の要件が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-111">The following requirements apply to all parameter sets.</span></span>
+<span data-ttu-id="c533f-111">すべてのパラメーターセットには、次の要件が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c533f-111">The following requirements apply to all parameter sets.</span></span>
 
-- <span data-ttu-id="c0b45-112">各パラメーターセットには、少なくとも1つの一意のパラメーターが必要です。</span><span class="sxs-lookup"><span data-stu-id="c0b45-112">Each parameter set must have at least one unique parameter.</span></span> <span data-ttu-id="c0b45-113">可能であれば、このパラメーターを必須パラメーターにします。</span><span class="sxs-lookup"><span data-stu-id="c0b45-113">If possible, make this parameter a mandatory parameter.</span></span>
+- <span data-ttu-id="c533f-112">各パラメーターセットには、パラメーターの一意の組み合わせが必要です。</span><span class="sxs-lookup"><span data-stu-id="c533f-112">Each parameter set must have a unique combination of parameters.</span></span> <span data-ttu-id="c533f-113">可能な場合は、一意のパラメーターの少なくとも1つが必須パラメーターである必要があります。</span><span class="sxs-lookup"><span data-stu-id="c533f-113">If possible, at least one of the unique parameters should be a mandatory parameter.</span></span>
 
-- <span data-ttu-id="c0b45-114">複数の位置指定パラメーターを含むパラメーターセットでは、パラメーターごとに一意の位置を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c0b45-114">A parameter set that contains multiple positional parameters must define unique positions for each parameter.</span></span> <span data-ttu-id="c0b45-115">2つの位置指定パラメーターで同じ位置を指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="c0b45-115">No two positional parameters can specify the same position.</span></span>
+- <span data-ttu-id="c533f-114">複数の位置指定パラメーターを含むパラメーターセットでは、パラメーターごとに一意の位置を定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c533f-114">A parameter set that contains multiple positional parameters must define unique positions for each parameter.</span></span> <span data-ttu-id="c533f-115">2つの位置指定パラメーターで同じ位置を指定することはできません。</span><span class="sxs-lookup"><span data-stu-id="c533f-115">No two positional parameters can specify the same position.</span></span>
 
-- <span data-ttu-id="c0b45-116">値がのキーワードを宣言できるのは、set 内の1つのパラメーターだけ `ValueFromPipeline` `true` です。</span><span class="sxs-lookup"><span data-stu-id="c0b45-116">Only one parameter in a set can declare the `ValueFromPipeline` keyword with a value of `true`.</span></span> <span data-ttu-id="c0b45-117">複数のパラメーターでキーワードを定義し、値をにすることができ `ValueFromPipelineByPropertyName` `true` ます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-117">Multiple parameters can define the `ValueFromPipelineByPropertyName` keyword with a value of `true`.</span></span>
+- <span data-ttu-id="c533f-116">値がのキーワードを宣言できるのは、set 内の1つのパラメーターだけ `ValueFromPipeline` `true` です。</span><span class="sxs-lookup"><span data-stu-id="c533f-116">Only one parameter in a set can declare the `ValueFromPipeline` keyword with a value of `true`.</span></span> <span data-ttu-id="c533f-117">複数のパラメーターでキーワードを定義し、値をにすることができ `ValueFromPipelineByPropertyName` `true` ます。</span><span class="sxs-lookup"><span data-stu-id="c533f-117">Multiple parameters can define the `ValueFromPipelineByPropertyName` keyword with a value of `true`.</span></span>
 
-- <span data-ttu-id="c0b45-118">パラメーターにパラメーターセットが指定されていない場合、パラメーターはすべてのパラメーターセットに属します。</span><span class="sxs-lookup"><span data-stu-id="c0b45-118">If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.</span></span>
+- <span data-ttu-id="c533f-118">パラメーターにパラメーターセットが指定されていない場合、パラメーターはすべてのパラメーターセットに属します。</span><span class="sxs-lookup"><span data-stu-id="c533f-118">If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c0b45-119">パラメーターセットは32個に制限されています。</span><span class="sxs-lookup"><span data-stu-id="c0b45-119">There is a limit of 32 parameter sets.</span></span>
+> <span data-ttu-id="c533f-119">パラメーターセットは32個に制限されています。</span><span class="sxs-lookup"><span data-stu-id="c533f-119">There is a limit of 32 parameter sets.</span></span>
 
-## <a name="default-parameter-sets"></a><span data-ttu-id="c0b45-120">既定のパラメーターセット</span><span class="sxs-lookup"><span data-stu-id="c0b45-120">Default parameter sets</span></span>
+## <a name="default-parameter-sets"></a><span data-ttu-id="c533f-120">既定のパラメーターセット</span><span class="sxs-lookup"><span data-stu-id="c533f-120">Default parameter sets</span></span>
 
-<span data-ttu-id="c0b45-121">複数のパラメーターセットが定義されている場合は、この `DefaultParameterSetName` 属性のキーワードによって既定のパラメーターセットが指定され **CmdletBinding** ます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-121">When multiple parameter sets are defined, the `DefaultParameterSetName` keyword of the **CmdletBinding** attribute specifies the default parameter set.</span></span>
-<span data-ttu-id="c0b45-122">PowerShell では、コマンドに指定された情報に基づいて、使用するパラメーターセットを特定できないときに、既定のパラメーターセットが使用されます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-122">PowerShell uses the default parameter set when it can't determine the parameter set to use based on the information provided to the command.</span></span> <span data-ttu-id="c0b45-123">参照 **バインド** 属性の詳細については、「 [about_functions_cmdletbindingattribute](about_functions_cmdletbindingattribute.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c0b45-123">For more information about the **CmdletBinding** attribute, see [about_functions_cmdletbindingattribute](about_functions_cmdletbindingattribute.md).</span></span>
+<span data-ttu-id="c533f-121">複数のパラメーターセットが定義されている場合は、この `DefaultParameterSetName` 属性のキーワードによって既定のパラメーターセットが指定されます。</span><span class="sxs-lookup"><span data-stu-id="c533f-121">When multiple parameter sets are defined, the `DefaultParameterSetName` keyword of the **CmdletBinding** attribute specifies the default parameter set.</span></span>
+<span data-ttu-id="c533f-122">PowerShell では、コマンドに指定された情報に基づいて、使用するパラメーターセットを特定できないときに、既定のパラメーターセットが使用されます。</span><span class="sxs-lookup"><span data-stu-id="c533f-122">PowerShell uses the default parameter set when it can't determine the parameter set to use based on the information provided to the command.</span></span> <span data-ttu-id="c533f-123">参照 **バインド** 属性の詳細については、「 [about_functions_cmdletbindingattribute](about_functions_cmdletbindingattribute.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c533f-123">For more information about the **CmdletBinding** attribute, see [about_functions_cmdletbindingattribute](about_functions_cmdletbindingattribute.md).</span></span>
 
-## <a name="declaring-parameter-sets"></a><span data-ttu-id="c0b45-124">パラメーターセットの宣言</span><span class="sxs-lookup"><span data-stu-id="c0b45-124">Declaring parameter sets</span></span>
+## <a name="declaring-parameter-sets"></a><span data-ttu-id="c533f-124">パラメーターセットの宣言</span><span class="sxs-lookup"><span data-stu-id="c533f-124">Declaring parameter sets</span></span>
 
-<span data-ttu-id="c0b45-125">パラメーターセットを作成するには、パラメーター `ParameterSetName` セット内のすべてのパラメーターに対して、 **parameter** 属性のキーワードを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c0b45-125">To create a parameter set, you must specify the `ParameterSetName` keyword of the **Parameter** attribute for every parameter in the parameter set.</span></span> <span data-ttu-id="c0b45-126">複数のパラメーターセットに属するパラメーターの場合は、パラメーターセットごとに **パラメーター** 属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="c0b45-126">For parameters that belong to multiple parameter sets, add a **Parameter** attribute for each parameter set.</span></span>
+<span data-ttu-id="c533f-125">パラメーターセットを作成するには、パラメーター `ParameterSetName` セット内のすべてのパラメーターに対して、 **parameter** 属性のキーワードを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c533f-125">To create a parameter set, you must specify the `ParameterSetName` keyword of the **Parameter** attribute for every parameter in the parameter set.</span></span> <span data-ttu-id="c533f-126">複数のパラメーターセットに属するパラメーターの場合は、パラメーターセットごとに **パラメーター** 属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="c533f-126">For parameters that belong to multiple parameter sets, add a **Parameter** attribute for each parameter set.</span></span>
 
-<span data-ttu-id="c0b45-127">パラメーター **属性を** 使用すると、パラメーターセットごとに異なる方法でパラメーターを定義できます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-127">The **Parameter** attribute enables you to define the parameter differently for each parameter set.</span></span> <span data-ttu-id="c0b45-128">たとえば、あるセットでは必須として、別のセットでは省略可能なパラメーターを定義できます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-128">For example, you can define a parameter as mandatory in one set and optional in another.</span></span> <span data-ttu-id="c0b45-129">ただし、各パラメーターセットには、少なくとも1つの一意のパラメーターを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c0b45-129">However, each parameter set must contain at least one unique parameter.</span></span>
+<span data-ttu-id="c533f-127">パラメーター **属性を** 使用すると、パラメーターセットごとに異なる方法でパラメーターを定義できます。</span><span class="sxs-lookup"><span data-stu-id="c533f-127">The **Parameter** attribute enables you to define the parameter differently for each parameter set.</span></span> <span data-ttu-id="c533f-128">たとえば、あるセットでは必須として、別のセットでは省略可能なパラメーターを定義できます。</span><span class="sxs-lookup"><span data-stu-id="c533f-128">For example, you can define a parameter as mandatory in one set and optional in another.</span></span> <span data-ttu-id="c533f-129">ただし、各パラメーターセットには、少なくとも1つの一意のパラメーターを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c533f-129">However, each parameter set must contain at least one unique parameter.</span></span>
 
-<span data-ttu-id="c0b45-130">パラメーターセット名が割り当てられていないパラメーターは、すべてのパラメーターセットに属しています。</span><span class="sxs-lookup"><span data-stu-id="c0b45-130">Parameters that don't have an assigned parameter set name belong to all parameter sets.</span></span>
+<span data-ttu-id="c533f-130">パラメーターセット名が割り当てられていないパラメーターは、すべてのパラメーターセットに属しています。</span><span class="sxs-lookup"><span data-stu-id="c533f-130">Parameters that don't have an assigned parameter set name belong to all parameter sets.</span></span>
 
-### <a name="example"></a><span data-ttu-id="c0b45-131">例</span><span class="sxs-lookup"><span data-stu-id="c0b45-131">Example</span></span>
+### <a name="example"></a><span data-ttu-id="c533f-131">例</span><span class="sxs-lookup"><span data-stu-id="c533f-131">Example</span></span>
 
-<span data-ttu-id="c0b45-132">次の関数の例では、テキストファイル内の行数、文字、および単語数をカウントします。</span><span class="sxs-lookup"><span data-stu-id="c0b45-132">The following example function counts the number lines, characters, and words in a text file.</span></span> <span data-ttu-id="c0b45-133">パラメーターを使用すると、どの値を取得し、どのファイルを測定するかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-133">Using parameters, you can specify which values you want returned and which files you want to measure.</span></span> <span data-ttu-id="c0b45-134">次の4つのパラメーターセットが定義されています。</span><span class="sxs-lookup"><span data-stu-id="c0b45-134">There are four parameter sets defined:</span></span>
+<span data-ttu-id="c533f-132">次の関数の例では、テキストファイル内の行数、文字、および単語数をカウントします。</span><span class="sxs-lookup"><span data-stu-id="c533f-132">The following example function counts the number lines, characters, and words in a text file.</span></span> <span data-ttu-id="c533f-133">パラメーターを使用すると、どの値を取得し、どのファイルを測定するかを指定できます。</span><span class="sxs-lookup"><span data-stu-id="c533f-133">Using parameters, you can specify which values you want returned and which files you want to measure.</span></span> <span data-ttu-id="c533f-134">次の4つのパラメーターセットが定義されています。</span><span class="sxs-lookup"><span data-stu-id="c533f-134">There are four parameter sets defined:</span></span>
 
-- <span data-ttu-id="c0b45-135">Path</span><span class="sxs-lookup"><span data-stu-id="c0b45-135">Path</span></span>
-- <span data-ttu-id="c0b45-136">PathAll</span><span class="sxs-lookup"><span data-stu-id="c0b45-136">PathAll</span></span>
-- <span data-ttu-id="c0b45-137">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="c0b45-137">LiteralPath</span></span>
-- <span data-ttu-id="c0b45-138">LiteralPathAll</span><span class="sxs-lookup"><span data-stu-id="c0b45-138">LiteralPathAll</span></span>
+- <span data-ttu-id="c533f-135">パス</span><span class="sxs-lookup"><span data-stu-id="c533f-135">Path</span></span>
+- <span data-ttu-id="c533f-136">PathAll</span><span class="sxs-lookup"><span data-stu-id="c533f-136">PathAll</span></span>
+- <span data-ttu-id="c533f-137">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="c533f-137">LiteralPath</span></span>
+- <span data-ttu-id="c533f-138">LiteralPathAll</span><span class="sxs-lookup"><span data-stu-id="c533f-138">LiteralPathAll</span></span>
 
 ```powershell
 function Measure-Lines {
@@ -138,9 +138,9 @@ function Measure-Lines {
 }
 ```
 
-<span data-ttu-id="c0b45-139">各パラメーターセットには、一意のパラメーターまたはパラメーターの一意の組み合わせが必要です。</span><span class="sxs-lookup"><span data-stu-id="c0b45-139">Each parameter set must have a unique parameter or a unique combination of parameters.</span></span> <span data-ttu-id="c0b45-140">パラメーター `Path` `PathAll` セットとパラメーターセットはよく似ていますが、 **All** パラメーターはパラメーターセットに対して一意です `PathAll` 。</span><span class="sxs-lookup"><span data-stu-id="c0b45-140">The `Path` and `PathAll` parameter sets are very similar but the **All** parameter is unique to the `PathAll` parameter set.</span></span> <span data-ttu-id="c0b45-141">とパラメーターセットにも同じことが当てはまり `LiteralPath` `LiteralPathAll` ます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-141">The same is true with the `LiteralPath` and `LiteralPathAll` parameter sets.</span></span> <span data-ttu-id="c0b45-142">`PathAll` `LiteralPathAll` パラメーターとパラメーターセットの両方に **All** パラメーターが設定されている場合でも、 **Path** パラメーターと **LiteralPath** パラメーターはそれらを区別します。</span><span class="sxs-lookup"><span data-stu-id="c0b45-142">Even though the `PathAll` and `LiteralPathAll` parameter sets both have the **All** parameter, the **Path** and **LiteralPath** parameters differentiate them.</span></span>
+<span data-ttu-id="c533f-139">各パラメーターセットには、一意のパラメーターまたはパラメーターの一意の組み合わせが必要です。</span><span class="sxs-lookup"><span data-stu-id="c533f-139">Each parameter set must have a unique parameter or a unique combination of parameters.</span></span> <span data-ttu-id="c533f-140">パラメーター `Path` `PathAll` セットとパラメーターセットはよく似ていますが、 **All** パラメーターはパラメーターセットに対して一意です `PathAll` 。</span><span class="sxs-lookup"><span data-stu-id="c533f-140">The `Path` and `PathAll` parameter sets are very similar but the **All** parameter is unique to the `PathAll` parameter set.</span></span> <span data-ttu-id="c533f-141">とパラメーターセットにも同じことが当てはまり `LiteralPath` `LiteralPathAll` ます。</span><span class="sxs-lookup"><span data-stu-id="c533f-141">The same is true with the `LiteralPath` and `LiteralPathAll` parameter sets.</span></span> <span data-ttu-id="c533f-142">`PathAll` `LiteralPathAll` パラメーターとパラメーターセットの両方に **All** パラメーターが設定されている場合でも、 **Path** パラメーターと **LiteralPath** パラメーターはそれらを区別します。</span><span class="sxs-lookup"><span data-stu-id="c533f-142">Even though the `PathAll` and `LiteralPathAll` parameter sets both have the **All** parameter, the **Path** and **LiteralPath** parameters differentiate them.</span></span>
 
-<span data-ttu-id="c0b45-143">を使用 `Get-Command -Syntax` すると、各パラメーターセットの構文が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-143">Use `Get-Command -Syntax` shows you the syntax of each parameter set.</span></span> <span data-ttu-id="c0b45-144">ただし、パラメーターセットの名前は表示されません。</span><span class="sxs-lookup"><span data-stu-id="c0b45-144">However it does not show the name of the parameter set.</span></span> <span data-ttu-id="c0b45-145">次の例では、各パラメーターセットで使用できるパラメーターを示します。</span><span class="sxs-lookup"><span data-stu-id="c0b45-145">The following example shows which parameters can be used in each parameter set.</span></span>
+<span data-ttu-id="c533f-143">を使用 `Get-Command -Syntax` すると、各パラメーターセットの構文が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c533f-143">Use `Get-Command -Syntax` shows you the syntax of each parameter set.</span></span> <span data-ttu-id="c533f-144">ただし、パラメーターセットの名前は表示されません。</span><span class="sxs-lookup"><span data-stu-id="c533f-144">However it does not show the name of the parameter set.</span></span> <span data-ttu-id="c533f-145">次の例では、各パラメーターセットで使用できるパラメーターを示します。</span><span class="sxs-lookup"><span data-stu-id="c533f-145">The following example shows which parameters can be used in each parameter set.</span></span>
 
 ```powershell
 (Get-Command Measure-Lines).ParameterSets |
@@ -157,9 +157,9 @@ LiteralPath      -LiteralPath <string> [-Lines] [-Words] [-Characters] [<CommonP
 LiteralPathAll   -LiteralPath <string> -All [<CommonParameters>]
 ```
 
-### <a name="parameter-sets-in-action"></a><span data-ttu-id="c0b45-146">アクションのパラメーターセット</span><span class="sxs-lookup"><span data-stu-id="c0b45-146">Parameter sets in action</span></span>
+### <a name="parameter-sets-in-action"></a><span data-ttu-id="c533f-146">アクションのパラメーターセット</span><span class="sxs-lookup"><span data-stu-id="c533f-146">Parameter sets in action</span></span>
 
-<span data-ttu-id="c0b45-147">この例では、パラメーターセットを使用してい `PathAll` ます。</span><span class="sxs-lookup"><span data-stu-id="c0b45-147">In this example, we are using the `PathAll` parameter set.</span></span>
+<span data-ttu-id="c533f-147">この例では、パラメーターセットを使用してい `PathAll` ます。</span><span class="sxs-lookup"><span data-stu-id="c533f-147">In this example, we are using the `PathAll` parameter set.</span></span>
 
 ```powershell
 Measure-Lines test* -All
