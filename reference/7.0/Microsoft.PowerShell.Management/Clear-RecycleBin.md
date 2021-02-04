@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/28/2019
+ms.date: 01/29/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-RecycleBin
-ms.openlocfilehash: 4131232e7afb2e0a213bbe11f5da7ee3a0071a59
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 4fde991ea99b46b96d0058334419ef4782a9adac
+ms.sourcegitcommit: 81558c2adb9d109946a027e5b96e4d24b3b13747
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94344305"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99098647"
 ---
 # Clear-RecycleBin
 
@@ -94,7 +93,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-ごみ箱をクリアするかどうかを確認するメッセージがユーザーに表示されないように指定します。
+ごみ箱をクリアするかどうかを確認するメッセージがユーザーに表示されないように指定します。 **Force** パラメーターは、 **WhatIf** パラメーターと **Confirm** パラメーターもオーバーライドします。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
