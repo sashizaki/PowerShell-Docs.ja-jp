@@ -570,14 +570,10 @@
       href: community/hall-of-fame.md
     - name: Docs の新機能
       items:
-        - name: 2020-Q4
-          href: community/2020-Q4.md
-        - name: 2020-Q3
-          href: community/2020-Q3.md
-        - name: 2020 年第 2 四半期
-          href: community/2020-Q2.md
-        - name: 2020 年第 1 四半期
-          href: community/2020-Q1.md
+        - name: 2021 年の更新
+          href: community/2021-updates.md
+        - name: 2020 年の更新
+          href: community/2020-updates.md
     - name: 共同作成者ガイド
       items:
         - name: 概要
@@ -775,7 +771,7 @@
         - name: GDPR コンプライアンス
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: ギャラリーに関してよく寄せられる質問
-      href: gallery/faqs.md
+      href: gallery/faqs.yml
 - name: スクリプト作成と開発
   items:
     - name: Visual Studio Code
