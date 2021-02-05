@@ -1,13 +1,13 @@
 ---
-ms.date: 12/01/2020
+ms.date: 01/25/2021
 title: コマンドレットのトラブルシューティング
 description: この記事では、PowerShell ギャラリーを使用してエラーのトラブルシューティングを行うための情報と手順を示します
-ms.openlocfilehash: 980da8ea7b8a09513f33a9939d512c437b755d8d
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: 8139147683b655b5f8532c3068387db6df12a98f
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913320"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771813"
 ---
 # <a name="troubleshooting-cmdlets"></a>コマンドレットのトラブルシューティング
 
@@ -30,6 +30,7 @@ Install および Update コマンドレットを使用する場合、PowerShell
 - `devopsgallerystorage.blob.core.windows.net` - ストレージ アカウントのホスト名
 - `*.powershellgallery.com` - Web サイト
 - `go.microsoft.com` - リダイレクト サービス
+- `onegetcdn.azureedge.net` - `PowerShellGet/PackageManagement` の NuGet プロバイダーのブートストラップ
 
 > [!NOTE]
 > PowerShell ギャラリー サービスが停止すると、PowerShell ギャラリーとやりとりするコマンドレットが予期しないエラーで失敗することがあります。 PowerShell ギャラリーの現在の状態を確認するには、GitHub の [PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) ページを参照してください。

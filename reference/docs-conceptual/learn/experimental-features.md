@@ -1,13 +1,13 @@
 ---
-ms.date: 11/11/2020
+ms.date: 12/14/2020
 title: PowerShell の試験的機能の使用
 description: 現在使用できる試験的機能とその使用方法を示します。
-ms.openlocfilehash: 4df3601cd38120fedecbbad8a3c63a95240c5f15
-ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
+ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94625705"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879356"
 ---
 # <a name="using-experimental-features-in-powershell"></a>PowerShell の試験的機能の使用
 
@@ -24,20 +24,21 @@ PowerShell の試験的機能のサポートは、試験的機能を PowerShell 
 
 この記事では、使用可能な試験的機能と、その機能の使用方法について説明します。
 
-|                            名前                            |   6.2   |   7.0   |   7.1   |
-| ---------------------------------------------------------- | :-----: | :-----: | :-----: |
-| PSTempDrive (PS 7.0 以降のメインストリーム)                        | &check; |         |         |
-| PSUseAbbreviationExpansion (PS 7.0 以降のメインストリーム)         | &check; |         |         |
-| PSNullConditionalOperators (PS 7.1 以降のメインストリーム)         |         | &check; |         |
-| PSUnixFileStat (Windows 以外のみ - PS 7.1 以降のメインストリーム)  |         | &check; |         |
-| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
-| PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; |
-| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNativePSPathResolution                                   |         |         | &check; |
-| PSCultureInvariantReplaceOperator                          |         |         | &check; |
-| PSNotApplyErrorActionToStderr                              |         |         | &check; |
-| PSSubsystemPluginModel                                     |         |         | &check; |
+|                            名前                            |   6.2   |   7.0   |   7.1   |   7.2   |
+| ---------------------------------------------------------- | :-----: | :-----: | :-----: | :-----: |
+| PSTempDrive (PS 7.0 以降のメインストリーム)                        | &check; |         |         |         |
+| PSUseAbbreviationExpansion (PS 7.0 以降のメインストリーム)         | &check; |         |         |         |
+| PSNullConditionalOperators (PS 7.1 以降のメインストリーム)         |         | &check; |         |         |
+| PSUnixFileStat (Windows 以外のみ - PS 7.1 以降のメインストリーム)  |         | &check; |         |         |
+| PSCommandNotFoundSuggestion                                | &check; | &check; | &check; | &check; |
+| PSImplicitRemotingBatching                                 | &check; | &check; | &check; | &check; |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; | &check; |
+| PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; | &check; |
+| PSNativePSPathResolution                                   |         |         | &check; | &check; |
+| PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
+| PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -65,6 +66,56 @@ $breakpoint = Get-PSBreakPoint -Runspace $runspace
 ```
 
 この例では、ジョブが開始され、`Set-PSBreakPoint` の実行時に中断するようにブレークポイントが設定されます。 実行空間は変数に格納され、**Runspace** パラメーターを使用して `Get-PSBreakPoint` コマンドに渡されます。 その後、`$breakpoint` 変数内のブレークポイントを調べることができます。
+
+## <a name="psansirendering"></a>PSAnsiRendering
+
+この実験は、PowerShell 7.2 で追加されました。 この機能により、PowerShell エンジンがテキストを出力し、`$PSStyle` 自動変数を追加し、文字列出力の ANSI 表示を制御する方法が変更されます。
+
+```powershell
+PS> $PSStyle
+
+Name            MemberType Definition
+----            ---------- ----------
+Reset           Property   string AttributesOff {get;set;}
+Background      Property   System.Management.Automation.PSStyle+BackgroundColor Background {get;set;}
+Blink           Property   string Blink {get;set;}
+BlinkOff        Property   string BlinkOff {get;set;}
+Bold            Property   string Bold {get;set;}
+BoldOff         Property   string BoldOff {get;set;}
+Foreground      Property   System.Management.Automation.PSStyle+ForegroundColor Foreground {get;set;}
+Formatting      Property   System.Management.Automation.PSStyle+FormattingData Formatting {get;set;}
+Hidden          Property   string Hidden {get;set;}
+HiddenOff       Property   string HiddenOff {get;set;}
+OutputRendering Property   System.Management.Automation.OutputRendering OutputRendering {get;set;}
+Reverse         Property   string Reverse {get;set;}
+ReverseOff      Property   string ReverseOff {get;set;}
+Italic          Property   string Standout {get;set;}
+ItalicOff       Property   string StandoutOff {get;set;}
+Underline       Property   string Underlined {get;set;}
+Underline Off   Property   string UnderlinedOff {get;set;}
+```
+
+基本メンバーは、名前にマップされた ANSI エスケープ シーケンスの文字列を返します。 値は、カスタマイズできるように設定できます。
+
+詳細については、「[about_Automatic_Variables](/reference/7.2/Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)」を参照してください
+
+> [!NOTE]
+> C# の開発者は、シングルトンとして `PSStyle` にアクセスできます。 このようにして使用します。
+>
+> ```csharp
+> string output = $"{PSStyle.Instance.Foreground.Red}{PSStyle.Instance.Bold}Hello{PSStyle.Instance.Reset}";
+> ```
+>
+> `PSStyle` は、System.Management.Automation 名前空間に存在します。
+
+これにより、`$PSStyle` ヘのアクセスと共に、PowerShell エンジンに対する変更が導入されます。 PowerShell の書式設定システムが、`$PSStyle.OutputRendering` を考慮するように更新されます。
+
+- `StringDecorated` 型が、ANSI エスケープ文字列を処理するために追加されます。
+- 文字列に ESC または C1 CSI が含まれているかどうかに基づいて、文字列に ANSI エスケープ シーケンスが含まれているかどうかを返すために、`string IsDecorated` ブール型プロパティが追加されます。
+- `Length` プロパティは、ANSI エスケープ シーケンスを使用せずにテキストの長さ "_のみ_" を返します。
+- `StringDecorated Substring(int contentLength)` メソッドは、ANSI エスケープ シーケンスの一部ではないコンテンツの長さまで、インデックス 0 から始まる substring を返します。 これは、テーブルの書式設定が文字列を切り捨て、印刷可能な文字領域を占有しない ANSI エスケープ シーケンスを保持するために必要です。
+- `string ToString()` メソッドは同じままで、文字列のプレーンテキスト バージョンを返します。
+- `Ansi` パラメーターが true の場合、`string ToString(bool Ansi)` メソッドは生の ANSI 埋め込み文字列を返します。 それ以外の場合は、ANSI エスケープ シーケンスが削除されたプレーンテキスト バージョンが返されます。
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
