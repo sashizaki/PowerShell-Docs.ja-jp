@@ -2,15 +2,14 @@
 title: 関数
 description: PowerShell 関数を使用すると、スクリプトで再利用できるツールを作成することができます。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
-ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
-ms.translationtype: HT
+ms.openlocfilehash: e4734b556a78f67c54152dad93eada536dd1c928
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94589134"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99601189"
 ---
 # <a name="chapter-9---functions"></a>第 9 章 - 関数
 
@@ -285,6 +284,8 @@ Machine                     0
 ```
 
 また、パラメーター名の大文字と小文字も、既定のコマンドレットに揃えることをお勧めします。 `computername` ではなく、`ComputerName` を使用してください。 これにより、関数の外観が既定のコマンドレットと同じようになります。 既に PowerShell に慣れている方にとっては、使いやすく感じるでしょう。
+
+`param`ステートメントを使用すると、1つ以上のパラメーターを定義できます。 パラメーター定義はコンマ () で区切られ `,` ます。 詳細については、「 [about_Functions_Advanced_Parameters][]」を参照してください。
 
 ## <a name="advanced-functions"></a>高度な関数
 
