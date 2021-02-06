@@ -2,15 +2,14 @@
 title: ヘルプ システム
 description: ヘルプ システムを使いこなすことは、PowerShell を使って成功するための鍵です。
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 98876cf324b367fd5bb3c3462cb90ea6d7c7d5b9
-ms.sourcegitcommit: 0942a6de384f4a1c624e89b1889434a30d22f4d6
-ms.translationtype: HT
+ms.openlocfilehash: cfb12f57b7bb6c514f4e19a93dfe9c77245bd977
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93143316"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99604927"
 ---
 # <a name="chapter-2---the-help-system"></a>第 2 章 - ヘルプ システム
 
@@ -83,7 +82,7 @@ PowerShell に限ったことではりませんが、パラメーターは、コ
 
 前の結果セットに示されているヘルプ トピックの構文セクションには、`Get-Help` のパラメーターの一覧が表示されています。 一見すると、同じパラメーターが 6 つの異なる時刻に表示されているようですが、 構文セクションのそれぞれのブロックが、パラメーター セットです。 つまり、`Get-Help` コマンドレットには 6 つの異なるパラメーター セットがあります。 さらに詳しく見ると、各パラメーター セットで、少なくとも 1 つのパラメーターが違っていることがわかります。
 
-パラメーター セットを同時に使用することはできません。 1 つのパラメーター セットにのみ存在する一意のパラメーターが使用されている場合、使用できるのは、そのパラメーター セットに含まれるパラメーターだけです。 たとえば、 **Full** パラメーターと **Detailed** パラメーターは、それぞれ異なるパラメーター セットに含まれているため、両方を同時に指定することはできません。
+パラメーター セットを同時に使用することはできません。 1 つのパラメーター セットにのみ存在する一意のパラメーターが使用されている場合、使用できるのは、そのパラメーター セットに含まれるパラメーターだけです。 たとえば、**Full** パラメーターと **Detailed** パラメーターは、それぞれ異なるパラメーター セットに含まれているため、両方を同時に指定することはできません。
 
 次のパラメーターはそれぞれ、異なるパラメーター セットに含まれています。
 
@@ -142,7 +141,7 @@ Windows 10 ラボ環境のコンピューターで実行したとき、前に示
 最後の 2 つのオプションが 1 ページずつ結果を返すこと以外、違いはありません。
 `Help` 関数を使用している場合、<kbd>スペース</kbd> キーを使用すると、コンテンツの次のページが表示されます。また、<kbd>Ctrl </kbd> + <kbd> C </kbd> キーを押すと、PowerShell コンソールで実行されているコマンドがキャンセルされます。
 
-最初の例では `Get-Help` コマンドレットが使用され、2 番目の例では `Help` 関数が使用されます。3 番目の例では、`Help` 関数が使用され、 **Name** パラメーターが省略されています。 **Name** は位置指定パラメーターであり、この例では位置指定に使用されています。 つまり、値自体が正しい位置で指定されていれば、パラメーター名を指定しなくても値を指定できます。 値を指定する位置はどのようにわかったのでしょうか。 次の例に示すヘルプを読めばわかります。
+最初の例では `Get-Help` コマンドレットが使用され、2 番目の例では `Help` 関数が使用されます。3 番目の例では、`Help` 関数が使用され、**Name** パラメーターが省略されています。 **Name** は位置指定パラメーターであり、この例では位置指定に使用されています。 つまり、値自体が正しい位置で指定されていれば、パラメーター名を指定しなくても値を指定できます。 値を指定する位置はどのようにわかったのでしょうか。 次の例に示すヘルプを読めばわかります。
 
 ```powershell
 help Get-Help -Parameter Name
@@ -177,11 +176,11 @@ help Get-Help -Parameter Name
     Accept wildcard characters?  true
 ```
 
-この例では、 **Parameter** パラメーターが Help 関数と共に使用され、 **Name** パラメーターのヘルプ トピックの情報だけが返されていることに注意してください。 これは、100 ページにも見えることがあるヘルプ トピックを手作業で詳しく調べようとするよりも、はるかに簡潔です。
+この例では、**Parameter** パラメーターが Help 関数と共に使用され、**Name** パラメーターのヘルプ トピックの情報だけが返されていることに注意してください。 これは、100 ページにも見えることがあるヘルプ トピックを手作業で詳しく調べようとするよりも、はるかに簡潔です。
 
-これらの結果から、 **Name** パラメーターが位置指定パラメーターで、位置指定に使用する場合は、位置 0 (最初の位置) で指定する必要があることがわかります。 パラメーター名が指定されている場合、パラメーターを指定する順序は重要ではありません。
+これらの結果から、**Name** パラメーターが位置指定パラメーターで、位置指定に使用する場合は、位置 0 (最初の位置) で指定する必要があることがわかります。 パラメーター名が指定されている場合、パラメーターを指定する順序は重要ではありません。
 
-もう 1 つ重要なのは、 **Name** パラメーターでは、その値のデータ型が、`<String>` によって示される 1 つの文字列であることが想定されることです。 複数の文字列が受け入れられると、データ型は `<String[]>` として表示されます。
+もう 1 つ重要なのは、**Name** パラメーターでは、その値のデータ型が、`<String>` によって示される 1 つの文字列であることが想定されることです。 複数の文字列が受け入れられると、データ型は `<String[]>` として表示されます。
 
 場合によっては、コマンドのヘルプ トピック全体を単に表示したくないこともあります。 `Get-Help` や `Help`で指定できる **Full** 以外にもパラメーターは多数あります。 Windows 10 ラボ環境のコンピューターで、次のコマンドを実行してみます。
 
@@ -194,9 +193,9 @@ Get-Help -Name Get-Command -Parameter Noun
 Get-Help -Name Get-Command -ShowWindow
 ```
 
-私はいつも、`help <command name>` は、 **Full** パラメーターまたは **Online** パラメーターと一緒に使用します。 例だけに関心がある場合は、 **Examples** パラメーターを、特定のパラメーターにのみ関心がある場合は、 **Parameter** パラメーターを使用します。 **ShowWindow** パラメーターを使用すると、別の検索可能なウィンドウでヘルプ トピックが開きます。複数のモニターがある場合は、それを別のモニターに配置できます。 この **ShowWindow** パラメーターには、ヘルプ トピック全体が表示されないという既知のバグがあるため、私は避けました。
+私はいつも、`help <command name>` は、**Full** パラメーターまたは **Online** パラメーターと一緒に使用します。 例だけに関心がある場合は、**Examples** パラメーターを、特定のパラメーターにのみ関心がある場合は、**Parameter** パラメーターを使用します。 **ShowWindow** パラメーターを使用すると、別の検索可能なウィンドウでヘルプ トピックが開きます。複数のモニターがある場合は、それを別のモニターに配置できます。 この **ShowWindow** パラメーターには、ヘルプ トピック全体が表示されないという既知のバグがあるため、私は避けました。
 
-別のウィンドウでヘルプを確認したい場合は、次の例に示すように、 **Online** パラメーターを使用するか、 **Full** パラメーターを使用して、結果を `Out-GridView` にパイプ処理することをお勧めします。
+別のウィンドウでヘルプを確認したい場合は、次の例に示すように、**Online** パラメーターを使用するか、**Full** パラメーターを使用して、結果を `Out-GridView` にパイプ処理することをお勧めします。
 
 ```powershell
 help Get-Command -Full | Out-GridView
@@ -204,7 +203,7 @@ help Get-Command -Full | Out-GridView
 
 `Out-GridView` コマンドレットと、`Get-Help` コマンドレットの **ShowWindow** パラメーターの両方に、GUI (グラフィカル ユーザー インターフェイス) を備えたオペレーティング システムが必要です。 サーバー コア (GUI なし) インストール オプションを使用してインストールされた Windows Server 上で、いずれか一方を使おうとすると、エラー メッセージが生成されます。
 
-`Get-Help` を使用してコマンドを検索するには、アスタリスク (`*`) ワイルドカード文字を **Name** パラメーターで使用します。 次の例に示すように、 **Name** パラメーターの値として、コマンドに対する検索用語を指定します。
+`Get-Help` を使用してコマンドを検索するには、アスタリスク (`*`) ワイルドカード文字を **Name** パラメーターで使用します。 次の例に示すように、**Name** パラメーターの値として、コマンドに対する検索用語を指定します。
 
 ```powershell
 help *process*
@@ -432,9 +431,9 @@ Cmdlet          Stop-Process                                       3.1.0.0    Mi
 Cmdlet          Wait-Process                                       3.1.0.0    Microsof...
 ```
 
-この例の `Get-Command` の実行例では、 **Noun** パラメーターが使用され、`Process` が **Noun** パラメーターの値として指定されていることに注意してください。 `Get-Command` コマンドレットの使用方法がわからない場合は、 `Get-Help` を使えば、`Get-Command` のヘルプ トピックを表示できます。
+この例の `Get-Command` の実行例では、**Noun** パラメーターが使用され、`Process` が **Noun** パラメーターの値として指定されていることに注意してください。 `Get-Command` コマンドレットの使用方法がわからない場合は、 `Get-Help` を使えば、`Get-Command` のヘルプ トピックを表示できます。
 
-**Name** 、 **Noun** 、 **Verb** の各パラメーターで、ワイルドカード文字を使用できます。 次の例では、 **Name** パラメーターでワイルドカード文字が使用されています。
+**Name**、**Noun**、**Verb** の各パラメーターで、ワイルドカード文字を使用できます。 次の例では、**Name** パラメーターでワイルドカード文字が使用されています。
 
 ```Output
 Get-Command -Name *service*
@@ -463,13 +462,13 @@ Application     TieringEngineService.exe                           10.0.14... C:
 
 `Get-Command` の **Name** パラメーターでワイルドカード文字を使用することは、あまり好きではありません。ネイティブの PowerShell コマンドではない実行可能ファイルも返されるためです。
 
-**Name** パラメーターと共にワイルドカード文字を使用する場合は、 **CommandType** パラメーターを使って結果を制限することをお勧めします。
+**Name** パラメーターと共にワイルドカード文字を使用する場合は、**CommandType** パラメーターを使って結果を制限することをお勧めします。
 
 ```powershell
 Get-Command -Name *service* -CommandType Cmdlet, Function, Alias
 ```
 
-それよりも良いのは、 **Verb** パラメーターまたは **Noun** パラメーターのいずれか、または両方を使用することでしょう。動詞と名詞の両方が含まれるのは、PowerShell コマンドだけだからです。
+それよりも良いのは、**Verb** パラメーターまたは **Noun** パラメーターのいずれか、または両方を使用することでしょう。動詞と名詞の両方が含まれるのは、PowerShell コマンドだけだからです。
 
 ヘルプ トピックで問題が見つかっても大丈夫です。 PowerShell のヘルプ トピックはオープンソースなので、GitHub の [PowerShell-Docs][] リポジトリから入手できます。 誤っている情報は、自分だけでなく他のユーザー全員が修正し、皆で協力し合うことができます。 ただ GitHub での PowerShell ドキュメント リポジトリのフォーク、ヘルプ トピック更新、pull request の送信のみを行ってください。
 pull request が受け入れられたら、修正されたドキュメントは全員が利用できます。
@@ -485,10 +484,8 @@ Update-Help
 
 ```Output
 Update-Help : Failed to update Help for the module(s) 'BitsTransfer' with UI culture(s)
-{en-US} : The value of the HelpInfoUri key in the module manifest must resolve to a
-container or root URL on a website where the help files are stored. The HelpInfoUri
-'https://technet.microsoft.com/en-us/library/dd819413.aspx' does not resolve to a
-container.
+{en-US} : Unable to retrieve the HelpInfo XML file for UI culture en-US. Make sure the HelpInfoUri
+property in the module manifest is valid or check your network connection and then try the command again.
 At line:1 char:1
 + Update-Help
 +
