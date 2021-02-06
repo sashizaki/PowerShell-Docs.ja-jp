@@ -1,0 +1,54 @@
+---
+description: PowerShell を使用して実行する機能を使用して、ファイルシステムドライブからスクリプトを実行する方法について説明します。
+Locale: en-US
+ms.date: 01/03/2018
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_run_with_powershell?view=powershell-7.2&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Run_With_PowerShell
+ms.openlocfilehash: 7070fa2bc8bb30e83f59e3d1193faa3a8495f109
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "99600611"
+---
+# <a name="about-run-with-powershell"></a><span data-ttu-id="6ab86-103">PowerShell を使用した実行について</span><span class="sxs-lookup"><span data-stu-id="6ab86-103">About Run With PowerShell</span></span>
+
+## <a name="short-description"></a><span data-ttu-id="6ab86-104">概要</span><span class="sxs-lookup"><span data-stu-id="6ab86-104">SHORT DESCRIPTION</span></span>
+<span data-ttu-id="6ab86-105">"PowerShell で実行" 機能を使用して、ファイルシステムドライブからスクリプトを実行する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="6ab86-105">Explains how to use the "Run with PowerShell" feature to run a script from a file system drive.</span></span>
+
+## <a name="long-description"></a><span data-ttu-id="6ab86-106">詳細説明</span><span class="sxs-lookup"><span data-stu-id="6ab86-106">LONG DESCRIPTION</span></span>
+
+<span data-ttu-id="6ab86-107">Windows PowerShell 3.0 以降では、"PowerShell で実行" 機能を使用して、Windows 8 および Windows Server 2012 のエクスプローラーと、以前のバージョンの Windows のエクスプローラーからスクリプトを実行できます。</span><span class="sxs-lookup"><span data-stu-id="6ab86-107">Beginning in Windows PowerShell 3.0, you can use the "Run with PowerShell" feature to run scripts from File Explorer in Windows 8 and Windows Server 2012 and from Windows Explorer in earlier versions of Windows.</span></span>
+
+<span data-ttu-id="6ab86-108">"PowerShell を使用して実行" 機能は、必要なパラメーターを持たず、コマンドプロンプトに出力を返さないスクリプトを実行するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="6ab86-108">The "Run with PowerShell" feature is designed to run scripts that do not have required parameters and do not return output to the command prompt.</span></span>
+
+<span data-ttu-id="6ab86-109">"PowerShell を使用して実行" 機能を使用すると、PowerShell コンソールウィンドウが少しだけ表示されます。</span><span class="sxs-lookup"><span data-stu-id="6ab86-109">When you use the "Run with PowerShell" feature, the PowerShell console window appears only briefly, if at all.</span></span> <span data-ttu-id="6ab86-110">これと対話することはできません。</span><span class="sxs-lookup"><span data-stu-id="6ab86-110">You cannot interact with it.</span></span>
+
+<span data-ttu-id="6ab86-111">"PowerShell で実行" 機能を使用するには、次のようにします。</span><span class="sxs-lookup"><span data-stu-id="6ab86-111">To use the "Run with PowerShell" feature:</span></span>
+
+<span data-ttu-id="6ab86-112">エクスプローラー (または Windows エクスプローラー) で、スクリプトファイルの名前を右クリックし、[PowerShell で実行] を選択します。</span><span class="sxs-lookup"><span data-stu-id="6ab86-112">In File Explorer (or Windows Explorer), right-click the script file name and then select "Run with PowerShell".</span></span>
+
+<span data-ttu-id="6ab86-113">"PowerShell を使用して実行" 機能は、実行ポリシーがバイパスの PowerShell セッションを開始し、スクリプトを実行して、セッションを閉じます。</span><span class="sxs-lookup"><span data-stu-id="6ab86-113">The "Run with PowerShell" feature starts a PowerShell session that has an execution policy of Bypass, runs the script, and closes the session.</span></span>
+
+<span data-ttu-id="6ab86-114">次の形式のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="6ab86-114">It runs a command that has the following format:</span></span>
+
+```
+PowerShell.exe -File <FileName> -ExecutionPolicy Bypass
+```
+
+<span data-ttu-id="6ab86-115">"PowerShell で実行" は、スクリプトが実行されるセッション (PowerShell プロセスの現在のインスタンス) に対してのみバイパス実行ポリシーを設定します。</span><span class="sxs-lookup"><span data-stu-id="6ab86-115">"Run with PowerShell" sets the Bypass execution policy only for the session (the current instance of the PowerShell process) in which the script runs.</span></span>
+<span data-ttu-id="6ab86-116">この機能では、コンピューターまたはユーザーの実行ポリシーは変更されません。</span><span class="sxs-lookup"><span data-stu-id="6ab86-116">This feature does not change the execution policy for the computer or the user.</span></span>
+
+<span data-ttu-id="6ab86-117">"PowerShell を使用して実行" 機能は、AllSigned 実行ポリシーによってのみ影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="6ab86-117">The "Run with PowerShell" feature is affected only by the AllSigned execution policy.</span></span> <span data-ttu-id="6ab86-118">コンピューターまたはユーザーに対して AllSigned 実行ポリシーが有効な場合は、"PowerShell で実行" は署名されたスクリプトのみを実行します。</span><span class="sxs-lookup"><span data-stu-id="6ab86-118">If the AllSigned execution policy is effective for the computer or the user, "Run with PowerShell" runs only signed scripts.</span></span> <span data-ttu-id="6ab86-119">"PowerShell で実行" は、他の実行ポリシーの影響を受けません。</span><span class="sxs-lookup"><span data-stu-id="6ab86-119">"Run with PowerShell" is not affected by any other execution policy.</span></span> <span data-ttu-id="6ab86-120">詳細については、「[about_Execution_Policies](about_Execution_Policies.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6ab86-120">For more information, see [about_Execution_Policies](about_Execution_Policies.md).</span></span>
+
+<span data-ttu-id="6ab86-121">トラブルシューティングに関する注意: PowerShell コマンドを使用して実行すると、実行ポリシーの変更を確認するメッセージが表示される場合があります。</span><span class="sxs-lookup"><span data-stu-id="6ab86-121">Troubleshooting Note: Run with PowerShell command might prompt you to confirm the execution policy change.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="6ab86-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="6ab86-122">SEE ALSO</span></span>
+
+[<span data-ttu-id="6ab86-123">about_Execution_Policies</span><span class="sxs-lookup"><span data-stu-id="6ab86-123">about_Execution_Policies</span></span>](about_Execution_Policies.md)
+
+[<span data-ttu-id="6ab86-124">about_Group_Policy_Settings</span><span class="sxs-lookup"><span data-stu-id="6ab86-124">about_Group_Policy_Settings</span></span>](about_Group_Policy_Settings.md)
+
+[<span data-ttu-id="6ab86-125">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="6ab86-125">about_Scripts</span></span>](about_Scripts.md)
+

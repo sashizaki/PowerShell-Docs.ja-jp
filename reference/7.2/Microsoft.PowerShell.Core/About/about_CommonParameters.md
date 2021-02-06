@@ -1,0 +1,562 @@
+---
+description: 任意のコマンドレットで使用できるパラメーターについて説明します。
+Locale: en-US
+ms.date: 11/26/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.2&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_CommonParameters
+ms.openlocfilehash: 44503e9c251cd3cccf9b879ceb71262c65d8e5e9
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "99600793"
+---
+# <a name="about-commonparameters"></a><span data-ttu-id="691e6-103">CommonParameters について</span><span class="sxs-lookup"><span data-stu-id="691e6-103">About CommonParameters</span></span>
+
+## <a name="short-description"></a><span data-ttu-id="691e6-104">概要</span><span class="sxs-lookup"><span data-stu-id="691e6-104">SHORT DESCRIPTION</span></span>
+
+<span data-ttu-id="691e6-105">任意のコマンドレットで使用できるパラメーターについて説明します。</span><span class="sxs-lookup"><span data-stu-id="691e6-105">Describes the parameters that can be used with any cmdlet.</span></span>
+
+## <a name="long-description"></a><span data-ttu-id="691e6-106">詳細説明</span><span class="sxs-lookup"><span data-stu-id="691e6-106">LONG DESCRIPTION</span></span>
+
+<span data-ttu-id="691e6-107">共通パラメーターは、すべてのコマンドレットで使用できるコマンドレットパラメーターのセットです。</span><span class="sxs-lookup"><span data-stu-id="691e6-107">The common parameters are a set of cmdlet parameters that you can use with any cmdlet.</span></span> <span data-ttu-id="691e6-108">これらは、コマンドレットの開発者ではなく、PowerShell によって実装され、任意のコマンドレットで自動的に使用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="691e6-108">They're implemented by PowerShell, not by the cmdlet developer, and they're automatically available to any cmdlet.</span></span>
+
+<span data-ttu-id="691e6-109">共通パラメーターは任意のコマンドレットと共に使用できますが、すべてのコマンドレットに影響を与えない場合があります。</span><span class="sxs-lookup"><span data-stu-id="691e6-109">You can use the common parameters with any cmdlet, but they might not have an effect on all cmdlets.</span></span> <span data-ttu-id="691e6-110">たとえば、コマンドレットで詳細出力が生成されない場合、 **verbose** 共通パラメーターを使用しても効果はありません。</span><span class="sxs-lookup"><span data-stu-id="691e6-110">For example, if a cmdlet doesn't generate any verbose output, using the **Verbose** common parameter has no effect.</span></span>
+
+<span data-ttu-id="691e6-111">一般的なパラメーターは、表示可能な **バインド** 属性または **Parameter** 属性を使用する高度な関数でも使用できます。</span><span class="sxs-lookup"><span data-stu-id="691e6-111">The common parameters are also available on advanced functions that use the **CmdletBinding** attribute or the **Parameter** attribute.</span></span>
+
+<span data-ttu-id="691e6-112">いくつかの一般的なパラメーターでは、システムの既定値や、PowerShell ユーザー設定変数を使用して設定した設定を上書きします。</span><span class="sxs-lookup"><span data-stu-id="691e6-112">Several common parameters override system defaults or preferences that you set by using the PowerShell preference variables.</span></span> <span data-ttu-id="691e6-113">ユーザー設定変数とは異なり、共通パラメーターは、使用されるコマンドにのみ影響します。</span><span class="sxs-lookup"><span data-stu-id="691e6-113">Unlike the preference variables, the common parameters affect only the commands in which they're used.</span></span>
+
+<span data-ttu-id="691e6-114">詳細については、「 [about_Preference_Variables](./about_Preference_Variables.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="691e6-114">For more information, see [about_Preference_Variables](./about_Preference_Variables.md).</span></span>
+
+<span data-ttu-id="691e6-115">共通パラメーターの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-115">The following list displays the common parameters.</span></span> <span data-ttu-id="691e6-116">これらのエイリアスは、かっこで囲まれています。</span><span class="sxs-lookup"><span data-stu-id="691e6-116">Their aliases are listed in parentheses.</span></span>
+
+- <span data-ttu-id="691e6-117">**Debug** (db)</span><span class="sxs-lookup"><span data-stu-id="691e6-117">**Debug** (db)</span></span>
+- <span data-ttu-id="691e6-118">**Erroraction** (ea)</span><span class="sxs-lookup"><span data-stu-id="691e6-118">**ErrorAction** (ea)</span></span>
+- <span data-ttu-id="691e6-119">**Errorvariable** (ev)</span><span class="sxs-lookup"><span data-stu-id="691e6-119">**ErrorVariable** (ev)</span></span>
+- <span data-ttu-id="691e6-120">**Informationaction** (infa)</span><span class="sxs-lookup"><span data-stu-id="691e6-120">**InformationAction** (infa)</span></span>
+- <span data-ttu-id="691e6-121">**Informationvariable** (iv)</span><span class="sxs-lookup"><span data-stu-id="691e6-121">**InformationVariable** (iv)</span></span>
+- <span data-ttu-id="691e6-122">**Outvariable** (ov-es)</span><span class="sxs-lookup"><span data-stu-id="691e6-122">**OutVariable** (ov)</span></span>
+- <span data-ttu-id="691e6-123">**Outbuffer** (ob)</span><span class="sxs-lookup"><span data-stu-id="691e6-123">**OutBuffer** (ob)</span></span>
+- <span data-ttu-id="691e6-124">**PipelineVariable** (pv)</span><span class="sxs-lookup"><span data-stu-id="691e6-124">**PipelineVariable** (pv)</span></span>
+- <span data-ttu-id="691e6-125">**Verbose** (vb)</span><span class="sxs-lookup"><span data-stu-id="691e6-125">**Verbose** (vb)</span></span>
+- <span data-ttu-id="691e6-126">**警告動作** (wa)</span><span class="sxs-lookup"><span data-stu-id="691e6-126">**WarningAction** (wa)</span></span>
+- <span data-ttu-id="691e6-127">**警告変数** (wv)</span><span class="sxs-lookup"><span data-stu-id="691e6-127">**WarningVariable** (wv)</span></span>
+
+<span data-ttu-id="691e6-128">**アクション** パラメーターは **actionpreference** 型の値です。</span><span class="sxs-lookup"><span data-stu-id="691e6-128">The **Action** parameters are **ActionPreference** type values.</span></span>
+<span data-ttu-id="691e6-129">**Actionpreference** は、次の値を持つ列挙体です。</span><span class="sxs-lookup"><span data-stu-id="691e6-129">**ActionPreference** is an enumeration with the following values:</span></span>
+
+| <span data-ttu-id="691e6-130">名前</span><span class="sxs-lookup"><span data-stu-id="691e6-130">Name</span></span>             | <span data-ttu-id="691e6-131">値</span><span class="sxs-lookup"><span data-stu-id="691e6-131">Value</span></span> |
+|------------------|-------|
+| <span data-ttu-id="691e6-132">[中断]</span><span class="sxs-lookup"><span data-stu-id="691e6-132">Suspend</span></span>          | <span data-ttu-id="691e6-133">5</span><span class="sxs-lookup"><span data-stu-id="691e6-133">5</span></span>     |
+| <span data-ttu-id="691e6-134">Ignore</span><span class="sxs-lookup"><span data-stu-id="691e6-134">Ignore</span></span>           | <span data-ttu-id="691e6-135">4</span><span class="sxs-lookup"><span data-stu-id="691e6-135">4</span></span>     |
+| <span data-ttu-id="691e6-136">照会</span><span class="sxs-lookup"><span data-stu-id="691e6-136">Inquire</span></span>          | <span data-ttu-id="691e6-137">3</span><span class="sxs-lookup"><span data-stu-id="691e6-137">3</span></span>     |
+| <span data-ttu-id="691e6-138">続行</span><span class="sxs-lookup"><span data-stu-id="691e6-138">Continue</span></span>         | <span data-ttu-id="691e6-139">2</span><span class="sxs-lookup"><span data-stu-id="691e6-139">2</span></span>     |
+| <span data-ttu-id="691e6-140">Stop</span><span class="sxs-lookup"><span data-stu-id="691e6-140">Stop</span></span>             | <span data-ttu-id="691e6-141">1</span><span class="sxs-lookup"><span data-stu-id="691e6-141">1</span></span>     |
+| <span data-ttu-id="691e6-142">SilentlyContinue</span><span class="sxs-lookup"><span data-stu-id="691e6-142">SilentlyContinue</span></span> | <span data-ttu-id="691e6-143">0</span><span class="sxs-lookup"><span data-stu-id="691e6-143">0</span></span>     |
+
+<span data-ttu-id="691e6-144">パラメーターと共に名前または値を使用できます。</span><span class="sxs-lookup"><span data-stu-id="691e6-144">You may use the name or the value with the parameter.</span></span>
+
+<span data-ttu-id="691e6-145">共通パラメーターに加えて、多くのコマンドレットには、リスク軽減パラメーターが用意されています。</span><span class="sxs-lookup"><span data-stu-id="691e6-145">In addition to the common parameters, many cmdlets offer risk mitigation parameters.</span></span> <span data-ttu-id="691e6-146">システムまたはユーザーデータに対するリスクが含まれるコマンドレットは、通常、これらのパラメーターを提供します。</span><span class="sxs-lookup"><span data-stu-id="691e6-146">Cmdlets that involve risk to the system or to user data usually offer these parameters.</span></span>
+
+<span data-ttu-id="691e6-147">リスク軽減のパラメーターは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="691e6-147">The risk mitigation parameters are:</span></span>
+
+- <span data-ttu-id="691e6-148">**WhatIf** (wi-fi)</span><span class="sxs-lookup"><span data-stu-id="691e6-148">**WhatIf** (wi)</span></span>
+- <span data-ttu-id="691e6-149">**確認** (cf)</span><span class="sxs-lookup"><span data-stu-id="691e6-149">**Confirm** (cf)</span></span>
+
+### <a name="common-parameter-descriptions"></a><span data-ttu-id="691e6-150">共通パラメーターの説明</span><span class="sxs-lookup"><span data-stu-id="691e6-150">COMMON PARAMETER DESCRIPTIONS</span></span>
+
+#### <a name="debug"></a><span data-ttu-id="691e6-151">デバッグ</span><span class="sxs-lookup"><span data-stu-id="691e6-151">Debug</span></span>
+
+<span data-ttu-id="691e6-152">コマンドによって実行される操作に関するプログラマレベルの詳細を表示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-152">Displays programmer-level detail about the operation done by the command.</span></span> <span data-ttu-id="691e6-153">このパラメーターは、コマンドによってデバッグメッセージが生成された場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="691e6-153">This parameter works only when the command generates a debugging message.</span></span> <span data-ttu-id="691e6-154">たとえば、コマンドにコマンドレットが含まれている場合、このパラメーターは機能し `Write-Debug` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-154">For example, this parameter works when a command contains the `Write-Debug` cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Aliases: db
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-155">既定では、変数の値 `$DebugPreference` が **SilentlyContinue** であるため、デバッグメッセージは表示されません。</span><span class="sxs-lookup"><span data-stu-id="691e6-155">By default, debugging messages aren't displayed because the value of the `$DebugPreference` variable is **SilentlyContinue**.</span></span>
+
+<span data-ttu-id="691e6-156">対話モードでは、 **Debug** パラメーターによって現在のコマンドの変数の値が上書きされ `$DebugPreference` 、の値が `$DebugPreference` **Inquire** に設定されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-156">In interactive mode, the **Debug** parameter overrides the value of the `$DebugPreference` variable for the current command, setting the value of `$DebugPreference` to **Inquire**.</span></span>
+
+<span data-ttu-id="691e6-157">非対話モードでは、 **Debug** パラメーターによって現在のコマンドの変数の値が上書きされ `$DebugPreference` 、の値 `$DebugPreference` が **Continue** に設定されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-157">In non-interactive mode, the **Debug** parameter overrides the value of the `$DebugPreference` variable for the current command, setting the value of `$DebugPreference` to **Continue**.</span></span>
+
+<span data-ttu-id="691e6-158">`-Debug:$true` と同じ効果があり `-Debug` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-158">`-Debug:$true` has the same effect as `-Debug`.</span></span> <span data-ttu-id="691e6-159">`-Debug:$false` `$DebugPreference` が **SilentlyContinue** ではない場合 (既定)、を使用して、デバッグメッセージの表示を抑制します。</span><span class="sxs-lookup"><span data-stu-id="691e6-159">Use `-Debug:$false` to suppress the display of debugging messages when `$DebugPreference` isn't **SilentlyContinue**, which is the default.</span></span>
+
+#### <a name="erroraction"></a><span data-ttu-id="691e6-160">ErrorAction</span><span class="sxs-lookup"><span data-stu-id="691e6-160">ErrorAction</span></span>
+
+<span data-ttu-id="691e6-161">コマンドレットが、コマンドから終了しないエラーに応答する方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="691e6-161">Determines how the cmdlet responds to a non-terminating error from the command.</span></span>
+<span data-ttu-id="691e6-162">このパラメーターは、コマンドがコマンドレットなどの終了しないエラーを生成した場合にのみ機能し `Write-Error` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-162">This parameter works only when the command generates a non-terminating error, such as those from the `Write-Error` cmdlet.</span></span>
+
+```yaml
+Type: ActionPreference
+Aliases: ea
+Accepted values: Suspend, Ignore, Inquire, Continue, Stop, SilentlyContinue
+
+Required: False
+Position: Named
+Default value: Depends on preference variable
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-163">**Erroraction** パラメーターは、現在のコマンドの変数の値よりも優先され `$ErrorActionPreference` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-163">The **ErrorAction** parameter overrides the value of the `$ErrorActionPreference` variable for the current command.</span></span> <span data-ttu-id="691e6-164">変数の既定値 `$ErrorActionPreference` は **続行** されるため、 **erroraction** パラメーターを使用しない限り、エラーメッセージが表示され、実行が続行されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-164">Because the default value of the `$ErrorActionPreference` variable is **Continue**, error messages are displayed and execution continues unless you use the **ErrorAction** parameter.</span></span>
+
+<span data-ttu-id="691e6-165">**Erroraction** パラメーターは、コマンドが正常に完了しないようにする、不足しているデータ、無効なパラメーター、権限の不足などの終了エラーには影響しません。</span><span class="sxs-lookup"><span data-stu-id="691e6-165">The **ErrorAction** parameter has no effect on terminating errors (such as missing data, parameters that aren't valid, or insufficient permissions) that prevent a command from completing successfully.</span></span>
+
+<span data-ttu-id="691e6-166">`-ErrorAction:Continue` エラーメッセージを表示し、コマンドの実行を続行します。</span><span class="sxs-lookup"><span data-stu-id="691e6-166">`-ErrorAction:Continue` display the error message and continues executing the command.</span></span> <span data-ttu-id="691e6-167">`Continue` は既定値です。</span><span class="sxs-lookup"><span data-stu-id="691e6-167">`Continue` is the default.</span></span>
+
+<span data-ttu-id="691e6-168">`-ErrorAction:Ignore` エラーメッセージを表示せずに、コマンドの実行を続行します。</span><span class="sxs-lookup"><span data-stu-id="691e6-168">`-ErrorAction:Ignore` suppresses the error message and continues executing the command.</span></span> <span data-ttu-id="691e6-169">**SilentlyContinue** とは異なり、 **Ignore** ではエラーメッセージが自動変数に追加されません `$Error` 。</span><span class="sxs-lookup"><span data-stu-id="691e6-169">Unlike **SilentlyContinue**, **Ignore** doesn't add the error message to the `$Error` automatic variable.</span></span> <span data-ttu-id="691e6-170">**Ignore** 値は、PowerShell 3.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="691e6-170">The **Ignore** value is introduced in PowerShell 3.0.</span></span>
+
+<span data-ttu-id="691e6-171">`-ErrorAction:Inquire` エラーメッセージを表示し、実行を続行する前に確認メッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-171">`-ErrorAction:Inquire` displays the error message and prompts you for confirmation before continuing execution.</span></span> <span data-ttu-id="691e6-172">この値はほとんど使用されません。</span><span class="sxs-lookup"><span data-stu-id="691e6-172">This value is rarely used.</span></span>
+
+<span data-ttu-id="691e6-173">`-ErrorAction:SilentlyContinue` エラーメッセージを表示せずに、コマンドの実行を続行します。</span><span class="sxs-lookup"><span data-stu-id="691e6-173">`-ErrorAction:SilentlyContinue` suppresses the error message and continues executing the command.</span></span>
+
+<span data-ttu-id="691e6-174">`-ErrorAction:Stop` エラーメッセージを表示し、コマンドの実行を停止します。</span><span class="sxs-lookup"><span data-stu-id="691e6-174">`-ErrorAction:Stop` displays the error message and stops executing the command.</span></span>
+
+<span data-ttu-id="691e6-175">`-ErrorAction:Suspend` は、PowerShell 6 以降ではサポートされていないワークフローでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="691e6-175">`-ErrorAction:Suspend` is only available for workflows which aren't supported in PowerShell 6 and beyond.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="691e6-176">**Erroraction** パラメーターはをオーバーライドしますが、 `$ErrorAction` スクリプトまたは関数を実行するためにコマンドでパラメーターを使用する場合は、ユーザー設定変数の値を置き換えません。</span><span class="sxs-lookup"><span data-stu-id="691e6-176">The **ErrorAction** parameter overrides, but does not replace the value of the `$ErrorAction` preference variable when the parameter is used in a command to run a script or function.</span></span>
+
+#### <a name="errorvariable"></a><span data-ttu-id="691e6-177">ErrorVariable</span><span class="sxs-lookup"><span data-stu-id="691e6-177">ErrorVariable</span></span>
+
+<span data-ttu-id="691e6-178">**Errorvariable** は、コマンドに関するエラーメッセージを指定された変数と自動変数に格納し `$Error` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-178">**ErrorVariable** stores error messages about the command in the specified variable and in the `$Error` automatic variable.</span></span> <span data-ttu-id="691e6-179">詳細については、「[about_Automatic_Variables](about_Automatic_Variables.md)」を参照してください</span><span class="sxs-lookup"><span data-stu-id="691e6-179">For more information, see [about_Automatic_Variables](about_Automatic_Variables.md)</span></span>
+
+```yaml
+Type: String
+Aliases: ev
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-180">既定では、新しいエラーメッセージは、変数に既に格納されているエラーメッセージを上書きします。</span><span class="sxs-lookup"><span data-stu-id="691e6-180">By default, new error messages overwrite error messages that are already stored in the variable.</span></span> <span data-ttu-id="691e6-181">変数の内容にエラーメッセージを追加するには、 `+` 変数名の前にプラス記号 () を入力します。</span><span class="sxs-lookup"><span data-stu-id="691e6-181">To append the error message to the variable content, type a plus sign (`+`) before the variable name.</span></span>
+
+<span data-ttu-id="691e6-182">たとえば、次のコマンドは変数を作成し、 `$a` エラーを格納します。</span><span class="sxs-lookup"><span data-stu-id="691e6-182">For example, the following command creates the `$a` variable and then stores any errors in it:</span></span>
+
+```powershell
+Get-Process -Id 6 -ErrorVariable a
+```
+
+<span data-ttu-id="691e6-183">次のコマンドを実行すると、エラーメッセージが変数に追加され `$a` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-183">The following command adds any error messages to the `$a` variable:</span></span>
+
+```powershell
+Get-Process -Id 2 -ErrorVariable +a
+```
+
+<span data-ttu-id="691e6-184">次のコマンドを実行すると、の内容が表示され `$a` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-184">The following command displays the contents of `$a`:</span></span>
+
+```powershell
+$a
+```
+
+<span data-ttu-id="691e6-185">このパラメーターを使用すると、特定のコマンドからのエラーメッセージのみを含む変数を作成でき `$Error` ます。自動変数の動作には影響しません。</span><span class="sxs-lookup"><span data-stu-id="691e6-185">You can use this parameter to create a variable that contains only error messages from specific commands and does not affect the behavior of the `$Error` automatic variable.</span></span> <span data-ttu-id="691e6-186">自動変数には、 `$Error` セッション内のすべてのコマンドからのエラーメッセージが含まれています。</span><span class="sxs-lookup"><span data-stu-id="691e6-186">The `$Error` automatic variable contains error messages from all the commands in the session.</span></span> <span data-ttu-id="691e6-187">やなどの配列表記を使用して、 `$a[0]` `$error[1,2]` 変数に格納されている特定のエラーを参照することができます。</span><span class="sxs-lookup"><span data-stu-id="691e6-187">You can use array notation, such as `$a[0]` or `$error[1,2]` to refer to specific errors stored in the variables.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="691e6-188">カスタムエラー変数には、入れ子になった関数またはスクリプトの呼び出しからのエラーを含め、コマンドによって生成されたすべてのエラーが含まれます。</span><span class="sxs-lookup"><span data-stu-id="691e6-188">The custom error variable contains all errors generated by the command, including errors from calls to nested functions or scripts.</span></span>
+
+#### <a name="informationaction"></a><span data-ttu-id="691e6-189">InformationAction</span><span class="sxs-lookup"><span data-stu-id="691e6-189">InformationAction</span></span>
+
+<span data-ttu-id="691e6-190">PowerShell 5.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="691e6-190">Introduced in PowerShell 5.0.</span></span> <span data-ttu-id="691e6-191">使用されているコマンドまたはスクリプト内で、 **Informationaction** 共通パラメーターは、 `$InformationPreference` 既定では **SilentlyContinue** に設定されているユーザー設定変数の値よりも優先されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-191">Within the command or script in which it's used, the **InformationAction** common parameter overrides the value of the `$InformationPreference` preference variable, which by default is set to **SilentlyContinue**.</span></span> <span data-ttu-id="691e6-192">`Write-Information` **Informationaction** を含むスクリプトでを使用すると、 `Write-Information` **informationaction** パラメーターの値に応じて値が表示されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-192">When you use `Write-Information` in a script with **InformationAction**, `Write-Information` values are shown depending on the value of the **InformationAction** parameter.</span></span> <span data-ttu-id="691e6-193">の詳細について `$InformationPreference` は、「 [about_Preference_Variables](./about_Preference_Variables.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="691e6-193">For more information about `$InformationPreference`, see [about_Preference_Variables](./about_Preference_Variables.md).</span></span>
+
+```yaml
+Type: ActionPreference
+Aliases: ia
+Accepted values: Suspend, Ignore, Inquire, Continue, Stop, SilentlyContinue
+
+Required: False
+Position: Named
+Default value: Depends on preference variable
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-194">`-InformationAction:Stop` コマンドが発生したときに、コマンドまたはスクリプトを停止し `Write-Information` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-194">`-InformationAction:Stop` stops a command or script at an occurrence of the `Write-Information` command.</span></span>
+
+<span data-ttu-id="691e6-195">`-InformationAction:Ignore` 情報メッセージを表示せずに、コマンドの実行を続行します。</span><span class="sxs-lookup"><span data-stu-id="691e6-195">`-InformationAction:Ignore` suppresses the informational message and continues running the command.</span></span> <span data-ttu-id="691e6-196">**SilentlyContinue** とは異なり、情報メッセージを完全には **無視** します。情報メッセージは情報ストリームに追加されません。</span><span class="sxs-lookup"><span data-stu-id="691e6-196">Unlike **SilentlyContinue**, **Ignore** completely forgets the informational message; it doesn't add the informational message to the information stream.</span></span>
+
+<span data-ttu-id="691e6-197">`-InformationAction:Inquire` コマンドで指定した情報メッセージを表示し、 `Write-Information` 続行するかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="691e6-197">`-InformationAction:Inquire` displays the informational message that you specify in a `Write-Information` command, then asks whether you want to continue.</span></span>
+
+<span data-ttu-id="691e6-198">`-InformationAction:Continue` 情報メッセージを表示し、実行を継続します。</span><span class="sxs-lookup"><span data-stu-id="691e6-198">`-InformationAction:Continue` displays the informational message, and continues running.</span></span>
+
+<span data-ttu-id="691e6-199">`-InformationAction:Suspend` は、ワークフローでのみ使用できるため、PowerShell Core ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="691e6-199">`-InformationAction:Suspend` isn't supported on PowerShell Core as it is only available for workflows.</span></span>
+
+<span data-ttu-id="691e6-200">`-InformationAction:SilentlyContinue` 情報メッセージが (既定値) 表示されないため、スクリプトは中断されることなく続行されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-200">`-InformationAction:SilentlyContinue` no effect as the informational message aren't (Default) displayed, and the script continues without interruption.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="691e6-201">**Informationaction** パラメーターはをオーバーライドしますが、 `$InformationAction` スクリプトまたは関数を実行するためにコマンドでパラメーターを使用する場合は、ユーザー設定変数の値を置き換えません。</span><span class="sxs-lookup"><span data-stu-id="691e6-201">The **InformationAction** parameter overrides, but does not replace the value of the `$InformationAction` preference variable when the parameter is used in a command to run a script or function.</span></span>
+
+#### <a name="informationvariable"></a><span data-ttu-id="691e6-202">InformationVariable</span><span class="sxs-lookup"><span data-stu-id="691e6-202">InformationVariable</span></span>
+
+<span data-ttu-id="691e6-203">PowerShell 5.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="691e6-203">Introduced in PowerShell 5.0.</span></span> <span data-ttu-id="691e6-204">使用されているコマンドまたはスクリプト内で、 **informationvariable** 共通パラメーターは、コマンドを追加して指定した文字列を変数に格納し `Write-Information` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-204">Within the command or script in which it's used, the **InformationVariable** common parameter stores in a variable a string that you specify by adding the `Write-Information` command.</span></span> <span data-ttu-id="691e6-205">`Write-Information` 値は、 **Informationaction** 共通パラメーターの値に応じて表示されます。 **Informationaction** 共通パラメーターを追加しない場合は、ユーザー `Write-Information` 設定変数の値に応じて文字列が表示され `$InformationPreference` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-205">`Write-Information` values are shown depending on the value of the **InformationAction** common parameter; if you don't add the **InformationAction** common parameter, `Write-Information` strings are shown depending on the value of the `$InformationPreference` preference variable.</span></span> <span data-ttu-id="691e6-206">の詳細について `$InformationPreference` は、「 [about_Preference_Variables](./about_Preference_Variables.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="691e6-206">For more information about `$InformationPreference`, see [about_Preference_Variables](./about_Preference_Variables.md).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="691e6-207">情報変数には、入れ子になった関数またはスクリプトの呼び出しからの情報メッセージを含め、コマンドによって生成されたすべての情報メッセージが含まれます。</span><span class="sxs-lookup"><span data-stu-id="691e6-207">The information variable contains all information messages generated by the command, including information messages from calls to nested functions or scripts.</span></span>
+
+```yaml
+Type: String
+Aliases: iv
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+#### <a name="outbuffer"></a><span data-ttu-id="691e6-208">OutBuffer</span><span class="sxs-lookup"><span data-stu-id="691e6-208">OutBuffer</span></span>
+
+<span data-ttu-id="691e6-209">オブジェクトがパイプラインを介して送信される前に、バッファーに蓄積されるオブジェクトの数を決定します。</span><span class="sxs-lookup"><span data-stu-id="691e6-209">Determines the number of objects to accumulate in a buffer before any objects are sent through the pipeline.</span></span> <span data-ttu-id="691e6-210">このパラメーターを省略すると、オブジェクトは生成時に送信されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-210">If you omit this parameter, objects are sent as they're generated.</span></span>
+
+```yaml
+Type: Int32
+Aliases: ob
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-211">このリソース管理パラメーターは、上級ユーザー向けに設計されています。</span><span class="sxs-lookup"><span data-stu-id="691e6-211">This resource management parameter is designed for advanced users.</span></span> <span data-ttu-id="691e6-212">このパラメーターを使用すると、PowerShell はのバッチで次のコマンドレットにデータを送信 `OutBuffer + 1` します。</span><span class="sxs-lookup"><span data-stu-id="691e6-212">When you use this parameter, PowerShell sends data to the next cmdlet in batches of `OutBuffer + 1`.</span></span>
+
+<span data-ttu-id="691e6-213">次の例では、コマンドレットを使用するプロセスブロックとの間でが交互に表示され `ForEach-Object` `Write-Host` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-213">The following example alternates displays between to `ForEach-Object` process blocks that use the `Write-Host` cmdlet.</span></span> <span data-ttu-id="691e6-214">ディスプレイは、2またはのバッチで交互に表示され `OutBuffer + 1` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-214">The display alternates in batches of 2 or `OutBuffer + 1`.</span></span>
+
+```powershell
+1..4 | ForEach-Object {
+        Write-Host "$($_): First"; $_
+      } -OutBuffer 1 | ForEach-Object {
+                        Write-Host "$($_): Second" }
+```
+
+```Output
+1: First
+2: First
+1: Second
+2: Second
+3: First
+4: First
+3: Second
+4: Second
+```
+
+#### <a name="outvariable"></a><span data-ttu-id="691e6-215">OutVariable</span><span class="sxs-lookup"><span data-stu-id="691e6-215">OutVariable</span></span>
+
+<span data-ttu-id="691e6-216">パイプラインに沿って出力を送信するだけでなく、指定した変数のコマンドからの出力オブジェクトを格納します。</span><span class="sxs-lookup"><span data-stu-id="691e6-216">Stores output objects from the command in the specified variable in addition to sending the output along the pipeline.</span></span>
+
+```yaml
+Type: String
+Aliases: ov
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-217">出力を変数に追加するには、既に格納されている可能性のある出力を置き換えるのではなく、 `+` 変数名の前にプラス記号 () を入力します。</span><span class="sxs-lookup"><span data-stu-id="691e6-217">To add the output to the variable, instead of replacing any output that might already be stored there, type a plus sign (`+`) before the variable name.</span></span>
+
+<span data-ttu-id="691e6-218">たとえば、次のコマンドは、変数を作成 `$out` し、その中に process オブジェクトを格納します。</span><span class="sxs-lookup"><span data-stu-id="691e6-218">For example, the following command creates the `$out` variable and stores the process object in it:</span></span>
+
+```powershell
+Get-Process PowerShell -OutVariable out
+```
+
+<span data-ttu-id="691e6-219">次のコマンドを実行すると、process オブジェクトが変数に追加され `$out` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-219">The following command adds the process object to the `$out` variable:</span></span>
+
+```powershell
+Get-Process iexplore -OutVariable +out
+```
+
+<span data-ttu-id="691e6-220">次のコマンドを実行すると、変数の内容が表示され `$out` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-220">The following command displays the contents of the `$out` variable:</span></span>
+
+```powershell
+$out
+```
+
+> [!NOTE]
+> <span data-ttu-id="691e6-221">**Outvariable** パラメーターによって作成された変数は `[System.Collections.ArrayList]` です。</span><span class="sxs-lookup"><span data-stu-id="691e6-221">The variable created by the **OutVariable** parameter is a `[System.Collections.ArrayList]`.</span></span>
+
+#### <a name="pipelinevariable"></a><span data-ttu-id="691e6-222">PipelineVariable</span><span class="sxs-lookup"><span data-stu-id="691e6-222">PipelineVariable</span></span>
+
+<span data-ttu-id="691e6-223">**PipelineVariable** は、現在のパイプライン要素の値を変数として格納します。これは、パイプラインを介してフローする任意の名前付きコマンドに使用します。</span><span class="sxs-lookup"><span data-stu-id="691e6-223">**PipelineVariable** stores the value of the current pipeline element as a variable, for any named command as it flows through the pipeline.</span></span>
+
+```yaml
+Type: String
+Aliases: pv
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-224">有効な値は文字列で、任意の変数名と同じです。</span><span class="sxs-lookup"><span data-stu-id="691e6-224">Valid values are strings, the same as for any variable names.</span></span>
+
+<span data-ttu-id="691e6-225">**PipelineVariable** の動作の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-225">The following is an example of how **PipelineVariable** works.</span></span> <span data-ttu-id="691e6-226">この例では、 コマンド `Foreach-Object` の結果を変数に格納するために、PipelineVariable パラメーターがコマンドに追加されています。</span><span class="sxs-lookup"><span data-stu-id="691e6-226">In this example, the **PipelineVariable** parameter is added to a `Foreach-Object` command to store the results of the command in variables.</span></span> <span data-ttu-id="691e6-227">1 ~ 10 の範囲の数値は最初のコマンドにパイプされ `Foreach-Object` 、その結果は **Left** という名前の変数に格納されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-227">A range of numbers, 1 to 10, are piped into the first `Foreach-Object` command, the results of which are stored in a variable named **Left**.</span></span>
+
+<span data-ttu-id="691e6-228">最初のコマンドの結果は、 `Foreach-Object` 2 番目のコマンドにパイプされ `Foreach-Object` ます。このコマンドは、最初のコマンドによって返されたオブジェクトをフィルター処理し `Foreach-Object` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-228">The results of the first `Foreach-Object` command are piped into a second `Foreach-Object` command, which filters the objects returned by the first `Foreach-Object` command.</span></span> <span data-ttu-id="691e6-229">2番目のコマンドの結果は、 **Right** という名前の変数に格納されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-229">The results of the second command are stored in a variable named **Right**.</span></span>
+
+<span data-ttu-id="691e6-230">3番目のコマンドでは、 `Foreach-Object` 変数によって表される最初の2つのパイプされたコマンドの結果 `Foreach-Object` が、乗算演算子を使用して処理されます。  </span><span class="sxs-lookup"><span data-stu-id="691e6-230">In the third `Foreach-Object` command, the results of the first two `Foreach-Object` piped commands, represented by the variables **Left** and **Right**, are processed by using a multiplication operator.</span></span> <span data-ttu-id="691e6-231">このコマンドは、 **左** と **右** の変数に格納されているオブジェクトに乗算するように指示し、結果を "左辺の範囲メンバー \* 右範囲メンバー = 製品" として表示するように指定します。</span><span class="sxs-lookup"><span data-stu-id="691e6-231">The command instructs objects stored in the **Left** and **Right** variables to be multiplied, and specifies that the results should be displayed as "Left range member \* Right range member = product".</span></span>
+
+```powershell
+1..10 | Foreach-Object -PipelineVariable Left -Process { $_ } |
+  Foreach-Object -PV Right -Process { 1..10 } |
+  Foreach-Object -Process { "$Left * $Right = " + ($Left*$Right) }
+```
+
+```output
+1 * 1 = 1
+1 * 2 = 2
+1 * 3 = 3
+1 * 4 = 4
+1 * 5 = 5
+...
+```
+
+#### <a name="verbose"></a><span data-ttu-id="691e6-232">"詳細"</span><span class="sxs-lookup"><span data-stu-id="691e6-232">Verbose</span></span>
+
+<span data-ttu-id="691e6-233">コマンドによって実行された操作に関する詳細情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-233">Displays detailed information about the operation done by the command.</span></span> <span data-ttu-id="691e6-234">この情報は、トレースまたはトランザクションログの情報に似ています。</span><span class="sxs-lookup"><span data-stu-id="691e6-234">This information resembles the information in a trace or in a transaction log.</span></span> <span data-ttu-id="691e6-235">このパラメーターは、コマンドによって詳細メッセージが生成された場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="691e6-235">This parameter works only when the command generates a verbose message.</span></span> <span data-ttu-id="691e6-236">たとえば、コマンドにコマンドレットが含まれている場合、このパラメーターは機能し `Write-Verbose` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-236">For example, this parameter works when a command contains the `Write-Verbose` cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Aliases: vb
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-237">**Verbose** パラメーターは、現在のコマンドの変数の値よりも優先され `$VerbosePreference` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-237">The **Verbose** parameter overrides the value of the `$VerbosePreference` variable for the current command.</span></span> <span data-ttu-id="691e6-238">変数の既定値 `$VerbosePreference` は **SilentlyContinue** であるため、詳細メッセージは既定では表示されません。</span><span class="sxs-lookup"><span data-stu-id="691e6-238">Because the default value of the `$VerbosePreference` variable is **SilentlyContinue**, verbose messages aren't displayed by default.</span></span>
+
+<span data-ttu-id="691e6-239">`-Verbose:$true` と同じ効果があります。 `-Verbose`</span><span class="sxs-lookup"><span data-stu-id="691e6-239">`-Verbose:$true` has the same effect as `-Verbose`</span></span>
+
+<span data-ttu-id="691e6-240">`-Verbose:$false` 詳細メッセージの表示を抑制します。</span><span class="sxs-lookup"><span data-stu-id="691e6-240">`-Verbose:$false` suppresses the display of verbose messages.</span></span> <span data-ttu-id="691e6-241">の値が SilentlyContinue (既定値) でない場合に、このパラメーターを使用し `$VerbosePreference` ます。 </span><span class="sxs-lookup"><span data-stu-id="691e6-241">Use this parameter when the value of `$VerbosePreference` isn't **SilentlyContinue** (the default).</span></span>
+
+#### <a name="warningaction"></a><span data-ttu-id="691e6-242">WarningAction</span><span class="sxs-lookup"><span data-stu-id="691e6-242">WarningAction</span></span>
+
+<span data-ttu-id="691e6-243">コマンドレットがコマンドからの警告に応答する方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="691e6-243">Determines how the cmdlet responds to a warning from the command.</span></span> <span data-ttu-id="691e6-244">**Continue** が既定値です。</span><span class="sxs-lookup"><span data-stu-id="691e6-244">**Continue** is the default value.</span></span> <span data-ttu-id="691e6-245">このパラメーターは、コマンドで警告メッセージが生成された場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="691e6-245">This parameter works only when the command generates a warning message.</span></span> <span data-ttu-id="691e6-246">たとえば、コマンドにコマンドレットが含まれている場合、このパラメーターは機能し `Write-Warning` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-246">For example, this parameter works when a command contains the `Write-Warning` cmdlet.</span></span>
+
+```yaml
+Type: ActionPreference
+Aliases: wa
+Accepted values: Suspend, Ignore, Inquire, Continue, Stop, SilentlyContinue
+
+Required: False
+Position: Named
+Default value: Depends on preference variable
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-247">**Warnings action** パラメーターは、現在のコマンドの変数の値よりも優先され `$WarningPreference` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-247">The **WarningAction** parameter overrides the value of the `$WarningPreference` variable for the current command.</span></span> <span data-ttu-id="691e6-248">変数の既定値 `$WarningPreference` は **Continue** であるため、 **warnings action** パラメーターを使用しない限り、警告が表示され、実行が続行されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-248">Because the default value of the `$WarningPreference` variable is **Continue**, warnings are displayed and execution continues unless you use the **WarningAction** parameter.</span></span>
+
+<span data-ttu-id="691e6-249">`-WarningAction:Continue` 警告メッセージを表示し、コマンドの実行を続行します。</span><span class="sxs-lookup"><span data-stu-id="691e6-249">`-WarningAction:Continue` displays the warning messages and continues executing the command.</span></span> <span data-ttu-id="691e6-250">`Continue` は既定値です。</span><span class="sxs-lookup"><span data-stu-id="691e6-250">`Continue` is the default.</span></span>
+
+<span data-ttu-id="691e6-251">`-WarningAction:Inquire` 警告メッセージを表示し、実行を続行する前に確認メッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-251">`-WarningAction:Inquire` displays the warning message and prompts you for confirmation before continuing execution.</span></span> <span data-ttu-id="691e6-252">この値はほとんど使用されません。</span><span class="sxs-lookup"><span data-stu-id="691e6-252">This value is rarely used.</span></span>
+
+<span data-ttu-id="691e6-253">`-WarningAction:SilentlyContinue` 警告メッセージを表示せずに、コマンドの実行を続行します。</span><span class="sxs-lookup"><span data-stu-id="691e6-253">`-WarningAction:SilentlyContinue` suppresses the warning message and continues executing the command.</span></span>
+
+<span data-ttu-id="691e6-254">`-WarningAction:Stop` 警告メッセージを表示し、コマンドの実行を停止します。</span><span class="sxs-lookup"><span data-stu-id="691e6-254">`-WarningAction:Stop` displays the warning message and stops executing the command.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="691e6-255">**警告動作** パラメーターはをオーバーライドしますが、 `$WarningAction` スクリプトまたは関数を実行するためにコマンドでパラメーターを使用する場合は、ユーザー設定変数の値を置き換えません。</span><span class="sxs-lookup"><span data-stu-id="691e6-255">The **WarningAction** parameter overrides, but does not replace the value of the `$WarningAction` preference variable when the parameter is used in a command to run a script or function.</span></span>
+
+#### <a name="warningvariable"></a><span data-ttu-id="691e6-256">WarningVariable</span><span class="sxs-lookup"><span data-stu-id="691e6-256">WarningVariable</span></span>
+
+<span data-ttu-id="691e6-257">指定された変数にコマンドに関する警告を格納します。</span><span class="sxs-lookup"><span data-stu-id="691e6-257">Stores warnings about the command in the specified variable.</span></span>
+
+```yaml
+Type: String
+Aliases: wv
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-258">警告がユーザーに表示されない場合でも、生成されたすべての警告は変数に保存されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-258">All generated warnings are saved in the variable even if the warnings aren't displayed to the user.</span></span>
+
+<span data-ttu-id="691e6-259">警告を変数の内容に追加するには、既に格納されている可能性のある警告を置き換えるのではなく、 `+` 変数名の前にプラス記号 () を入力します。</span><span class="sxs-lookup"><span data-stu-id="691e6-259">To append the warnings to the variable content, instead of replacing any warnings that might already be stored there, type a plus sign (`+`) before the variable name.</span></span>
+
+<span data-ttu-id="691e6-260">たとえば、次のコマンドは変数を作成し、 `$a` 警告を格納します。</span><span class="sxs-lookup"><span data-stu-id="691e6-260">For example, the following command creates the `$a` variable and then stores any warnings in it:</span></span>
+
+```powershell
+Get-Process -Id 6 -WarningVariable a
+```
+
+<span data-ttu-id="691e6-261">次のコマンドは、変数に警告を追加し `$a` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-261">The following command adds any warnings to the `$a` variable:</span></span>
+
+```powershell
+Get-Process -Id 2 -WarningVariable +a
+```
+
+<span data-ttu-id="691e6-262">次のコマンドを実行すると、の内容が表示され `$a` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-262">The following command displays the contents of `$a`:</span></span>
+
+```powershell
+$a
+```
+
+<span data-ttu-id="691e6-263">このパラメーターを使用すると、特定のコマンドからの警告のみを含む変数を作成できます。</span><span class="sxs-lookup"><span data-stu-id="691e6-263">You can use this parameter to create a variable that contains only warnings from specific commands.</span></span> <span data-ttu-id="691e6-264">やなどの配列表記を使用して、 `$a[0]` `$warning[1,2]` 変数に格納されている特定の警告を参照することができます。</span><span class="sxs-lookup"><span data-stu-id="691e6-264">You can use array notation, such as `$a[0]` or `$warning[1,2]` to refer to specific warnings stored in the variable.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="691e6-265">警告変数には、入れ子になった関数またはスクリプトの呼び出しからの警告など、コマンドによって生成されるすべての警告が含まれます。</span><span class="sxs-lookup"><span data-stu-id="691e6-265">The warning variable contains all warnings generated by the command, including warnings from calls to nested functions or scripts.</span></span>
+
+### <a name="risk-management-parameter-descriptions"></a><span data-ttu-id="691e6-266">リスク管理のパラメーターの説明</span><span class="sxs-lookup"><span data-stu-id="691e6-266">Risk Management Parameter Descriptions</span></span>
+
+#### <a name="whatif"></a><span data-ttu-id="691e6-267">WhatIf</span><span class="sxs-lookup"><span data-stu-id="691e6-267">WhatIf</span></span>
+
+<span data-ttu-id="691e6-268">コマンドを実行する代わりに、コマンドの効果を説明するメッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-268">Displays a message that describes the effect of the command, instead of executing the command.</span></span>
+
+```yaml
+Type: SwitchParameter
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-269">**WhatIf** パラメーターは、現在のコマンドの変数の値よりも優先され `$WhatIfPreference` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-269">The **WhatIf** parameter overrides the value of the `$WhatIfPreference` variable for the current command.</span></span> <span data-ttu-id="691e6-270">変数の既定値 `$WhatIfPreference` は 0 (無効) であるため、whatif パラメーターを指定しないと **whatif** 動作は実行されません。</span><span class="sxs-lookup"><span data-stu-id="691e6-270">Because the default value of the `$WhatIfPreference` variable is 0 (disabled), **WhatIf** behavior isn't done without the **WhatIf** parameter.</span></span> <span data-ttu-id="691e6-271">詳細については、「」を参照してください [about_Preference_Variables](about_Preference_Variables.md)</span><span class="sxs-lookup"><span data-stu-id="691e6-271">For more information, see [about_Preference_Variables](about_Preference_Variables.md)</span></span>
+
+<span data-ttu-id="691e6-272">`-WhatIf:$true` と同じ効果があり `-WhatIf` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-272">`-WhatIf:$true` has the same effect as `-WhatIf`.</span></span>
+
+<span data-ttu-id="691e6-273">`-WhatIf:$false` 変数の値が1の場合に生成される自動 WhatIf 動作を抑制し `$WhatIfPreference` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-273">`-WhatIf:$false` suppresses the automatic WhatIf behavior that results when the value of the `$WhatIfPreference` variable is 1.</span></span>
+
+<span data-ttu-id="691e6-274">たとえば、次のコマンドでは、 `-WhatIf` コマンドでパラメーターを使用し `Remove-Item` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-274">For example, the following command uses the `-WhatIf` parameter in a `Remove-Item` command:</span></span>
+
+```powershell
+Remove-Item Date.csv -WhatIf
+```
+
+<span data-ttu-id="691e6-275">PowerShell では、項目を削除する代わりに、実行する操作と影響を受ける項目が一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-275">Instead of removing the item, PowerShell lists the operations it would do and the items that would be affected.</span></span> <span data-ttu-id="691e6-276">このコマンドでは次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="691e6-276">This command produces the following output:</span></span>
+
+```output
+What if: Performing operation "Remove File" on
+Target "C:\ps-test\date.csv".
+```
+
+#### <a name="confirm"></a><span data-ttu-id="691e6-277">Confirm</span><span class="sxs-lookup"><span data-stu-id="691e6-277">Confirm</span></span>
+
+<span data-ttu-id="691e6-278">コマンドを実行する前に確認メッセージを表示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-278">Prompts you for confirmation before executing the command.</span></span>
+
+```yaml
+Type: SwitchParameter
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: Depends on preference variable
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+<span data-ttu-id="691e6-279">**Confirm** パラメーターは、現在のコマンドの変数の値よりも優先され `$ConfirmPreference` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-279">The **Confirm** parameter overrides the value of the `$ConfirmPreference` variable for the current command.</span></span> <span data-ttu-id="691e6-280">既定値は、true です。</span><span class="sxs-lookup"><span data-stu-id="691e6-280">The default value is true.</span></span> <span data-ttu-id="691e6-281">詳細については、「」を参照してください [about_Preference_Variables](about_Preference_Variables.md)</span><span class="sxs-lookup"><span data-stu-id="691e6-281">For more information, see [about_Preference_Variables](about_Preference_Variables.md)</span></span>
+
+<span data-ttu-id="691e6-282">`-Confirm:$true` と同じ効果があり `-Confirm` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-282">`-Confirm:$true` has the same effect as `-Confirm`.</span></span>
+
+<span data-ttu-id="691e6-283">`-Confirm:$false` 自動確認を抑制します。これは、の値 `$ConfirmPreference` がコマンドレットの推定リスク以下である場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="691e6-283">`-Confirm:$false` suppresses automatic confirmation, which occurs when the value of `$ConfirmPreference` is less than or equal to the estimated risk of the cmdlet.</span></span>
+
+<span data-ttu-id="691e6-284">たとえば、次のコマンドでは、 **Confirm** パラメーターをコマンドと共に使用し `Remove-Item` ます。</span><span class="sxs-lookup"><span data-stu-id="691e6-284">For example, the following command uses the **Confirm** parameter with a `Remove-Item` command.</span></span> <span data-ttu-id="691e6-285">項目を削除する前に、PowerShell によって実行される操作と影響を受ける項目が一覧表示され、承認が求められます。</span><span class="sxs-lookup"><span data-stu-id="691e6-285">Before removing the item, PowerShell lists the operations it would do and the items that would be affected, and asks for approval.</span></span>
+
+```
+PS C:\ps-test> Remove-Item tmp*.txt -Confirm
+
+Confirm
+Are you sure you want to perform this action?
+Performing operation "Remove File" on Target " C:\ps-test\tmp1.txt
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend
+[?] Help (default is "Y"):
+```
+
+<span data-ttu-id="691e6-286">Confirm response オプションは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="691e6-286">The Confirm response options are as follows:</span></span>
+
+|<span data-ttu-id="691e6-287">Response</span><span class="sxs-lookup"><span data-stu-id="691e6-287">Response</span></span>       |<span data-ttu-id="691e6-288">結果</span><span class="sxs-lookup"><span data-stu-id="691e6-288">Result</span></span>                                                     |
+|---------------|-----------------------------------------------------------|
+|<span data-ttu-id="691e6-289">はい (Y)</span><span class="sxs-lookup"><span data-stu-id="691e6-289">Yes (Y)</span></span>        |<span data-ttu-id="691e6-290">アクションを実行します。</span><span class="sxs-lookup"><span data-stu-id="691e6-290">Perform the action.</span></span>                                        |
+|<span data-ttu-id="691e6-291">すべてはい (A)</span><span class="sxs-lookup"><span data-stu-id="691e6-291">Yes to All (A)</span></span> |<span data-ttu-id="691e6-292">すべてのアクションを実行し、後続のクエリの確認を抑制する</span><span class="sxs-lookup"><span data-stu-id="691e6-292">Perform all actions and suppress subsequent Confirm queries</span></span>|
+|               |<span data-ttu-id="691e6-293">次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="691e6-293">for this command.</span></span>                                          |
+|<span data-ttu-id="691e6-294">いいえ (N):</span><span class="sxs-lookup"><span data-stu-id="691e6-294">No (N):</span></span>        |<span data-ttu-id="691e6-295">操作は実行しないでください。</span><span class="sxs-lookup"><span data-stu-id="691e6-295">Do not perform the action.</span></span>                                 |
+|<span data-ttu-id="691e6-296">すべていいえ (L):</span><span class="sxs-lookup"><span data-stu-id="691e6-296">No to All (L):</span></span> |<span data-ttu-id="691e6-297">アクションを実行せず、その後の確認を抑制する</span><span class="sxs-lookup"><span data-stu-id="691e6-297">Do not perform any actions and suppress subsequent Confirm</span></span> |
+|               |<span data-ttu-id="691e6-298">このコマンドを照会します。</span><span class="sxs-lookup"><span data-stu-id="691e6-298">queries for this command.</span></span>                                  |
+|<span data-ttu-id="691e6-299">中断 (S):</span><span class="sxs-lookup"><span data-stu-id="691e6-299">Suspend (S):</span></span>   |<span data-ttu-id="691e6-300">コマンドを一時停止し、一時的なセッションを作成します。</span><span class="sxs-lookup"><span data-stu-id="691e6-300">Pause the command and create a temporary session.</span></span>          |
+|<span data-ttu-id="691e6-301">ヘルプ (?)</span><span class="sxs-lookup"><span data-stu-id="691e6-301">Help (?)</span></span>       |<span data-ttu-id="691e6-302">これらのオプションのヘルプを表示します。</span><span class="sxs-lookup"><span data-stu-id="691e6-302">Display help for these options.</span></span>                            |
+
+<span data-ttu-id="691e6-303">**Suspend** オプションを指定すると、コマンドが保留状態になり、一時的な入れ子になったセッションが作成されます。このセッションでは、[**確認**] オプションを選択する準備ができています。</span><span class="sxs-lookup"><span data-stu-id="691e6-303">The **Suspend** option places the command on hold and creates a temporary nested session in which you can work until you're ready to choose a **Confirm** option.</span></span> <span data-ttu-id="691e6-304">入れ子になったセッションのコマンドプロンプトには、元の親コマンドの子操作であることを示すために、2つの追加のキャレット (>>) があります。</span><span class="sxs-lookup"><span data-stu-id="691e6-304">The command prompt for the nested session has two extra carets (>>) to indicate that it's a child operation of the original parent command.</span></span> <span data-ttu-id="691e6-305">入れ子になったセッションでは、コマンドとスクリプトを実行できます。</span><span class="sxs-lookup"><span data-stu-id="691e6-305">You can run commands and scripts in the nested session.</span></span> <span data-ttu-id="691e6-306">入れ子になったセッションを終了し、元のコマンドの Confirm オプションに戻るには、「exit」と入力します。</span><span class="sxs-lookup"><span data-stu-id="691e6-306">To end the nested session and return to the Confirm options for the original command, type "exit".</span></span>
+
+<span data-ttu-id="691e6-307">次の例では、ユーザーがコマンドパラメーターのヘルプを確認している間に、 **Suspend** オプションを使用してコマンドを一時的に停止しています。</span><span class="sxs-lookup"><span data-stu-id="691e6-307">In the following example, the **Suspend** option (S) is used to halt a command temporarily while the user checks the help for a command parameter.</span></span> <span data-ttu-id="691e6-308">ユーザーは必要な情報を取得した後、"exit" を入力して入れ子になったプロンプトを終了し、確認クエリに対して [はい] (y) の応答を選択します。</span><span class="sxs-lookup"><span data-stu-id="691e6-308">After obtaining the needed information, the user types "exit" to end the nested prompt and then selects the Yes (y) response to the Confirm query.</span></span>
+
+```
+PS C:\ps-test> New-Item -ItemType File -Name Test.txt -Confirm
+
+Confirm
+Are you sure you want to perform this action?
+
+Performing operation "Create File" on Target "Destination:
+C:\ps-test\test.txt".
+[Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default
+is "Y"): s
+
+PS C:\ps-test> Get-Help New-Item -Parameter ItemType
+
+-ItemType <string>
+Specifies the provider-specified type of the new item.
+
+Required?                    false
+Position?                    named
+Default value
+Accept pipeline input?       true (ByPropertyName)
+Accept wildcard characters?  false
+
+PS C:\ps-test> exit
+
+Confirm
+Are you sure you want to perform this action?
+Performing operation "Create File" on Target "Destination: C:\ps-test\test
+.txt".
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (defau
+lt is "Y"): y
+
+Directory: C:\ps-test
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+-a---         8/27/2010   2:41 PM          0 test.txt
+```
+
+## <a name="keywords"></a><span data-ttu-id="691e6-309">KEYWORDS</span><span class="sxs-lookup"><span data-stu-id="691e6-309">KEYWORDS</span></span>
+
+<span data-ttu-id="691e6-310">about_Common_Parameters</span><span class="sxs-lookup"><span data-stu-id="691e6-310">about_Common_Parameters</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="691e6-311">関連項目</span><span class="sxs-lookup"><span data-stu-id="691e6-311">SEE ALSO</span></span>
+
+[<span data-ttu-id="691e6-312">about_Preference_Variables</span><span class="sxs-lookup"><span data-stu-id="691e6-312">about_Preference_Variables</span></span>](about_Preference_Variables.md)
+
+[<span data-ttu-id="691e6-313">Write-Debug</span><span class="sxs-lookup"><span data-stu-id="691e6-313">Write-Debug</span></span>](xref:Microsoft.PowerShell.Utility.Write-Debug)
+
+[<span data-ttu-id="691e6-314">Write-Warning</span><span class="sxs-lookup"><span data-stu-id="691e6-314">Write-Warning</span></span>](xref:Microsoft.PowerShell.Utility.Write-Warning)
+
+[<span data-ttu-id="691e6-315">Write-Error</span><span class="sxs-lookup"><span data-stu-id="691e6-315">Write-Error</span></span>](xref:Microsoft.PowerShell.Utility.Write-Error)
+
+[<span data-ttu-id="691e6-316">Write-Verbose</span><span class="sxs-lookup"><span data-stu-id="691e6-316">Write-Verbose</span></span>](xref:Microsoft.PowerShell.Utility.Write-Verbose)
+
