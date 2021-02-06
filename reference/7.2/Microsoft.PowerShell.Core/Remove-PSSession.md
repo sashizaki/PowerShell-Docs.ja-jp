@@ -1,0 +1,392 @@
+---
+external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Remove-PSSession
+ms.openlocfilehash: cd0e2b62464a4c34278d42b833a669c6c28e377f
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "99602633"
+---
+# <span data-ttu-id="da50a-102">Remove-PSSession</span><span class="sxs-lookup"><span data-stu-id="da50a-102">Remove-PSSession</span></span>
+
+## <span data-ttu-id="da50a-103">概要</span><span class="sxs-lookup"><span data-stu-id="da50a-103">SYNOPSIS</span></span>
+<span data-ttu-id="da50a-104">1つ以上の PowerShell セッション (pssession) を閉じます。</span><span class="sxs-lookup"><span data-stu-id="da50a-104">Closes one or more PowerShell sessions (PSSessions).</span></span>
+
+## <span data-ttu-id="da50a-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="da50a-105">SYNTAX</span></span>
+
+### <span data-ttu-id="da50a-106">Id (既定値)</span><span class="sxs-lookup"><span data-stu-id="da50a-106">Id (Default)</span></span>
+
+```
+Remove-PSSession [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da50a-107">セッション</span><span class="sxs-lookup"><span data-stu-id="da50a-107">Session</span></span>
+
+```
+Remove-PSSession [-Session] <PSSession[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da50a-108">ContainerId</span><span class="sxs-lookup"><span data-stu-id="da50a-108">ContainerId</span></span>
+
+```
+Remove-PSSession -ContainerId <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da50a-109">VMId</span><span class="sxs-lookup"><span data-stu-id="da50a-109">VMId</span></span>
+
+```
+Remove-PSSession -VMId <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da50a-110">VMName</span><span class="sxs-lookup"><span data-stu-id="da50a-110">VMName</span></span>
+
+```
+Remove-PSSession -VMName <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da50a-111">InstanceId</span><span class="sxs-lookup"><span data-stu-id="da50a-111">InstanceId</span></span>
+
+```
+Remove-PSSession -InstanceId <Guid[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da50a-112">名前</span><span class="sxs-lookup"><span data-stu-id="da50a-112">Name</span></span>
+
+```
+Remove-PSSession -Name <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da50a-113">[ComputerName]</span><span class="sxs-lookup"><span data-stu-id="da50a-113">ComputerName</span></span>
+
+```
+Remove-PSSession [-ComputerName] <String[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="da50a-114">Description</span><span class="sxs-lookup"><span data-stu-id="da50a-114">DESCRIPTION</span></span>
+
+<span data-ttu-id="da50a-115">削除コマンドレットは、現在のセッションの PowerShell **セッション (** **PSSession** ) を閉じます。</span><span class="sxs-lookup"><span data-stu-id="da50a-115">The **Remove-PSSession** cmdlet closes PowerShell sessions (**PSSessions**) in the current session.</span></span>
+<span data-ttu-id="da50a-116">このメソッドは、pssession で実行されている **すべてのコマンドを停止** し、 **pssession** を終了して、 **pssession** が使用していたリソースを解放します。</span><span class="sxs-lookup"><span data-stu-id="da50a-116">It stops any commands that are running in the **PSSessions**, ends the **PSSession**, and releases the resources that the **PSSession** was using.</span></span>
+<span data-ttu-id="da50a-117">**PSSession** がリモートコンピューターに接続されている場合は、このコマンドレットによって、ローカルコンピューターとリモートコンピューター間の接続も切断されます。</span><span class="sxs-lookup"><span data-stu-id="da50a-117">If the **PSSession** is connected to a remote computer, this cmdlet also closes the connection between the local and remote computers.</span></span>
+
+<span data-ttu-id="da50a-118">**PSSession** を削除するには、セッションの *名前*、 *ComputerName*、 *ID*、または *InstanceID* を入力します。</span><span class="sxs-lookup"><span data-stu-id="da50a-118">To remove a **PSSession**, enter the *Name*, *ComputerName*, *ID*, or *InstanceID* of the session.</span></span>
+
+<span data-ttu-id="da50a-119">*Pssession* を変数に保存した場合、セッションオブジェクトは変数に残りますが、 *pssession* の状態は閉じられます。</span><span class="sxs-lookup"><span data-stu-id="da50a-119">If you have saved the *PSSession* in a variable, the session object remains in the variable, but the state of the *PSSession* is Closed.</span></span>
+
+## <span data-ttu-id="da50a-120">例</span><span class="sxs-lookup"><span data-stu-id="da50a-120">EXAMPLES</span></span>
+
+### <span data-ttu-id="da50a-121">例 1: Id を使用してセッションを削除する</span><span class="sxs-lookup"><span data-stu-id="da50a-121">Example 1: Remove sessions by using IDs</span></span>
+
+```powershell
+Remove-PSSession -Id 1, 2
+```
+
+<span data-ttu-id="da50a-122">このコマンドは、Id が1および2の **pssession を削除** します。</span><span class="sxs-lookup"><span data-stu-id="da50a-122">This command removes the **PSSessions** that have IDs 1 and 2.</span></span>
+
+### <span data-ttu-id="da50a-123">例 2: 現在のセッションのすべてのセッションを削除する</span><span class="sxs-lookup"><span data-stu-id="da50a-123">Example 2: Remove all the sessions in the current session</span></span>
+
+```powershell
+Get-PSSession | Remove-PSSession
+Remove-PSSession -Session (Get-PSSession)
+$s = Get-PSSession
+Remove-PSSession -Session $s
+```
+
+<span data-ttu-id="da50a-124">これらのコマンド **は、現在** のセッションのすべての pssession を削除します。</span><span class="sxs-lookup"><span data-stu-id="da50a-124">These commands remove all of the **PSSessions** in the current session.</span></span>
+<span data-ttu-id="da50a-125">これらの 3 つのコマンドの形式は異なっていますが、効果は同じです。</span><span class="sxs-lookup"><span data-stu-id="da50a-125">Although the three command formats look different, they have the same effect.</span></span>
+
+### <span data-ttu-id="da50a-126">例 3: 名前を使用してセッションを閉じる</span><span class="sxs-lookup"><span data-stu-id="da50a-126">Example 3: Close sessions by using names</span></span>
+
+```powershell
+$r = Get-PSSession -ComputerName Serv*
+$r | Remove-PSSession
+```
+
+<span data-ttu-id="da50a-127">これらのコマンドは **、名前** が Serv で始まるコンピューターに接続されている pssession を閉じます。</span><span class="sxs-lookup"><span data-stu-id="da50a-127">These commands close the **PSSessions** that are connected to computers that have names that begin with Serv.</span></span>
+
+### <span data-ttu-id="da50a-128">例 4: ポートに接続されているセッションを閉じる</span><span class="sxs-lookup"><span data-stu-id="da50a-128">Example 4: Close sessions connected to a port</span></span>
+
+```powershell
+Get-PSSession | where {$_.port -eq 90} | Remove-PSSession
+```
+
+<span data-ttu-id="da50a-129">このコマンドは、ポート90に接続され **ている pssession** を閉じます。</span><span class="sxs-lookup"><span data-stu-id="da50a-129">This command closes the **PSSessions** that are connected to port 90.</span></span>
+<span data-ttu-id="da50a-130">このコマンド形式を使用すると、 *ComputerName*、 *Name*、 *InstanceID*、および *ID* 以外のプロパティで **pssessions** を識別できます。</span><span class="sxs-lookup"><span data-stu-id="da50a-130">You can use this command format to identify **PSSessions** by properties other than *ComputerName*, *Name*, *InstanceID*, and *ID*.</span></span>
+
+### <span data-ttu-id="da50a-131">例 5: インスタンス ID に基づいてセッションを閉じる</span><span class="sxs-lookup"><span data-stu-id="da50a-131">Example 5: Close a session based on instance ID</span></span>
+
+```powershell
+Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
+```
+
+```Output
+ComputerName InstanceId
+------------ ----------------
+Server01     875d231b-2788-4f36-9f67-2e50d63bb82a
+localhost    c065ffa0-02c4-406e-84a3-dacb0d677868
+Server02     4699cdbc-61d5-4e0d-b916-84f82ebede1f
+Server03     4e5a3245-4c63-43e4-88d0-a7798bfc2414
+TX-TEST-01   fc4e9dfa-f246-452d-9fa3-1adbdd64ae85 PS C:\> Remove-PSSession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
+```
+
+<span data-ttu-id="da50a-132">これらのコマンドは、インスタンス ID または **Remoterunspace ID** に基づいて **PSSession** を閉じる方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="da50a-132">These commands show how to close a **PSSession** based on its instance ID, or **RemoteRunspaceID**.</span></span>
+
+<span data-ttu-id="da50a-133">最初のコマンドは、 **Get PSSession** コマンドレットを使用して、現在の **セッションの** PSSession を取得します。</span><span class="sxs-lookup"><span data-stu-id="da50a-133">The first command uses the **Get-PSSession** cmdlet to get the **PSSessions** in the current session.</span></span>
+<span data-ttu-id="da50a-134">この例では、パイプライン演算子 (|) を使用して、pssession を Format-Table コマンド **レットに送信します** 。このコマンドレットは、テーブル内の **ComputerName** プロパティと **InstanceID** プロパティを書式設定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-134">It uses a pipeline operator (|) to send the **PSSessions** to the Format-Table cmdlet, which formats their **ComputerName** and **InstanceID** properties in a table.</span></span>
+<span data-ttu-id="da50a-135">*AutoSize* パラメーターは、表示する列を圧縮します。</span><span class="sxs-lookup"><span data-stu-id="da50a-135">The *AutoSize* parameter compresses the columns for display.</span></span>
+
+<span data-ttu-id="da50a-136">結果の表示から、閉じる **pssession** を特定し、その **pssession** の *InstanceID* をコピーして2番目のコマンドに貼り付けることができます。</span><span class="sxs-lookup"><span data-stu-id="da50a-136">From the resulting display, you can identify the **PSSession** to be closed, and copy and paste the *InstanceID* of that **PSSession** into the second command.</span></span>
+
+<span data-ttu-id="da50a-137">2番目のコマンドは、 **削除 pssession** コマンドレットを使用して、指定されたインスタンス ID を持つ *pssession* を削除します。</span><span class="sxs-lookup"><span data-stu-id="da50a-137">The second command uses the **Remove-PSSession** cmdlet to remove the *PSSession* with the specified instance ID.</span></span>
+
+### <span data-ttu-id="da50a-138">例 6: 現在のセッションのすべてのセッションを削除する関数を作成する</span><span class="sxs-lookup"><span data-stu-id="da50a-138">Example 6: Create a function that deletes all sessions in the current session</span></span>
+
+```powershell
+Function EndPSS { Get-PSSession | Remove-PSSession }
+```
+
+<span data-ttu-id="da50a-139">この関数 **は、現在** のセッションのすべての pssession を削除します。</span><span class="sxs-lookup"><span data-stu-id="da50a-139">This function deletes all of the **PSSessions** in the current session.</span></span>
+<span data-ttu-id="da50a-140">この関数を PowerShell プロファイルに追加した後、すべてのセッションを削除するには、「」と入力 `EndPSS` します。</span><span class="sxs-lookup"><span data-stu-id="da50a-140">After you add this function to your PowerShell profile, to delete all sessions, type `EndPSS`.</span></span>
+
+## <span data-ttu-id="da50a-141">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="da50a-141">PARAMETERS</span></span>
+
+### <span data-ttu-id="da50a-142">-ComputerName</span><span class="sxs-lookup"><span data-stu-id="da50a-142">-ComputerName</span></span>
+
+<span data-ttu-id="da50a-143">コンピューターの名前の配列を指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-143">Specifies an array of names of computers.</span></span>
+<span data-ttu-id="da50a-144">このコマンドレットは、指定されたコンピューターに接続され **ている pssession** を閉じます。</span><span class="sxs-lookup"><span data-stu-id="da50a-144">This cmdlet closes the **PSSessions** that are connected to the specified computers.</span></span>
+<span data-ttu-id="da50a-145">ワイルドカード文字を使用できます。</span><span class="sxs-lookup"><span data-stu-id="da50a-145">Wildcard characters are permitted.</span></span>
+
+<span data-ttu-id="da50a-146">1 台または複数のリモート コンピューターの NetBIOS 名、IP アドレス、または完全修飾ドメイン名を入力します。</span><span class="sxs-lookup"><span data-stu-id="da50a-146">Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more remote computers.</span></span>
+<span data-ttu-id="da50a-147">ローカルコンピューターを指定するには、コンピューター名、localhost、またはドット (.) を入力します。</span><span class="sxs-lookup"><span data-stu-id="da50a-147">To specify the local computer, type the computer name, localhost, or a dot (.).</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: ComputerName
+Aliases: Cn
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="da50a-148">-ContainerId</span><span class="sxs-lookup"><span data-stu-id="da50a-148">-ContainerId</span></span>
+
+<span data-ttu-id="da50a-149">コンテナーの Id の配列を指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-149">Specifies an array of IDs of containers.</span></span> <span data-ttu-id="da50a-150">このコマンドレットは、指定された各コンテナーのセッションを削除します。</span><span class="sxs-lookup"><span data-stu-id="da50a-150">This cmdlet removes sessions for each of the specified containers.</span></span> <span data-ttu-id="da50a-151">`docker ps`コンテナー id の一覧を取得するには、コマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="da50a-151">Use the `docker ps` command to get a list of container IDs.</span></span> <span data-ttu-id="da50a-152">詳細については、 [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) コマンドのヘルプを参照してください。</span><span class="sxs-lookup"><span data-stu-id="da50a-152">For more information, see the help for the [docker ps](https://docs.docker.com/engine/reference/commandline/ps/) command.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: ContainerId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da50a-153">-Id</span><span class="sxs-lookup"><span data-stu-id="da50a-153">-Id</span></span>
+
+<span data-ttu-id="da50a-154">セッションの Id の配列を指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-154">Specifies an array of IDs of sessions.</span></span>
+<span data-ttu-id="da50a-155">このコマンドレットは、指定された Id *を持つ pssession を閉じ* ます。</span><span class="sxs-lookup"><span data-stu-id="da50a-155">This cmdlet closes the *PSSessions* with the specified IDs.</span></span>
+<span data-ttu-id="da50a-156">1つ以上の Id をコンマで区切って入力するか、範囲演算子 (..) を使用して Id の範囲を指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-156">Type one or more IDs, separated by commas, or use the range operator (..) to specify a range of IDs.</span></span>
+
+<span data-ttu-id="da50a-157">ID は、現在のセッションの **PSSession** を一意に識別する整数です。</span><span class="sxs-lookup"><span data-stu-id="da50a-157">An ID is an integer that uniquely identifies the **PSSession** in the current session.</span></span>
+<span data-ttu-id="da50a-158">これは *InstanceId* よりも覚えやすく、入力も簡単ですが、現在のセッションでのみ一意です。</span><span class="sxs-lookup"><span data-stu-id="da50a-158">It is easier to remember and type than the *InstanceId*, but it is unique only in the current session.</span></span>
+<span data-ttu-id="da50a-159">**PSSession** の ID を検索するには、パラメーターを指定せずに Get-PSSession コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="da50a-159">To find the ID of a **PSSession**, run the Get-PSSession cmdlet without parameters.</span></span>
+
+```yaml
+Type: System.Int32[]
+Parameter Sets: Id
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da50a-160">-InstanceId</span><span class="sxs-lookup"><span data-stu-id="da50a-160">-InstanceId</span></span>
+
+<span data-ttu-id="da50a-161">インスタンス Id の配列を指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-161">Specifies an array of instance IDs.</span></span>
+<span data-ttu-id="da50a-162">このコマンドレットは、指定されたインスタンス Id を持つ **pssession を閉じ** ます。</span><span class="sxs-lookup"><span data-stu-id="da50a-162">This cmdlet closes the **PSSessions** that have the specified instance IDs.</span></span>
+
+<span data-ttu-id="da50a-163">インスタンス ID は、現在のセッションの **PSSession** を一意に識別する GUID です。</span><span class="sxs-lookup"><span data-stu-id="da50a-163">The instance ID is a GUID that uniquely identifies a **PSSession** in the current session.</span></span>
+<span data-ttu-id="da50a-164">1台のコンピューターで複数のセッションが実行されている場合でも、インスタンス ID は一意です。</span><span class="sxs-lookup"><span data-stu-id="da50a-164">The instance ID is unique, even when you have multiple sessions running on a single computer.</span></span>
+
+<span data-ttu-id="da50a-165">インスタンス ID は、 **PSSession** を表すオブジェクトの **InstanceID** プロパティに格納されます。</span><span class="sxs-lookup"><span data-stu-id="da50a-165">The instance ID is stored in the **InstanceID** property of the object that represents a **PSSession**.</span></span>
+<span data-ttu-id="da50a-166">現在 **のセッション** の Pssession の **InstanceID** を検索するには、「」と入力 `Get-PSSession | Format-Table Name, ComputerName, InstanceId` します。</span><span class="sxs-lookup"><span data-stu-id="da50a-166">To find the **InstanceID** of the **PSSessions** in the current session, type `Get-PSSession | Format-Table Name, ComputerName, InstanceId`.</span></span>
+
+```yaml
+Type: System.Guid[]
+Parameter Sets: InstanceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da50a-167">-Name</span><span class="sxs-lookup"><span data-stu-id="da50a-167">-Name</span></span>
+
+<span data-ttu-id="da50a-168">セッションのフレンドリ名の配列を指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-168">Specifies an array of friendly names of sessions.</span></span>
+<span data-ttu-id="da50a-169">このコマンド **レットは、** 指定されたフレンドリ名を持つ pssession を閉じます。</span><span class="sxs-lookup"><span data-stu-id="da50a-169">This cmdlet closes the **PSSessions** that have the specified friendly names.</span></span>
+<span data-ttu-id="da50a-170">ワイルドカード文字を使用できます。</span><span class="sxs-lookup"><span data-stu-id="da50a-170">Wildcard characters are permitted.</span></span>
+
+<span data-ttu-id="da50a-171">**Pssession** のフレンドリ名は一意ではない可能性があるため、 *name* パラメーターを使用する場合は、 **Pssession の削除** コマンドで *WhatIf* または *Confirm* パラメーターも使用することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="da50a-171">Because the friendly name of a **PSSession** might not be unique, when you use the *Name* parameter, consider also using the *WhatIf* or *Confirm* parameter in the **Remove-PSSession** command.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: Name
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="da50a-172">-セッション</span><span class="sxs-lookup"><span data-stu-id="da50a-172">-Session</span></span>
+
+<span data-ttu-id="da50a-173">閉じる **pssession のセッション** オブジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-173">Specifies the session objects of the **PSSessions** to close.</span></span>
+<span data-ttu-id="da50a-174">**Pssessions** を含む変数、または PSSession **を作成** または取得するコマンドを入力します (New-PSSession や、 **PSSession** コマンドなど)。</span><span class="sxs-lookup"><span data-stu-id="da50a-174">Enter a variable that contains the **PSSessions** or a command that creates or gets the **PSSessions**, such as a New-PSSession or **Get-PSSession** command.</span></span>
+<span data-ttu-id="da50a-175">パイプを使用して1つ以上のセッションオブジェクトを **削除** することもできます。</span><span class="sxs-lookup"><span data-stu-id="da50a-175">You can also pipe one or more session objects to **Remove-PSSession**.</span></span>
+
+```yaml
+Type: System.Management.Automation.Runspaces.PSSession[]
+Parameter Sets: Session
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da50a-176">-VMId</span><span class="sxs-lookup"><span data-stu-id="da50a-176">-VMId</span></span>
+
+<span data-ttu-id="da50a-177">仮想マシンの ID の配列を指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-177">Specifies an array of ID of virtual machines.</span></span>
+<span data-ttu-id="da50a-178">このコマンドレットは、指定された各仮想マシンとの対話型セッションを開始します。</span><span class="sxs-lookup"><span data-stu-id="da50a-178">This cmdlet starts an interactive session with each of the specified virtual machines.</span></span>
+<span data-ttu-id="da50a-179">使用可能な仮想マシンを表示するには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="da50a-179">To see the virtual machines that are available to you, use the following command:</span></span>
+
+`Get-VM | Select-Object -Property Name, ID`
+
+```yaml
+Type: System.Guid[]
+Parameter Sets: VMId
+Aliases: VMGuid
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da50a-180">-VMName</span><span class="sxs-lookup"><span data-stu-id="da50a-180">-VMName</span></span>
+
+<span data-ttu-id="da50a-181">仮想マシンの名前の配列を指定します。</span><span class="sxs-lookup"><span data-stu-id="da50a-181">Specifies an array of names of virtual machines.</span></span>
+<span data-ttu-id="da50a-182">このコマンドレットは、指定された各仮想マシンとの対話型セッションを開始します。</span><span class="sxs-lookup"><span data-stu-id="da50a-182">This cmdlet starts an interactive session with each of the specified virtual machines.</span></span>
+<span data-ttu-id="da50a-183">使用可能な仮想マシンを表示するには、 **GET VM** コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="da50a-183">To see the virtual machines that are available to you, use the **Get-VM** cmdlet.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: VMName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da50a-184">-Confirm</span><span class="sxs-lookup"><span data-stu-id="da50a-184">-Confirm</span></span>
+
+<span data-ttu-id="da50a-185">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="da50a-185">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da50a-186">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="da50a-186">-WhatIf</span></span>
+
+<span data-ttu-id="da50a-187">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="da50a-187">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="da50a-188">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="da50a-188">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da50a-189">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="da50a-189">CommonParameters</span></span>
+
+<span data-ttu-id="da50a-190">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="da50a-190">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="da50a-191">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="da50a-191">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="da50a-192">入力</span><span class="sxs-lookup"><span data-stu-id="da50a-192">INPUTS</span></span>
+
+### <span data-ttu-id="da50a-193">システム管理. 実行空間</span><span class="sxs-lookup"><span data-stu-id="da50a-193">System.Management.Automation.Runspaces.PSSession</span></span>
+
+<span data-ttu-id="da50a-194">このコマンドレットには、セッションオブジェクトをパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="da50a-194">You can pipe a session object to this cmdlet.</span></span>
+
+## <span data-ttu-id="da50a-195">出力</span><span class="sxs-lookup"><span data-stu-id="da50a-195">OUTPUTS</span></span>
+
+### <span data-ttu-id="da50a-196">なし</span><span class="sxs-lookup"><span data-stu-id="da50a-196">None</span></span>
+
+<span data-ttu-id="da50a-197">このコマンドレットはオブジェクトを返しません。</span><span class="sxs-lookup"><span data-stu-id="da50a-197">This cmdlet does not return any objects.</span></span>
+
+## <span data-ttu-id="da50a-198">注</span><span class="sxs-lookup"><span data-stu-id="da50a-198">NOTES</span></span>
+
+* <span data-ttu-id="da50a-199">*Id* パラメーターは必須です。</span><span class="sxs-lookup"><span data-stu-id="da50a-199">The *Id* parameter is mandatory.</span></span> <span data-ttu-id="da50a-200">現在の **セッションのすべての pssession** を削除するには、「」と入力 `Get-PSSession | Remove-PSSession` します。</span><span class="sxs-lookup"><span data-stu-id="da50a-200">To delete all the **PSSessions** in the current session, type `Get-PSSession | Remove-PSSession`.</span></span>
+* <span data-ttu-id="da50a-201">**PSSession** は、リモートコンピューターへの永続的な接続を使用します。</span><span class="sxs-lookup"><span data-stu-id="da50a-201">A **PSSession** uses a persistent connection to a remote computer.</span></span> <span data-ttu-id="da50a-202">**PSSession** を作成して、データを共有する一連のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="da50a-202">Create a **PSSession** to run a series of commands that share data.</span></span> <span data-ttu-id="da50a-203">詳細を表示するには「`Get-Help about_PSSessions`」を入力します。</span><span class="sxs-lookup"><span data-stu-id="da50a-203">For more information, type `Get-Help about_PSSessions`.</span></span>
+* <span data-ttu-id="da50a-204">**Pssessions** は、現在のセッションに固有のものです。</span><span class="sxs-lookup"><span data-stu-id="da50a-204">**PSSessions** are specific to the current session.</span></span> <span data-ttu-id="da50a-205">セッションを終了すると、そのセッションで作成 **した pssession** が強制的に閉じられます。</span><span class="sxs-lookup"><span data-stu-id="da50a-205">When you end a session, the **PSSessions** that you created in that session are forcibly closed.</span></span>
+
+## <span data-ttu-id="da50a-206">関連リンク</span><span class="sxs-lookup"><span data-stu-id="da50a-206">RELATED LINKS</span></span>
+
+[<span data-ttu-id="da50a-207">Connect-PSSession</span><span class="sxs-lookup"><span data-stu-id="da50a-207">Connect-PSSession</span></span>](Connect-PSSession.md)
+
+[<span data-ttu-id="da50a-208">Disconnect-PSSession</span><span class="sxs-lookup"><span data-stu-id="da50a-208">Disconnect-PSSession</span></span>](Disconnect-PSSession.md)
+
+[<span data-ttu-id="da50a-209">Enter-PSSession</span><span class="sxs-lookup"><span data-stu-id="da50a-209">Enter-PSSession</span></span>](Enter-PSSession.md)
+
+[<span data-ttu-id="da50a-210">Exit-PSSession</span><span class="sxs-lookup"><span data-stu-id="da50a-210">Exit-PSSession</span></span>](Exit-PSSession.md)
+
+[<span data-ttu-id="da50a-211">Get-PSSession</span><span class="sxs-lookup"><span data-stu-id="da50a-211">Get-PSSession</span></span>](Get-PSSession.md)
+
+[<span data-ttu-id="da50a-212">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="da50a-212">Invoke-Command</span></span>](Invoke-Command.md)
+
+[<span data-ttu-id="da50a-213">New-PSSession</span><span class="sxs-lookup"><span data-stu-id="da50a-213">New-PSSession</span></span>](New-PSSession.md)
+
+[<span data-ttu-id="da50a-214">Receive-PSSession</span><span class="sxs-lookup"><span data-stu-id="da50a-214">Receive-PSSession</span></span>](Receive-PSSession.md)
+
+[<span data-ttu-id="da50a-215">about_PSSessions</span><span class="sxs-lookup"><span data-stu-id="da50a-215">about_PSSessions</span></span>](About/about_PSSessions.md)
+
+[<span data-ttu-id="da50a-216">about_Remote</span><span class="sxs-lookup"><span data-stu-id="da50a-216">about_Remote</span></span>](About/about_Remote.md)
+

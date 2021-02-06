@@ -1,0 +1,290 @@
+---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
+ms.date: 05/01/2019
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer?view=powershell-7.2&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Rename-Computer
+ms.openlocfilehash: 070a428530f4f3eecceb0ae3f520ad565097c1e0
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "99602411"
+---
+# <span data-ttu-id="9b061-102">Rename-Computer</span><span class="sxs-lookup"><span data-stu-id="9b061-102">Rename-Computer</span></span>
+
+## <span data-ttu-id="9b061-103">概要</span><span class="sxs-lookup"><span data-stu-id="9b061-103">SYNOPSIS</span></span>
+<span data-ttu-id="9b061-104">コンピューターの名前を変更します。</span><span class="sxs-lookup"><span data-stu-id="9b061-104">Renames a computer.</span></span>
+
+## <span data-ttu-id="9b061-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="9b061-105">SYNTAX</span></span>
+
+```
+Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCredential>]
+ [-LocalCredential <PSCredential>] [-NewName] <String> [-Force] [-Restart] [-WsmanAuthentication <String>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="9b061-106">Description</span><span class="sxs-lookup"><span data-stu-id="9b061-106">DESCRIPTION</span></span>
+
+<span data-ttu-id="9b061-107">`Rename-Computer`コマンドレットは、ローカルコンピューターまたはリモートコンピューターの名前を変更します。</span><span class="sxs-lookup"><span data-stu-id="9b061-107">The `Rename-Computer` cmdlet renames the local computer or a remote computer.</span></span>
+<span data-ttu-id="9b061-108">各コマンドで 1 つのコンピューターの名前を変更します。</span><span class="sxs-lookup"><span data-stu-id="9b061-108">It renames one computer in each command.</span></span>
+
+<span data-ttu-id="9b061-109">このコマンドレットは、Windows PowerShell 3.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="9b061-109">This cmdlet was introduced in Windows PowerShell 3.0.</span></span>
+
+## <span data-ttu-id="9b061-110">例</span><span class="sxs-lookup"><span data-stu-id="9b061-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="9b061-111">例 1: ローカルコンピューターの名前を変更する</span><span class="sxs-lookup"><span data-stu-id="9b061-111">Example 1: Rename the local computer</span></span>
+
+<span data-ttu-id="9b061-112">このコマンドは、ローカルコンピューターの名前をに変更し、 `Server044` 再起動して変更を有効にします。</span><span class="sxs-lookup"><span data-stu-id="9b061-112">This command renames the local computer to `Server044` and then restarts it to make the change effective.</span></span>
+
+```powershell
+Rename-Computer -NewName "Server044" -DomainCredential Domain01\Admin01 -Restart
+```
+
+### <span data-ttu-id="9b061-113">例 2: リモートコンピューターの名前を変更する</span><span class="sxs-lookup"><span data-stu-id="9b061-113">Example 2: Rename a remote computer</span></span>
+
+<span data-ttu-id="9b061-114">このコマンドにより、コンピューターの名前 `Srv01` がに変更さ `Server001` れます。</span><span class="sxs-lookup"><span data-stu-id="9b061-114">This command renames the `Srv01` computer to `Server001`.</span></span> <span data-ttu-id="9b061-115">コンピューターは再起動されません。</span><span class="sxs-lookup"><span data-stu-id="9b061-115">The computer is not restarted.</span></span>
+
+<span data-ttu-id="9b061-116">**DomainCredential** パラメーターは、ドメイン内のコンピューターの名前を変更するアクセス許可を持つユーザーの資格情報を指定します。</span><span class="sxs-lookup"><span data-stu-id="9b061-116">The **DomainCredential** parameter specifies the credentials of a user who has permission to rename computers in the domain.</span></span>
+
+<span data-ttu-id="9b061-117">**Force** パラメーターを指定すると、確認プロンプトは表示されません。</span><span class="sxs-lookup"><span data-stu-id="9b061-117">The **Force** parameter suppresses the confirmation prompt.</span></span>
+
+```powershell
+Rename-Computer -ComputerName "Srv01" -NewName "Server001" -DomainCredential Domain01\Admin01 -Force
+```
+
+## <span data-ttu-id="9b061-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="9b061-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="9b061-119">-ComputerName</span><span class="sxs-lookup"><span data-stu-id="9b061-119">-ComputerName</span></span>
+
+<span data-ttu-id="9b061-120">指定したリモート コンピューターの名前を変更します。</span><span class="sxs-lookup"><span data-stu-id="9b061-120">Renames the specified remote computer.</span></span>
+<span data-ttu-id="9b061-121">既定値はローカル コンピューターです。</span><span class="sxs-lookup"><span data-stu-id="9b061-121">The default is the local computer.</span></span>
+
+<span data-ttu-id="9b061-122">リモート コンピューターの NetBIOS 名、IP アドレス、または完全修飾ドメイン名を入力します。</span><span class="sxs-lookup"><span data-stu-id="9b061-122">Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer.</span></span>
+<span data-ttu-id="9b061-123">ローカルコンピューターを指定するには、コンピューター名、ドット ( `.` )、またはを入力し `localhost` ます。</span><span class="sxs-lookup"><span data-stu-id="9b061-123">To specify the local computer, type the computer name, a dot (`.`), or `localhost`.</span></span>
+
+<span data-ttu-id="9b061-124">このパラメーターは、PowerShell リモート処理に依存しません。</span><span class="sxs-lookup"><span data-stu-id="9b061-124">This parameter does not rely on PowerShell remoting.</span></span>
+<span data-ttu-id="9b061-125"> `Rename-Computer` コンピューターがリモートコマンドを実行するように構成されていない場合でも、の ComputerName パラメーターを使用できます。</span><span class="sxs-lookup"><span data-stu-id="9b061-125">You can use the **ComputerName** parameter of `Rename-Computer` even if your computer is not configured to run remote commands.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Local Computer
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-126">-DomainCredential</span><span class="sxs-lookup"><span data-stu-id="9b061-126">-DomainCredential</span></span>
+
+<span data-ttu-id="9b061-127">ドメインに接続するアクセス許可を持つユーザー アカウントを指定します。</span><span class="sxs-lookup"><span data-stu-id="9b061-127">Specifies a user account that has permission to connect to the domain.</span></span>
+<span data-ttu-id="9b061-128">ドメインに参加しているコンピューターの名前を変更するには、明示的な資格情報が必要です。</span><span class="sxs-lookup"><span data-stu-id="9b061-128">Explicit credentials are required to rename a computer that is joined to a domain.</span></span>
+
+<span data-ttu-id="9b061-129">またはなどのユーザー名を入力する `User01` `Domain01\User01` か、コマンドレットによって生成されるような **PSCredential** オブジェクトを入力し `Get-Credential` ます。</span><span class="sxs-lookup"><span data-stu-id="9b061-129">Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.</span></span>
+
+<span data-ttu-id="9b061-130">ユーザー名を入力すると、このコマンドレットによってパスワードの入力が求められます。</span><span class="sxs-lookup"><span data-stu-id="9b061-130">If you type a user name, this cmdlet prompts you for a password.</span></span>
+
+<span data-ttu-id="9b061-131">**ComputerName** パラメーターで指定されたコンピューターに接続するアクセス許可を持つユーザー アカウントを指定するには、**LocalCredential** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="9b061-131">To specify a user account that has permission to connect to the computer that is specified by the **ComputerName** parameter, use the **LocalCredential** parameter.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-132">-Force</span><span class="sxs-lookup"><span data-stu-id="9b061-132">-Force</span></span>
+
+<span data-ttu-id="9b061-133">ユーザーに確認せずに、直ちにコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="9b061-133">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-134">-LocalCredential</span><span class="sxs-lookup"><span data-stu-id="9b061-134">-LocalCredential</span></span>
+
+<span data-ttu-id="9b061-135">**ComputerName** パラメーターで指定されたコンピューターに接続するアクセス許可を持つユーザー アカウントを指定します。</span><span class="sxs-lookup"><span data-stu-id="9b061-135">Specifies a user account that has permission to connect to the computer specified by the **ComputerName** parameter.</span></span> <span data-ttu-id="9b061-136">既定値は現在のユーザーです。</span><span class="sxs-lookup"><span data-stu-id="9b061-136">The default is the current user.</span></span>
+
+<span data-ttu-id="9b061-137">またはなどのユーザー名を入力する `User01` `Domain01\User01` か、コマンドレットによって生成されるような **PSCredential** オブジェクトを入力し `Get-Credential` ます。</span><span class="sxs-lookup"><span data-stu-id="9b061-137">Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such as one generated by the `Get-Credential` cmdlet.</span></span>
+
+<span data-ttu-id="9b061-138">ユーザー名を入力すると、このコマンドレットによってパスワードの入力が求められます。</span><span class="sxs-lookup"><span data-stu-id="9b061-138">If you type a user name, this cmdlet prompts you for a password.</span></span>
+
+<span data-ttu-id="9b061-139">ドメインに接続するアクセス許可を持つユーザー アカウントを指定するには、**DomainCredential** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="9b061-139">To specify a user account that has permission to connect to the domain, use the **DomainCredential** parameter.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Current User
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-140">-NewName</span><span class="sxs-lookup"><span data-stu-id="9b061-140">-NewName</span></span>
+
+<span data-ttu-id="9b061-141">コンピューターの新しい名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="9b061-141">Specifies a new name for the computer.</span></span>
+<span data-ttu-id="9b061-142">このパラメーターは必須です。</span><span class="sxs-lookup"><span data-stu-id="9b061-142">This parameter is required.</span></span>
+
+<span data-ttu-id="9b061-143">標準名には、文字 ( `a-z` )、( `A-Z` )、数字 ( `0-9` )、ハイフン () を含めることができ `-` ますが、スペースやピリオド () は使用できません `.` 。</span><span class="sxs-lookup"><span data-stu-id="9b061-143">Standard names may contain letters (`a-z`), (`A-Z`), numbers (`0-9`), and hyphens (`-`), but no spaces or periods (`.`).</span></span> <span data-ttu-id="9b061-144">名前には数字だけを使用することはできません。また、63文字以内にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="9b061-144">The name may not consist entirely of digits, and may not be longer than 63 characters</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-145">-PassThru</span><span class="sxs-lookup"><span data-stu-id="9b061-145">-PassThru</span></span>
+
+<span data-ttu-id="9b061-146">コマンドの結果を返します。</span><span class="sxs-lookup"><span data-stu-id="9b061-146">Returns the results of the command.</span></span>
+<span data-ttu-id="9b061-147">それ以外の場合、このコマンドレットによる出力はありません。</span><span class="sxs-lookup"><span data-stu-id="9b061-147">Otherwise, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-148">-Restart</span><span class="sxs-lookup"><span data-stu-id="9b061-148">-Restart</span></span>
+
+<span data-ttu-id="9b061-149">このコマンドレットは、名前が変更されたコンピューターを再起動することを示します。</span><span class="sxs-lookup"><span data-stu-id="9b061-149">Indicates that this cmdlet restarts the computer that was renamed.</span></span>
+<span data-ttu-id="9b061-150">多くの場合、変更を有効にするには再起動が必要です。</span><span class="sxs-lookup"><span data-stu-id="9b061-150">A restart is often required to make the change effective.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-151">-WsmanAuthentication</span><span class="sxs-lookup"><span data-stu-id="9b061-151">-WsmanAuthentication</span></span>
+
+<span data-ttu-id="9b061-152">このコマンドレットで WSMan プロトコルを使用するときに、ユーザー資格情報の認証に使用されるメカニズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="9b061-152">Specifies the mechanism that is used to authenticate the user credentials when this cmdlet uses the WSMan protocol.</span></span> <span data-ttu-id="9b061-153">このパラメーターの有効値は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="9b061-153">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="9b061-154">**Basic**</span><span class="sxs-lookup"><span data-stu-id="9b061-154">**Basic**</span></span>
+- <span data-ttu-id="9b061-155">**CredSSP**</span><span class="sxs-lookup"><span data-stu-id="9b061-155">**CredSSP**</span></span>
+- <span data-ttu-id="9b061-156">**[Default]**</span><span class="sxs-lookup"><span data-stu-id="9b061-156">**Default**</span></span>
+- <span data-ttu-id="9b061-157">**ダイジェスト**</span><span class="sxs-lookup"><span data-stu-id="9b061-157">**Digest**</span></span>
+- <span data-ttu-id="9b061-158">**Kerberos**</span><span class="sxs-lookup"><span data-stu-id="9b061-158">**Kerberos**</span></span>
+- <span data-ttu-id="9b061-159">**ネゴシエート**</span><span class="sxs-lookup"><span data-stu-id="9b061-159">**Negotiate**</span></span>
+
+<span data-ttu-id="9b061-160">既定値は **Default** です。</span><span class="sxs-lookup"><span data-stu-id="9b061-160">The default value is **Default**.</span></span>
+
+<span data-ttu-id="9b061-161">このパラメーターの値の詳細については、「 [Authenticationmechanism 列挙型](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9b061-161">For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).</span></span>
+
+> [!WARNING]
+> <span data-ttu-id="9b061-162">ユーザー資格情報が認証対象のリモートコンピューターに渡される Credential Security Service Provider (CredSSP) 認証は、リモートネットワーク共有へのアクセスなど、複数のリソースでの認証を必要とするコマンド向けに設計されています。</span><span class="sxs-lookup"><span data-stu-id="9b061-162">Credential Security Service Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.</span></span>
+> <span data-ttu-id="9b061-163">このメカニズムを使用すると、リモート操作のセキュリティ リスクが高まります。</span><span class="sxs-lookup"><span data-stu-id="9b061-163">This mechanism increases the security risk of the remote operation.</span></span>
+> <span data-ttu-id="9b061-164">リモートコンピューターが侵害された場合、そのコンピューターに渡された資格情報を使用して、ネットワークセッション > 制御できます。</span><span class="sxs-lookup"><span data-stu-id="9b061-164">If the remote computer is compromised, the credentials that are passed to it can be used to control > the network session.</span></span>
+
+<span data-ttu-id="9b061-165">このパラメーターは Windows PowerShell 3.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="9b061-165">This parameter was introduced in Windows PowerShell 3.0.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Default, Basic, Negotiate, CredSSP, Digest, Kerberos
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-166">-Confirm</span><span class="sxs-lookup"><span data-stu-id="9b061-166">-Confirm</span></span>
+
+<span data-ttu-id="9b061-167">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="9b061-167">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-168">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="9b061-168">-WhatIf</span></span>
+
+<span data-ttu-id="9b061-169">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="9b061-169">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="9b061-170">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="9b061-170">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9b061-171">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="9b061-171">CommonParameters</span></span>
+
+<span data-ttu-id="9b061-172">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="9b061-172">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9b061-173">詳細については、「[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9b061-173">For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).</span></span>
+
+## <span data-ttu-id="9b061-174">入力</span><span class="sxs-lookup"><span data-stu-id="9b061-174">INPUTS</span></span>
+
+### <span data-ttu-id="9b061-175">なし</span><span class="sxs-lookup"><span data-stu-id="9b061-175">None</span></span>
+
+<span data-ttu-id="9b061-176">このコマンドレットには、値による入力を受け取るパラメーターはありません。</span><span class="sxs-lookup"><span data-stu-id="9b061-176">This cmdlet does not have parameters that take input by value.</span></span> <span data-ttu-id="9b061-177">ただし、パイプを使用してオブジェクトの **ComputerName** および **NewName** プロパティの値をこのコマンドレットに渡すことはできます。</span><span class="sxs-lookup"><span data-stu-id="9b061-177">However, you can pipe the values of the **ComputerName** and **NewName** properties of objects to this cmdlet.</span></span>
+
+## <span data-ttu-id="9b061-178">出力</span><span class="sxs-lookup"><span data-stu-id="9b061-178">OUTPUTS</span></span>
+
+### <span data-ttu-id="9b061-179">Microsoft. PowerShell. ComputerChangeInfo</span><span class="sxs-lookup"><span data-stu-id="9b061-179">Microsoft.PowerShell.Commands.ComputerChangeInfo</span></span>
+
+<span data-ttu-id="9b061-180">**PassThru** パラメーターを指定した場合、このコマンドレットは **computerchangeinfo** オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="9b061-180">This cmdlet returns a **ComputerChangeInfo** object, if you specify the **PassThru** parameter.</span></span>
+<span data-ttu-id="9b061-181">それ以外の場合、出力は返しません。</span><span class="sxs-lookup"><span data-stu-id="9b061-181">Otherwise, it does not return any output.</span></span>
+
+## <span data-ttu-id="9b061-182">注</span><span class="sxs-lookup"><span data-stu-id="9b061-182">NOTES</span></span>
+
+<span data-ttu-id="9b061-183">このコマンドレットは、Windows プラットフォームでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="9b061-183">This cmdlet is only available on Windows platforms.</span></span>
+
+## <span data-ttu-id="9b061-184">関連リンク</span><span class="sxs-lookup"><span data-stu-id="9b061-184">RELATED LINKS</span></span>
+
+[<span data-ttu-id="9b061-185">Restart-Computer</span><span class="sxs-lookup"><span data-stu-id="9b061-185">Restart-Computer</span></span>](Restart-Computer.md)
+
+[<span data-ttu-id="9b061-186">Stop-Computer</span><span class="sxs-lookup"><span data-stu-id="9b061-186">Stop-Computer</span></span>](Stop-Computer.md)
