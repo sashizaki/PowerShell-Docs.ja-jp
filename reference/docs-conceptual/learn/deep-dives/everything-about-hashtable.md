@@ -3,12 +3,12 @@ title: ハッシュテーブルについて知りたかったことのすべて
 description: ハッシュテーブルは PowerShell で非常に重要であるため、十分に理解しておくことをお勧めします。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
-ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
+ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
+ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "93354424"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "97980503"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>ハッシュテーブルについて知りたかったことのすべて
 
@@ -925,8 +925,7 @@ Orig: [copy]
 
 ### <a name="deep-copies"></a>ディープ コピー
 
-この記事の執筆時点で、ハッシュテーブルのディープ コピーを作成する (そしてハッシュテーブルとして保持する) ための巧妙な方法を私は知りません。 これについてはだれかが執筆する必要があります。
-これを行う簡単な方法を次に示します。
+ハッシュテーブルのディープ コピーを作成するには、いくつかの方法があります (ハッシュテーブルは保持されます)。 次に示す関数では、PowerShell を使用してディープ コピーが再帰的に作成されます。
 
 ```powershell
 function Get-DeepClone
@@ -952,6 +951,21 @@ function Get-DeepClone
 ```
 
 他の参照型または配列は処理されませんが、出発点として適しています。
+
+もう 1 つは、.Net を使用して、この関数のように **CliXml** を使用して逆シリアル化する方法です。
+
+```powershell
+function Get-DeepClone
+{
+    param(
+        $InputObject
+    )
+    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize($obj, [int32]::MaxValue)
+    return [System.Management.Automation.PSSerializer]::Deserialize($TempCliXmlString)
+}
+```
+
+非常に大きなハッシュテーブルの場合、逆シリアル化関数の方がスケールアウトされるため高速になります。ただし、この方法を使用する際、考慮すべき点がいくつかあります。 **Clixml** が使用されることで、メモリが集中的に使用されるため、大きなハッシュテーブルを複製する場合に問題になる可能性があります。 **Clixml** には、深さの制限が 48 という制限もあります。 つまり、ハッシュテーブルに 48 層のハッシュテーブルが入れ子にされている場合、複製は失敗し、ハッシュテーブルはまったく出力されません。
 
 ## <a name="anything-else"></a>その他
 
