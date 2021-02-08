@@ -1,13 +1,13 @@
 ---
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
-ms.date: 11/11/2020
-ms.openlocfilehash: 039db904a315bd3ad3f4e1358d414c98c3a84be5
-ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
+ms.date: 02/02/2021
+ms.openlocfilehash: befc5ff156cb7c3843d89e394e903778682ba28e
+ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661428"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536492"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -24,14 +24,14 @@ WSMan を介して PowerShell のリモート処理を有効にするには、�
 
 ## <a name="download-the-installer-package"></a>インストーラー パッケージをダウンロードする
 
-Windows に PowerShell をインストールするには、[最新][]のインストール パッケージを GitHub からダウンロードします。 最新のプレビュー バージョンは、[[リリース]][] ページでも確認できます。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+Windows に PowerShell をインストールするには、[最新][]のインストール パッケージを GitHub からダウンロードします。 最新の[プレビュー][] バージョンも確認できます。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
 
 MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。 次に例を示します。
 
-- `PowerShell-7.1.0-win-x64.msi`
-- `PowerShell-7.1.0-win-x86.msi`
+- `PowerShell-7.1.1-win-x64.msi`
+- `PowerShell-7.1.1-win-x86.msi`
 
 ダウンロードしたら、インストーラーをダブルクリックし、プロンプトの指示に従います。
 
@@ -55,13 +55,14 @@ MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようにな�
 MSI パッケージはコマンド ラインからインストールできるため、管理者はユーザーの介入なしにパッケージを展開できます。 MSI パッケージには、インストールのオプションを制御するための次のプロパティが含まれます。
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - このプロパティでは、エクスプローラーのコンテキスト メニューに **[Open PowerShell]\(PowerShell を開く\)** 項目を追加するためのオプションを制御します。
+- **ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL** - このプロパティでは、エクスプローラーのコンテキスト メニューに **[PowerShell を使用しての実行]** 項目を追加するためのオプションを制御します。
 - **ENABLE_PSREMOTING** - このプロパティでは、インストール中に PowerShell リモート処理を有効にするためのオプションを制御します。
 - **REGISTER_MANIFEST** - このプロパティでは、Windows イベント ログのマニフェストを登録するためのオプションを制御します。
 
 すべてのインストール オプションを有効にして PowerShell をサイレント インストールする方法を、次の例に示します。
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 `Msiexec.exe` 用のコマンド ライン オプションの完全な一覧については、[コマンド ライン オプション](/windows/desktop/Msi/command-line-options)に関するページをご覧ください。
@@ -83,10 +84,10 @@ PowerShell 7.1 以降では、MSI パッケージによって、インストー�
 
 PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 [リリース][リリース] ページから、次のいずれかの ZIP アーカイブをダウンロードします。
 
-- PowerShell-7.1.0-win-x64.zip
-- PowerShell-7.1.0-win-x86.zip
-- PowerShell-7.1.0-win-arm64.zip
-- PowerShell-7.1.0-win-arm32.zip
+- PowerShell-7.1.1-win-x64.zip
+- PowerShell-7.1.1-win-x86.zip
+- PowerShell-7.1.1-win-arm64.zip
+- PowerShell-7.1.1-win-arm32.zip
 
 ファイルのダウンロード方法によっては、`Unblock-File` コマンドレットを使用して、ファイルのブロックを解除することが必要になる場合があります。 任意の場所にコンテンツを解凍し、そこから `pwsh.exe` を実行します。 MSI パッケージをインストールする場合とは異なり、ZIP アーカイブをインストールしても、前提条件は確認されません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
 
@@ -225,8 +226,8 @@ dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.0
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.1
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.1-preview.5
    ```
 
 1. `--exact` パラメーターを使用して、いずれかのバージョンの PowerShell をインストールします
@@ -286,8 +287,8 @@ Microsoft は、このドキュメントでインストール方法をサポー�
 
 <!-- link references -->
 
-[リリース]: https://github.com/PowerShell/PowerShell/releases
-[latest]: https://github.com/PowerShell/PowerShell/releases/latest
+[preview]: https://aka.ms/powershell-release?tag=preview
+[latest]: https://aka.ms/powershell-release?tag=stable
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
