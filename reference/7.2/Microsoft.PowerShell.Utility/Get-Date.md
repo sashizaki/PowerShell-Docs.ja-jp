@@ -6,12 +6,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 8c0a1b7a14f5dfa071a85808f5d7dfba4d06048e
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "99599715"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975058"
 ---
 # Get-Date
 
@@ -215,7 +215,7 @@ d-----         6/27/2019    07:59                2019-06-27T07.59.24.4603750-07.
 
 ### 例 9: Unix タイムスタンプを変換する
 
-この例では、Unix 時刻 (1970-01-01 0:00:00 以降の秒数で表されます) を DateTime に変換します。
+この例では、Unix 時間 (1970-01-01 0:00:00 以降の秒数で表されます) を DateTime に変換します。
 
 ```powershell
 Get-Date -UnixTimeSeconds 1577836800
@@ -513,7 +513,7 @@ Accept wildcard characters: False
 
 ### パイプラインの入力
 
-`Get-Date` パイプラインの入力を受け入れます。 たとえば、`Get-ChildItem | Get-Date` のようになります。
+`Get-Date` パイプラインの入力を受け入れます。 たとえば、`Get-ChildItem | Get-Date` のようにします。
 
 ## 出力
 
@@ -526,7 +526,7 @@ Accept wildcard characters: False
 メソッドは、 `(Get-Date).ToString()` **DateTime** オブジェクトを **String** オブジェクトに変換します。
 
 オブジェクトのプロパティとメソッドを表示するには、オブジェクトをパイプライン内でに送信し `Get-Member` ます。
-たとえば、`Get-Date | Get-Member` のようになります。
+たとえば、`Get-Date | Get-Member` のようにします。
 
 ## 注
 
@@ -565,9 +565,9 @@ Accept wildcard characters: False
 | `%t` | 水平タブ文字                                                |                          |
 | `%T` | 24 時間制の時刻                                                  | 17:45:52                 |
 | `%U` | ' W ' と同じ                                                             |                          |
-| `%u` | 曜日-数字                                                | 日曜日 = 0               |
+| `%u` | 曜日の数字 (1-7)                                           | 月曜日 = 1、日曜日 = 7   |
 | `%V` | 年の通算週                                                        | 01-53                    |
-| `%w` | ' U ' と同じ                                                             |                          |
+| `%w` | 曜日の数字 (0-6)                                           | 日曜日 = 0、土曜日 = 6 |
 | `%W` | 年の通算週                                                        | 00-52                    |
 | `%X` | ' T ' と同じ                                                             |                          |
 | `%x` | ロケールの標準形式の日付                                      | 英語-米国の場合は06/27/19  |

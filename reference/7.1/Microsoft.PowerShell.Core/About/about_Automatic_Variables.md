@@ -5,12 +5,12 @@ ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 60ad0e40f7e392bf240ee76a5902123c45a282fd
-ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
+ms.openlocfilehash: 8a2410dd2adcc1679ab203293b4c4e712b960278
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577244"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975143"
 ---
 # <a name="about-automatic-variables"></a>自動変数について
 
@@ -67,7 +67,7 @@ $? # $true
 
 関数、スクリプト、またはスクリプトブロックに渡される、宣言されていないパラメーターの値の配列を格納します。 関数を作成するときに、キーワードを使用する `param` か、関数名の後にパラメーターのコンマ区切りリストをかっこで追加することによって、パラメーターを宣言できます。
 
-イベントアクションでは、変数には、 `$Args` 処理中のイベントのイベント引数を表すオブジェクトが格納されます。 この変数は、 `Action` イベント登録コマンドのブロック内でのみ設定されます。
+イベントアクションでは、変数には、 `$args` 処理中のイベントのイベント引数を表すオブジェクトが格納されます。 この変数は、 `Action` イベント登録コマンドのブロック内でのみ設定されます。
 この変数の値は、を返す **PSEventArgs** オブジェクトの **sourceargs** プロパティにもあり `Get-Event` ます。
 
 ### <a name="consolefilename"></a>$ConsoleFileName
@@ -180,7 +180,7 @@ echo Hello | pwsh -Command """$input World!"""
 
 PowerShell 3.0 以降では、に `MyInvocation` 次の新しいプロパティが追加されています。
 
-| プロパティ      | [説明]                                         |
+| プロパティ      | Description                                         |
 | ------------- | --------------------------------------------------- |
 | **PSScriptRoot**  | 呼び出されたスクリプトへの完全なパスを格納します。   |
 |               | 現在のコマンド。 このプロパティの値は次のようになります。  |
@@ -368,7 +368,7 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 現在のセッションで実行されている PowerShell のバージョンに関する詳細を表示する読み取り専用のハッシュテーブルが含まれています。 この表には、次の項目が含まれています。
 
-| プロパティ                  | [説明]                                   |
+| プロパティ                  | Description                                   |
 | ------------------------- | --------------------------------------------- |
 | **PSVersion**             | PowerShell のバージョン番号                 |
 | **PSEdition**             | このプロパティの値は、  |
@@ -460,7 +460,7 @@ PSSession を開始したユーザーに関する情報が含まれます。こ�
 
 **現在** のプロパティは、 **MoveNext** が呼び出されるまで、同じプロパティを返し続けます。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 ### <a name="example-1-using-the-input-variable"></a>例 1: $input 変数の使用
 
