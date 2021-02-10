@@ -1,16 +1,16 @@
 ---
 description: PowerShell でシーケンス内の次の文字を解釈する方法を制御する特殊文字シーケンスについて説明します。
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
-ms.openlocfilehash: c642bc69d9e67bd945e5687d7f7c35e039062194
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b21ec1eb5ed0da52cf5eff01eaf3c220d117cf55
+ms.sourcegitcommit: 364c3fe46b2069b810107d840be59fe519ea7b4a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99601416"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100100718"
 ---
 # <a name="about-special-characters"></a>特殊文字について
 
@@ -30,7 +30,7 @@ PowerShell は、次のエスケープシーケンスを認識します。
 
 |  Sequence   |       説明       |
 | ----------- | ----------------------- |
-| `` `0 ``    | [Null]                    |
+| `` `0 ``    | Null                    |
 | `` `a ``    | アラート:                   |
 | `` `b ``    | バックスペース               |
 | `` `e ``    | エスケープ                  |
@@ -157,13 +157,28 @@ Unicode エスケープシーケンス () では、 `` `u{x} `` コードポイ�
 
 ## <a name="vertical-tab-v"></a>垂直タブ (' v)
 
-水平タブ ( `` `v `` ) 文字は、次の垂直タブに進み、その時点で残りの出力を書き込みます。 これは、既定の Windows コンソールには影響しません。
+垂直タブ ( `` `v `` ) 文字は、次の垂直タブに進み、その時点で残りの出力を書き込みます。 垂直タブのレンダリングは、デバイスと端末に依存します。
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-次の例は、プリンターまたは別のコンソールホストで取得する出力を示しています。
+次の例では、いくつかの一般的な環境で、垂直タブのレンダリングされた出力を示します。
+
+Windows コンソールホストアプリケーションは ( `` `v `` ) を特殊文字として解釈しますが、余分な空白は追加されません。
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+[Windows ターミナル](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)は、垂直タブ文字をキャリッジリターンとラインフィードとしてレンダリングします。 出力の残りの部分は、次の行の先頭に印刷されます。
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+プリンターまたは unix ベースのコンソールでは、垂直タブ文字が次の行に進み、その時点で残りの出力を書き込みます。
 
 ```Output
 There is a vertical tab
