@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: パラメーター属性の宣言
 description: パラメーター属性の宣言
-ms.openlocfilehash: bab48a94cb4b1e8501fb79c2f3ef71393fa2ee68
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 24a49406b1493a7f8c23bca798ddb3e73a901111
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92650346"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500231"
 ---
 # <a name="parameter-attribute-declaration"></a>パラメーター属性の宣言
 
@@ -37,11 +37,11 @@ Parameter 属性は、コマンドレットパラメーターとしてコマン�
 
 `HelpMessage` 省略可能な名前付きパラメーター。 パラメーターの短い説明を指定します。 コマンドレットが実行され、必須パラメーターが指定されていない場合、Windows PowerShell はこのメッセージを表示します。
 
-`HelpMessageBaseName` 省略可能な名前付きパラメーター。リソース識別子が存在する場所を指定します。 たとえば、このパラメーターは、ローカライズするヘルプメッセージを含むリソースアセンブリを指定できます。
+`HelpMessageBaseName` 省略可能な名前付きパラメーター。 リソース識別子が存在する場所を指定します。 たとえば、このパラメーターは、ローカライズするヘルプメッセージを含むリソースアセンブリを指定できます。
 
 `HelpMessageResourceId` 省略可能な名前付きパラメーター。ヘルプメッセージのリソース識別子を指定します。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 - この属性を宣言する方法の詳細については、「 [コマンドレットのパラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)」を参照してください。
 
@@ -59,7 +59,7 @@ Parameter 属性は、コマンドレットパラメーターとしてコマン�
 
   - パラメーターセットには、同じ位置に複数の位置パラメーターを含めることはできません。
 
-  - パラメーターセット内の1つのパラメーターだけがを宣言する必要があり `ValueFromPipeline = true` ます。 複数のパラメーターでを定義でき `ValueFromPipelineByPropertyName = true` ます。
+  - パラメーターセット内の1つのパラメーターだけがを宣言する必要があり `ValueFromPipeline = true` ます。
 
   - 複数のパラメーターでを定義でき `ValueFromPipelineByPropertyName = true` ます。
 

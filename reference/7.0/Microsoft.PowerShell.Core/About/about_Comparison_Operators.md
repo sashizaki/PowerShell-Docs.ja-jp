@@ -5,12 +5,12 @@ ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: a89ab612a7f0fe518f97a4d037956df14546740d
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: 179798b490855cd463e2348acaf1292f042ba173
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98620117"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500161"
 ---
 # <a name="about-comparison-operators"></a>比較演算子について
 
@@ -34,7 +34,7 @@ PowerShell の比較演算子は、2つの値を比較するか、コレクシ�
 |             | -notlike     | 文字列がワイルドカードパターンと一致しません    |
 |             | -match       | 文字列が regex パターンと一致します              |
 |             | -notmatch    | 文字列が regex パターンと一致しません       |
-| Replacement | -replace     | 正規表現パターンに一致する文字列を置換します |
+| 代替 | -replace     | 正規表現パターンに一致する文字列を置換します |
 | Containment | -contains    | コレクションに値が含まれています               |
 |             | -notcontains | コレクションに値が含まれていません       |
 |             | -in          | 値がコレクション内にあります                  |
@@ -47,7 +47,7 @@ PowerShell の比較演算子は、2つの値を比較するか、コレクシ�
 既定では、すべての比較演算子で大文字と小文字が区別されます。 大文字と小文字を区別する比較演算子を作成するには、の後にを追加し `c` `-` ます。 たとえば、 `-ceq` は、の大文字と小文字を区別するバージョンです `-eq` 。 大文字と小文字を区別しないようにするには、の前にを追加し `i` `-` ます。 たとえば、 `-ieq` は、の大文字と小文字を区別しない明示的なバージョンです `-eq` 。
 
 演算子の入力がスカラー値の場合、演算子は **ブール** 値を返します。 入力がコレクションの場合、演算子は、式の右辺の値に一致するコレクションの要素を返します。
-コレクション内に一致するものがない場合、比較演算子は空の配列を返します。 以下に例を示します。
+コレクション内に一致するものがない場合、比較演算子は空の配列を返します。 次に例を示します。
 
 ```powershell
 $a = (1, 2 -eq 3)
@@ -249,7 +249,7 @@ Members smaller than or equal to 7
 
 これらの演算子は、 [system.icomparable][1]を実装するすべてのクラスで機能します。
 
-例 :
+次に例を示します。
 
 ```powershell
 # Date comparison
@@ -395,7 +395,7 @@ Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 
 既定では、 `-replace` 演算子は大文字と小文字を区別しません。 大文字と小文字を区別するには、を使用 `-creplace` します。 大文字と小文字を区別しないようにするには、を使用 `-ireplace` します。
 
-例 :
+次に例を示します。
 
 ```powershell
 "book" -ireplace "B", "C" # Case insensitive
@@ -414,7 +414,7 @@ book
 次の例では、 `-replace` 演算子は、の形式でユーザー名を受け取り、 `DomainName\Username` 形式に変換し `Username@DomainName` ます。
 
 ```powershell
-$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
 'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
@@ -429,9 +429,9 @@ John.Doe@Contoso.local
 >
 > - PowerShell では、2つの二重引用符の間に変数を指定し、部分式演算子として機能します。
 > - 正規表現の検索文字列では、行の終わりを示します。
-> - Regex の置換文字列では、キャプチャされたグループを表します。したがって、単一引用符の間に正規表現を配置するか、バックティック () 文字を挿入するようにしてください `` ` `` 。
+> - Regex の置換文字列では、キャプチャされたグループを表します。1つの二重引用符の間に正規表現を配置するか、バックティック () 文字を挿入してください `` ` `` 。
 
-以下に例を示します。
+次に例を示します。
 
 ```powershell
 $1 = 'Goodbye'
@@ -443,7 +443,7 @@ $1 = 'Goodbye'
 # Output: Hello Universe
 ```
 
-`$$` Regex のはリテラルを表し `$` ます。 置換 `$$` 文字列内のこの値によって、置換後のリテラルが含まれ `$` ます。 以下に例を示します。
+`$$` Regex のはリテラルを表し `$` ます。 これは、置換後の `$$` 置換文字列に含まれ `$` ます。 次に例を示します。
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
@@ -455,7 +455,7 @@ $1 = 'Goodbye'
 
 ### <a name="substituting-in-a-collection"></a>コレクション内での置換
 
-`<input>`演算子へのが `-replace` コレクションである場合、PowerShell はコレクションのすべての値に置換を適用します。 以下に例を示します。
+`<input>`演算子へのが `-replace` コレクションである場合、PowerShell はコレクションのすべての値に置換を適用します。 次に例を示します。
 
 ```powershell
 "B1","B2","B3","B4","B5" -replace "B", 'a'
@@ -505,7 +505,7 @@ Hello
 
 これらの演算子は、セットに特定の要素が含まれているかどうかを判断します。 `-contains` 右側 (テストオブジェクト) がセット内のいずれかの要素と一致する場合に True を返します。 `-notcontains` 代わりに False を返します。 テストオブジェクトがコレクションの場合、これらの演算子は参照の等価性を使用します。つまり、セットの要素の1つがテストオブジェクトの同じインスタンスであるかどうかを確認します。
 
-例 :
+次に例を示します。
 
 ```powershell
 "abc", "def" -contains "def"                  # Output: True

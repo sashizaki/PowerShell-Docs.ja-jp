@@ -5,12 +5,12 @@ ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: 2bd2aa825d09078f37dba1f99fa64584dacd324d
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: 2ccd631083ddc06d25f2c3b4733223cca2e89d44
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "99599725"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500248"
 ---
 # <a name="about-comparison-operators"></a>比較演算子について
 
@@ -34,12 +34,12 @@ PowerShell の比較演算子は、2つの値を比較するか、コレクシ�
 |             | -notlike     | 文字列がワイルドカードパターンと一致しません    |
 |             | -match       | 文字列が regex パターンと一致します              |
 |             | -notmatch    | 文字列が regex パターンと一致しません       |
-| Replacement | -replace     | 正規表現パターンに一致する文字列を置換します |
+| 代替 | -replace     | 正規表現パターンに一致する文字列を置換します |
 | Containment | -contains    | コレクションに値が含まれています               |
 |             | -notcontains | コレクションに値が含まれていません       |
 |             | -in          | 値がコレクション内にあります                  |
 |             | -notin       | 値がコレクション内にありません              |
-| 型        | -が          | 両方のオブジェクトが同じ型です。            |
+| Type        | -が          | 両方のオブジェクトが同じ型です。            |
 |             | -isnot       | オブジェクトが同じ型ではありません         |
 
 ## <a name="common-features"></a>共通機能
@@ -414,7 +414,7 @@ book
 次の例では、 `-replace` 演算子は、の形式でユーザー名を受け取り、 `DomainName\Username` 形式に変換し `Username@DomainName` ます。
 
 ```powershell
-$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
 'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
@@ -429,7 +429,7 @@ John.Doe@Contoso.local
 >
 > - PowerShell では、2つの二重引用符の間に変数を指定し、部分式演算子として機能します。
 > - 正規表現の検索文字列では、行の終わりを示します。
-> - Regex の置換文字列では、キャプチャされたグループを表します。したがって、単一引用符の間に正規表現を配置するか、バックティック () 文字を挿入するようにしてください `` ` `` 。
+> - Regex の置換文字列では、キャプチャされたグループを表します。1つの二重引用符の間に正規表現を配置するか、バックティック () 文字を挿入してください `` ` `` 。
 
 次に例を示します。
 
@@ -443,7 +443,7 @@ $1 = 'Goodbye'
 # Output: Hello Universe
 ```
 
-`$$` Regex のはリテラルを表し `$` ます。 置換 `$$` 文字列内のこの値によって、置換後のリテラルが含まれ `$` ます。 次に例を示します。
+`$$` Regex のはリテラルを表し `$` ます。 これは、置換後の `$$` 置換文字列に含まれ `$` ます。 次に例を示します。
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72

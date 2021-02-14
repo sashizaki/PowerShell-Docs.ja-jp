@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: PSReadLine について
-ms.openlocfilehash: 4836abfec465ba7cdfb6800c1e60104fba19ce08
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "99600977"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500214"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -918,19 +918,39 @@ PSReadLine の履歴をクリアします。 これは、PowerShell の履歴に
 
 - Vi の挿入モード: `<Shift+Tab>`
 
-## <a name="miscellaneous-functions"></a>その他の関数
+## <a name="prediction-functions"></a>予測関数
 
 ### <a name="acceptnextsuggestionword"></a>AcceptNextSuggestionWord
 
-インラインまたは選択した修正候補の次の単語をそのまま使用します。
+予測のビュースタイルとしてを使用する場合は `InlineView` 、インライン修正候補の次の単語を受け入れます。
 
 - 関数はバインド解除されています。
 
 ### <a name="acceptsuggestion"></a>AcceptSuggestion
 
-現在のインラインまたは選択された提案を受け入れます。
+予測のビュースタイルとしてを使用する場合は `InlineView` 、現在のインライン提案を受け入れます。
 
 - 関数はバインド解除されています。
+
+### <a name="nextsuggestion"></a>NextSuggestion
+
+予測のビュースタイルとしてを使用する場合は、 `ListView` 一覧の次の提案に移動します。
+
+- 関数はバインド解除されています。
+
+### <a name="previoussuggestion"></a>前の提案
+
+予測のビュースタイルとしてを使用する場合は、 `ListView` 一覧の前の候補に移動します。
+
+- 関数はバインド解除されています。
+
+### <a name="switchpredictionview"></a>SwitchPredictionView
+
+との間の予測のビュースタイルを切り替え `InlineView` `ListView` ます。
+
+- コマンド: `<F2>`
+
+## <a name="miscellaneous-functions"></a>その他の関数
 
 ### <a name="capturescreen"></a>CaptureScreen
 
@@ -1007,6 +1027,15 @@ PSReadLine の履歴をクリアします。 これは、PowerShell の履歴に
 
 - 関数はバインド解除されています。
 
+### <a name="showcommandhelp"></a>ShowCommandHelp
+
+**Microsoft PowerShell** のポケットベルを使用して、代替画面バッファーの完全なコマンドレットヘルプを表示します。
+
+- コマンド: `<F1>`
+- .Emacs `<F1>`
+- Vi の挿入モード: `<F1>`
+- Vi コマンドモード: `<F1>`
+
 ### <a name="showkeybindings"></a>ShowKeyBindings
 
 すべてのバインドされたキーを表示します。
@@ -1014,6 +1043,15 @@ PSReadLine の履歴をクリアします。 これは、PowerShell の履歴に
 - コマンド: `<Ctrl+Alt+?>`
 - .Emacs `<Ctrl+Alt+?>`
 - Vi の挿入モード: `<Ctrl+Alt+?>`
+
+### <a name="showparameterhelp"></a>ShowParameterHelp
+
+のような現在のコマンドラインの下に表示することにより、パラメーターの動的なヘルプを提供 `MenuComplete` します。
+
+- コマンド: `<Alt+h>`
+- .Emacs `<Alt+h>`
+- Vi の挿入モード: `<Alt+h>`
+- Vi コマンドモード: `<Alt+h>`
 
 ### <a name="vicommandmode"></a>ViCommandMode
 
@@ -1392,7 +1430,7 @@ bool TryGetArgAsInt(System.Object arg, [ref] int numericArg,
   [ref]$numericArg, 1)
 ```
 
-## <a name="notes"></a>メモ
+## <a name="notes"></a>ノート
 
 ### <a name="command-history"></a>コマンド履歴
 
