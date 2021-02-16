@@ -1,17 +1,16 @@
 ---
 description: PowerShell でワイルドカード文字を使用する方法について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 3/28/2019
+ms.date: 02/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
-ms.openlocfilehash: 3a3146210a7d133190631f177d3a69ca120d1432
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 54108eaafa645452f58b1962c3f103bcdd5c9e4a
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93220960"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529993"
 ---
 # <a name="about-wildcards"></a>ワイルドカードについて
 
@@ -21,7 +20,9 @@ PowerShell でワイルドカード文字を使用する方法について説明
 
 ## <a name="long-description"></a>詳細説明
 
-ワイルドカード文字は、1つまたは複数の文字を表します。 これらのコマンドを使用して、コマンドで単語パターンを作成できます。 たとえば、ディレクトリ内のファイル名拡張子を持つすべてのファイルを取得するには、次のように `C:\Techdocs` `.ppt` 入力します。
+ワイルドカード文字は、1つまたは複数の文字を表します。 これらのコマンドを使用して、コマンドで単語パターンを作成できます。 ワイルドカード式は、 `-like` 演算子またはワイルドカードを受け入れる任意のパラメーターと共に使用します。
+
+たとえば、ディレクトリ内のすべてのファイルを `C:\Techdocs` ファイル名拡張子と照合するには、次のように `.ppt` 入力します。
 
 ```powershell
 Get-ChildItem C:\Techdocs\*.ppt
@@ -29,9 +30,11 @@ Get-ChildItem C:\Techdocs\*.ppt
 
 この場合、アスタリスク ( `*` ) ワイルドカード文字は、ファイル名拡張子の前に表示される任意の文字を表し `.ppt` ます。
 
+ワイルドカード式は、正規表現よりも簡単です。 詳細については、「 [about_Regular_Expressions](./about_Regular_Expressions.md)」を参照してください。
+
 PowerShell では、次のワイルドカード文字がサポートされています。
 
-|ワイルドカード|説明               |例 |一致する        |一致なし|
+|ワイルドカード|説明               |例 |一致したもの        |一致なし|
 |--------|--------------------------|--------|-------------|--------|
 |\*      |0個以上の文字と一致します | ある\*  | aA、ag、Apple | バナナ |
 |?       |その位置の1文字と一致します | ? n | 、in、on | 済み |

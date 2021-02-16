@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
-ms.openlocfilehash: 27a1d2994dee46b9e5bfd54132ff4a665330c2b4
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: 1eade078765f93713da1f665e3ad6f062a1826d9
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93219416"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529942"
 ---
 # ConvertTo-Html
 
@@ -69,7 +69,7 @@ Invoke-Item aliases.htm
 ### 例 3: PowerShell イベントを表示する web ページを作成する
 
 ```powershell
-`Get-EventLog` -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
 ```
 
 このコマンド `pslog.htm` は、ローカルコンピューターの Windows PowerShell イベントログにイベントを表示するという名前の HTML ページを作成します。
@@ -153,7 +153,7 @@ Get-EventLog -Log "Windows PowerShell" | ConvertTo-Html -Property id, level, tas
 
 パイプライン演算子 () を使用して、イベントを `|` コマンドレットに送信し `ConvertTo-Html` ます。これにより、イベントが HTML 形式に変換されます。
 
-この `ConvertTo-Html` コマンドは、 **Property** パラメーターを使用して、イベントの **ID** 、 **Level** 、および **Task** プロパティのみを選択します。
+この `ConvertTo-Html` コマンドは、 **Property** パラメーターを使用して、イベントの **ID**、 **Level**、および **Task** プロパティのみを選択します。
 
 ### 例 9: 指定したサービスを表示する web ページを作成する
 
@@ -170,7 +170,7 @@ Get-Service A* |
 Invoke-Item Services.htm
 ```
 
-このコマンドは、で始まるコンピューター上のサービスを表示する Web ページを作成して開きます。の **Title** 、 **Body** 、 **precontent** 、および **postcontent** パラメーターを使用して `ConvertTo-Html` 、出力をカスタマイズします。
+このコマンドは、で始まるコンピューター上のサービスを表示する Web ページを作成して開きます。の **Title**、 **Body**、 **precontent**、および **postcontent** パラメーターを使用して `ConvertTo-Html` 、出力をカスタマイズします。
 
 コマンドの最初の部分では、コマンドレットを使用して `Get-Service` 、で始まるコンピューター上のサービスを取得します。このコマンドは、パイプライン演算子 () を使用して `|` 結果を `ConvertTo-Html` コマンドレットに送信します。 また、コマンドレットを使用して、 `Out-File` 出力を Services.htm ファイルに送信します。
 
