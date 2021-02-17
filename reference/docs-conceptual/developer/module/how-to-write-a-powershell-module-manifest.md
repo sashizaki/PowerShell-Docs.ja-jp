@@ -3,12 +3,12 @@ ms.date: 01/04/2021
 ms.topic: reference
 title: PowerShell モジュール マニフェストを記述する方法
 description: PowerShell モジュール マニフェストを記述する方法
-ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 0270b9b3745b7ffd187f2089414ea7759515d96b
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879373"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563321"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>PowerShell モジュールマニフェストを記述する方法
 
@@ -57,7 +57,7 @@ PowerShell モジュールを作成した後、モジュールに関する情報
 |要素|Default|説明|
 |-------------|-------------|-----------------|
 |**RootModule**<br /> 型: `String`|`<empty string>`|このマニフェストに関連付けられているスクリプトモジュールまたはバイナリモジュールファイル。 以前のバージョンの PowerShell では、この要素が **ModuleToProcess** と呼ばれていました。<br /> ルートモジュールに使用できる型は空にすることができます。これにより、 **マニフェスト** モジュール、スクリプトモジュールの名前 ( `.psm1` )、またはバイナリモジュールの名前 ( `.exe` または) が作成さ `.dll` れます。 モジュールマニフェストの名前 ( `.psd1` ) またはスクリプトファイル ( `.ps1` ) をこの要素に配置すると、エラーが発生します。 <br /> 例: `RootModule = 'ScriptModule.psm1'`|
-|**ModuleVersion**<br /> 型: `Version`|`'0.0.1'`|このモジュールのバージョン番号。 値が指定されていない場合、は `New-ModuleManifest`   既定のを使用します。 文字列は、などの型に変換できる必要があり `Version` `#.#.#.#.#` ます。 `Import-Module`名前に一致し、少なくとも1つ以上の **ModuleVersion** を持つ、 **$PSModulePath** で見つかった最初のモジュールを **MinimumVersion** パラメーターとして読み込みます。 特定のバージョンをインポートするには、 `Import-Module` コマンドレットの **RequiredVersion** パラメーターを使用します。<br /> 例: `ModuleVersion = '1.0'`|
+|**ModuleVersion**<br /> 型: `Version`|`'0.0.1'`|このモジュールのバージョン番号。 値が指定されていない場合、は `New-ModuleManifest`   既定のを使用します。 文字列は、などの型に変換できる必要があり `Version` `#.#.#.#` ます。 `Import-Module`名前に一致し、少なくとも1つ以上の **ModuleVersion** を持つ、 **$PSModulePath** で見つかった最初のモジュールを **MinimumVersion** パラメーターとして読み込みます。 特定のバージョンをインポートするには、 `Import-Module` コマンドレットの **RequiredVersion** パラメーターを使用します。<br /> 例: `ModuleVersion = '1.0'`|
 |**GUID**<br /> 型: `GUID`|`'<GUID>'`|このモジュールを一意に識別するために使用する ID。 値が指定されていない場合、 `New-ModuleManifest` オプティマイザー値を生成します。 現在、 **GUID** によってモジュールをインポートすることはできません。 <br /> 例: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
 |**作成者**<br /> 型: `String`|`'<Current user>'`|このモジュールの作成者。 値が指定されていない場合、は `New-ModuleManifest` 現在のユーザーを使用します。 <br /> 例: `Author = 'AuthorNameHere'`|
 |**CompanyName**<br /> 型: `String`|`'Unknown'`|このモジュールの会社またはベンダー。 値が指定されていない場合、は `New-ModuleManifest` 既定のを使用します。<br /> 例: `CompanyName = 'Fabrikam'`|

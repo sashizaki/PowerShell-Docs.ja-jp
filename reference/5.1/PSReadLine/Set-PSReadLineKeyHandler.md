@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: PSReadline
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
-ms.openlocfilehash: 8eefd819b59cf8d0050484c6aad3058bc6e7753a
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 220b38f51afab619a57473be27b1139b878eb7e9
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93224899"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563228"
 ---
 # Set-PSReadLineKeyHandler
 
@@ -85,6 +85,9 @@ Accept wildcard characters: False
 
 `Ctrl+X,Ctrl+L`
 
+> [!NOTE]
+> PSReadLine 2.0.0 の場合、 **コード** パラメーターでは **大文字と小文字が区別** されます。 つまり、 `Ctrl+X` と `Ctrl+x` は異なるバインドを作成します。
+
 このパラメーターは、文字列の配列を受け入れます。 各文字列は個別のバインドであり、1つのバインドのキーのシーケンスではありません。
 
 ```yaml
@@ -151,7 +154,7 @@ Accept wildcard characters: False
 
 バインドが適用される vi モードを指定します。
 
-有効な値は次のとおりです。
+次の値を指定できます。
 
 - 挿入
 - コマンド

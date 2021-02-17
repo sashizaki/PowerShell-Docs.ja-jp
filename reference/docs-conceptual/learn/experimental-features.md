@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: PowerShell の試験的機能の使用
 description: 現在使用できる試験的機能とその使用方法を示します。
-ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 556ae8d877b670b119b7b5b958a52488aad16241
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879356"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500125"
 ---
 # <a name="using-experimental-features-in-powershell"></a>PowerShell の試験的機能の使用
 
@@ -38,6 +38,7 @@ PowerShell の試験的機能のサポートは、試験的機能を PowerShell 
 | PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
@@ -116,6 +117,24 @@ Underline Off   Property   string UnderlinedOff {get;set;}
 - `StringDecorated Substring(int contentLength)` メソッドは、ANSI エスケープ シーケンスの一部ではないコンテンツの長さまで、インデックス 0 から始まる substring を返します。 これは、テーブルの書式設定が文字列を切り捨て、印刷可能な文字領域を占有しない ANSI エスケープ シーケンスを保持するために必要です。
 - `string ToString()` メソッドは同じままで、文字列のプレーンテキスト バージョンを返します。
 - `Ansi` パラメーターが true の場合、`string ToString(bool Ansi)` メソッドは生の ANSI 埋め込み文字列を返します。 それ以外の場合は、ANSI エスケープ シーケンスが削除されたプレーンテキスト バージョンが返されます。
+
+## <a name="psansiprogress"></a>PSAnsiProgress
+
+この実験は、PowerShell 7.2 で追加されました。 この機能によって `$PSStyle.Progress` メンバーが追加され、進行状況ビュー バーの表示を制御できるようになります。
+
+- `$PSStyle.Progress.Style` - 表示スタイルを設定する ANSI 文字列。
+- `$PSStyle.Progress.MaxWidth` - ビューの最大幅を設定します。 `0` に設定するとコンソールの幅になります。
+  既定値は `120` です
+- `$PSStyle.Progress.View` - 値 `Minimal` と `Classic` を持つ列挙型。 `Classic` は変更なしの既存の表示です。 `Minimal` は単一行の最小表示です。 `Minimal` が既定値です。
+
+次の例では、表示スタイルを最小の進行状況バーに更新します。
+
+```powershell
+$PSStyle.Progress.View.Minimal
+```
+
+> [!NOTE]
+> この機能を使用するには、試験的機能 **PSAnsiRendering** を有効にする必要があります。
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 
