@@ -9,12 +9,12 @@ metadata:
   author: sdwheeler
   ms.author: sewhee
   ms.date: 09/04/2019
-  ms.openlocfilehash: 14d9c28093ec91351048819e719ab80d5dd9c501
-  ms.sourcegitcommit: a073c7db07d765ab45f52345ab98c7660582bc98
+  ms.openlocfilehash: f469ddb8179b1b2c937478e776fb0383c22357e1
+  ms.sourcegitcommit: 14f45157bb60db7ef4c321c1a525c836698cafa9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87377500"
+  ms.lasthandoff: 02/18/2021
+  ms.locfileid: "101101289"
 highlightedContent:
   items:
   - title: 概要
@@ -139,18 +139,18 @@ additionalContent:
   - title: PowerShell のチーム
     summary: PowerShell のチームと通信する
     items:
-    - title: PowerShell の公式ブログ
+    - title: PowerShell チーム ブログ
       summary: 公式なニュースとお知らせ
       url: https://devblogs.microsoft.com/powershell/
+    - title: PowerShell コミュニティ ブログ
+      summary: PowerShell の学習と分析情報の共有を行うコミュニティのための場所
+      url: https://devblogs.microsoft.com/powershell-community/
     - title: PowerShell チームの Twitter
       summary: PowerShell の 280 文字ニュース
       url: https://twitter.com/PowerShell_Team
-    - title: PowerShell の UserVoice
-      summary: Windows PowerShell のバグの場所
-      url: https://windowsserver.uservoice.com/forums/301869-powershell
     - title: GitHub イシュー
       summary: 現在のリリースのバグの場所
       url: https://github.com/powershell/powershell/issues
-    - title: Hey Scripting Guy!  ブログ
-      summary: PowerShell について学習し、オートメーションのストーリーを共有する場所
-      url: https://devblogs.microsoft.com/scripting/
+    - title: PowerShell の UserVoice
+      summary: Windows PowerShell のバグの場所
+      url: https://windowsserver.uservoice.com/forums/301869-powershell
