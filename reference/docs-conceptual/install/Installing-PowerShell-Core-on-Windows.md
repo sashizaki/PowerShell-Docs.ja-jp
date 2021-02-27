@@ -24,7 +24,7 @@ WSMan を介して PowerShell のリモート処理を有効にするには、�
 
 ## <a name="download-the-installer-package"></a>インストーラー パッケージをダウンロードする
 
-Windows に PowerShell をインストールするには、[最新][]のインストール パッケージを GitHub からダウンロードします。 最新の[プレビュー][] バージョンも確認できます。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+Windows に PowerShell をインストールするには、[最新](https://aka.ms/powershell-release?tag=stable)のインストール パッケージを GitHub からダウンロードします。 最新の[プレビュー](https://aka.ms/powershell-release?tag=preview)バージョンも確認できます。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
 
